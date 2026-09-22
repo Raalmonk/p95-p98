@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1150" viewBox="0 0 1760 1150" role="img" aria-labelledby="title desc">
+<title id="title">Policy evolution with the NGK refinement loop expanded</title>
+<desc id="desc">A black-and-white, three-panel method diagram. Panel a shows OpenEvolve choosing existing policies, LLM code revision, evaluation on TRAIN48, Pareto selection, and the two selected programs P95 and P98. Panel b expands one training task: source-only observations enter a fixed policy that chooses ProMod3 database retrieval, NGK, minimization or delivery; candidate state, history and remaining work return to that policy. Panel c expands the NGK refinement loop into native initialization, a policy stop check, loop selection, torsion sampling, KIC closure, side-chain trials or scheduled repacking, minimization and energy evaluation, Monte Carlo acceptance or rejection, and state/history update. Failed closure returns to sampling schematically. The native annealing schedule feeds a policy-controlled per-acceptance temperature multiplier; the multiplier and stopping rule, not the underlying KIC solver or base schedule, are evolved. P95 and P98 use native acceptance or a conditional 0.75 multiplier; neither uses custom inner saves or restores. NGK returns its native low-energy state. This is a schematic of method and control boundaries, not an exact trace of every native nested operation or an assertion about branch frequencies.</desc>
+<defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 Z" fill="#000"/></marker></defs>
+<style>
+text {font-family:Arial,Helvetica,sans-serif;fill:#000;}
+.node {fill:#fff;stroke:#000;stroke-width:1.55;}
+.evolved {fill:#fff;stroke:#000;stroke-width:1.9;stroke-dasharray:6 4;}
+.edge {fill:none;stroke:#000;stroke-width:1.55;stroke-linejoin:round;stroke-linecap:round;}
+.guide {fill:none;stroke:#000;stroke-width:1.05;stroke-dasharray:2 5;}
+.frame {fill:none;stroke:#000;stroke-width:1.05;}
+</style>
+<rect width="1760" height="1150" fill="#fff"/>
+
+<g id="a-program-evolution">
+<text x="30" y="117" font-size="23" font-weight="bold" text-anchor="middle">a</text>
+<text x="65" y="34" font-size="19" font-weight="normal" text-anchor="start">OpenEvolve</text>
+<path d="M1252.5 84 V49 H177.5 V84" class="edge" marker-end="url(#arrow)"/>
+<text x="715" y="34" font-size="17" font-weight="normal" text-anchor="middle">evaluation feedback</text>
+<rect x="65" y="90" width="225" height="76" rx="0" class="node"/>
+<text x="177.5" y="124.0" font-size="22" font-weight="normal" text-anchor="middle">Policy pool</text>
+<text x="177.5" y="150.0" font-size="17" font-weight="normal" text-anchor="middle">initial + evaluated code</text>
+<rect x="410" y="90" width="225" height="76" rx="0" class="node"/>
+<text x="522.5" y="124.0" font-size="22" font-weight="normal" text-anchor="middle">LLM</text>
+<text x="522.5" y="150.0" font-size="17" font-weight="normal" text-anchor="middle">edit policy code</text>
+<rect x="755" y="90" width="255" height="76" rx="0" class="node"/>
+<text x="882.5" y="124.0" font-size="22" font-weight="normal" text-anchor="middle">TRAIN48</text>
+<text x="882.5" y="150.0" font-size="17" font-weight="normal" text-anchor="middle">evaluate new policy</text>
+<rect x="1125" y="90" width="255" height="76" rx="0" class="node"/>
+<text x="1252.5" y="124.0" font-size="22" font-weight="normal" text-anchor="middle">Pareto selection</text>
+<text x="1252.5" y="150.0" font-size="17" font-weight="normal" text-anchor="middle">update the pool</text>
+<rect x="1510" y="90" width="185" height="76" rx="0" class="node"/>
+<text x="1602.5" y="124.0" font-size="22" font-weight="normal" text-anchor="middle">P95 / P98</text>
+<text x="1602.5" y="150.0" font-size="17" font-weight="normal" text-anchor="middle">selected code</text>
+<path d="M296 128 H404" class="edge" marker-end="url(#arrow)"/>
+<path d="M641 128 H749" class="edge" marker-end="url(#arrow)"/>
+<path d="M1016 128 H1119" class="edge" marker-end="url(#arrow)"/>
+<path d="M1386 128 H1504" class="edge" marker-end="url(#arrow)"/>
+<text x="697" y="109" font-size="16" font-weight="normal" text-anchor="middle">new code</text>
+<text x="1446" y="109" font-size="16" font-weight="normal" text-anchor="middle">after search</text>
+<text x="1602.5" y="193" font-size="17" font-weight="normal" text-anchor="middle">No online LLM</text>
+<path d="M882.5 172 V245" class="guide"/>
+</g>
+<g id="b-training-task">
+<rect x="20" y="264" width="1693" height="347" rx="0" class="frame"/>
+<rect x="45" y="248" width="292" height="28" fill="#fff"/>
+<text x="53" y="269" font-size="23" font-weight="bold" text-anchor="middle">b</text>
+<text x="79" y="269" font-size="20" font-weight="normal" text-anchor="start">One task in TRAIN48</text>
+<path d="M296 415 H354" class="edge" marker-end="url(#arrow)"/>
+<path d="M616 415 H650" class="edge"/>
+<path d="M650 415 V325 H684" class="edge" marker-end="url(#arrow)"/>
+<path d="M650 415 H684" class="edge" marker-end="url(#arrow)"/>
+<path d="M650 415 V505 H684" class="edge" marker-end="url(#arrow)"/>
+<path d="M936 325 H985 V505" class="edge"/>
+<path d="M936 415 H1019" class="edge" marker-end="url(#arrow)"/>
+<path d="M936 505 H985" class="edge"/>
+<path d="M1261 415 H1379" class="edge" marker-end="url(#arrow)"/>
+<path d="M1140 461 V566 H485 V461" class="edge" marker-end="url(#arrow)"/>
+<rect x="65" y="375" width="225" height="80" rx="0" class="node"/>
+<text x="177.5" y="411.0" font-size="22" font-weight="normal" text-anchor="middle">Source model</text>
+<text x="177.5" y="437.0" font-size="17" font-weight="normal" text-anchor="middle">seq. · loops · budget</text>
+<rect x="360" y="375" width="250" height="80" rx="0" class="evolved"/>
+<text x="485.0" y="411.0" font-size="22" font-weight="normal" text-anchor="middle">Policy</text>
+<text x="485.0" y="437.0" font-size="17" font-weight="normal" text-anchor="middle">route · keep · deliver</text>
+<rect x="690" y="295" width="240" height="60" rx="0" class="node"/>
+<text x="810.0" y="332.48" font-size="22" font-weight="normal" text-anchor="middle">ProMod3 DB</text>
+<rect x="690" y="385" width="240" height="60" rx="0" class="node"/>
+<text x="810.0" y="422.48" font-size="22" font-weight="normal" text-anchor="middle">NGK (c)</text>
+<rect x="690" y="475" width="240" height="60" rx="0" class="node"/>
+<text x="810.0" y="512.48" font-size="22" font-weight="normal" text-anchor="middle">Min</text>
+<rect x="1025" y="375" width="230" height="80" rx="0" class="node"/>
+<text x="1140.0" y="411.0" font-size="22" font-weight="normal" text-anchor="middle">Candidate pool</text>
+<text x="1140.0" y="437.0" font-size="17" font-weight="normal" text-anchor="middle">states + observations</text>
+<rect x="1385" y="325" width="290" height="180" rx="0" class="node"/>
+<text x="1530" y="354" font-size="22" font-weight="normal" text-anchor="middle">Evaluate output</text>
+<text x="1530" y="386" font-size="17" font-weight="normal" text-anchor="middle">Local / global RMSD (Å)</text>
+<text x="1530" y="414" font-size="17" font-weight="normal" text-anchor="middle">Local / global E (REU)</text>
+<text x="1530" y="442" font-size="18" font-weight="normal" text-anchor="middle">Work + CPU</text>
+<text x="1530" y="477" font-size="18" font-weight="normal" text-anchor="middle">Validity · MP</text>
+<text x="1320" y="397" font-size="17" font-weight="normal" text-anchor="middle">deliver</text>
+<text x="810" y="589" font-size="17" font-weight="normal" text-anchor="middle">state · history · remaining work</text>
+</g>
+<g id="c-ngk-refinement">
+<rect x="20" y="668" width="1693" height="414" rx="0" class="frame"/>
+<rect x="40" y="652" width="245" height="28" fill="#fff"/>
+<text x="53" y="673" font-size="23" font-weight="bold" text-anchor="middle">c</text>
+<text x="79" y="673" font-size="20" font-weight="normal" text-anchor="start">NGK refinement</text>
+<path d="M175 780 V820" class="edge" marker-end="url(#arrow)"/>
+<path d="M250 870 H324" class="edge" marker-end="url(#arrow)"/>
+<path d="M100 870 H35 V1010 H59" class="edge" marker-end="url(#arrow)"/>
+<path d="M506 870 H544" class="edge" marker-end="url(#arrow)"/>
+<path d="M736 870 H774" class="edge" marker-end="url(#arrow)"/>
+<path d="M966 870 H1004" class="edge" marker-end="url(#arrow)"/>
+<path d="M1206 870 H1244" class="edge" marker-end="url(#arrow)"/>
+<path d="M1426 870 H1474" class="edge" marker-end="url(#arrow)"/>
+<path d="M870 830 V800 H640 V830" class="edge" marker-end="url(#arrow)"/>
+<path d="M1426 742 H1474" class="edge" marker-end="url(#arrow)"/>
+<path d="M1587.5 780 V826" class="edge" marker-end="url(#arrow)"/>
+<path d="M1587.5 914 V982.5 H1246" class="edge" marker-end="url(#arrow)"/>
+<path d="M864 982.5 H350 V944 H175 V920" class="edge" marker-end="url(#arrow)"/>
+<rect x="65" y="710" width="220" height="64" rx="0" class="node"/>
+<text x="175.0" y="738.0" font-size="22" font-weight="normal" text-anchor="middle">Initialize</text>
+<text x="175.0" y="764.0" font-size="16" font-weight="normal" text-anchor="middle">native closure / repack</text>
+<path d="M175,826 L250,870 L175,914 L100,870 Z" class="evolved"/>
+<text x="175" y="877" font-size="22" font-weight="normal" text-anchor="middle">Stop?</text>
+<rect x="330" y="836" width="170" height="68" rx="0" class="node"/>
+<text x="415.0" y="876.8" font-size="20" font-weight="normal" text-anchor="middle">Choose loop</text>
+<rect x="550" y="836" width="180" height="68" rx="0" class="node"/>
+<text x="640.0" y="876.8" font-size="20" font-weight="normal" text-anchor="middle">Sample torsions</text>
+<rect x="780" y="836" width="180" height="68" rx="0" class="node"/>
+<text x="870.0" y="877.14" font-size="21" font-weight="normal" text-anchor="middle">KIC closure</text>
+<rect x="1010" y="836" width="190" height="68" rx="0" class="node"/>
+<text x="1105.0" y="866.0" font-size="21" font-weight="normal" text-anchor="middle">SC update</text>
+<text x="1105.0" y="892.0" font-size="17" font-weight="normal" text-anchor="middle">trials / repack</text>
+<rect x="1250" y="836" width="170" height="68" rx="0" class="node"/>
+<text x="1335.0" y="866.0" font-size="21" font-weight="normal" text-anchor="middle">Min + score</text>
+<text x="1335.0" y="892.0" font-size="18" font-weight="normal" text-anchor="middle">ΔE</text>
+<rect x="1480" y="832" width="215" height="76" rx="0" class="node"/>
+<text x="1587.5" y="866.0" font-size="23" font-weight="normal" text-anchor="middle">MC</text>
+<text x="1587.5" y="892.0" font-size="18" font-weight="normal" text-anchor="middle">accept / reject</text>
+<rect x="1200" y="710" width="220" height="64" rx="0" class="node"/>
+<text x="1310.0" y="738.0" font-size="21" font-weight="normal" text-anchor="middle">Native SA</text>
+<text x="1310.0" y="764.0" font-size="17" font-weight="normal" text-anchor="middle">T schedule</text>
+<rect x="1480" y="710" width="215" height="64" rx="0" class="evolved"/>
+<text x="1587.5" y="738.0" font-size="21" font-weight="normal" text-anchor="middle">Scale T</text>
+<text x="1587.5" y="764.0" font-size="17" font-weight="normal" text-anchor="middle">m × native T</text>
+<rect x="870" y="949" width="370" height="67" rx="0" class="node"/>
+<text x="1055.0" y="978.5" font-size="21" font-weight="normal" text-anchor="middle">Update state + history</text>
+<text x="1055.0" y="1004.5" font-size="17" font-weight="normal" text-anchor="middle">current + lowest-E states</text>
+<rect x="65" y="978" width="220" height="64" rx="0" class="node"/>
+<text x="175.0" y="1016.8" font-size="20" font-weight="normal" text-anchor="middle">Return low-E state</text>
+<text x="286" y="852" font-size="16" font-weight="normal" text-anchor="middle">no</text>
+<text x="72" y="852" font-size="16" font-weight="normal" text-anchor="middle">yes</text>
+<text x="755" y="784" font-size="16" font-weight="normal" text-anchor="middle">retry if no closure</text>
+<text x="525" y="967" font-size="16" font-weight="normal" text-anchor="middle">next step</text>
+<text x="175" y="1064" font-size="16" font-weight="normal" text-anchor="middle">to candidate pool</text>
+</g>
+<g id="legend">
+<rect x="60" y="1108" width="32" height="17" rx="0" class="evolved"/>
+<text x="106" y="1123" font-size="17" font-weight="normal" text-anchor="start">LLM-evolved rules</text>
+<text x="500" y="1123" font-size="16" font-weight="normal" text-anchor="start">SA, simulated annealing; SC, side chains; MC, Monte Carlo; MP, MolProbity.</text>
+</g>
+</svg>

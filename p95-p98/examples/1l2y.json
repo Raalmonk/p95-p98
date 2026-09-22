@@ -1,0 +1,8 @@
+{
+  "structure": "1l2y_model1_A.pdb",
+  "sequence": "NLYIQWLKDGGPSSGRPPPS",
+  "loops": [{"start": 10, "stop": 15, "cut": 12, "extended": false}],
+  "local_energy_residues": [10, 11, 12, 13, 14, 15],
+  "seed": 20260922,
+  "input_kind": "W"
+}

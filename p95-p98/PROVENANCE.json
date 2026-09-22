@@ -1,0 +1,23 @@
+{
+  "release": "0.1.0",
+  "policy_code_modified": false,
+  "policies": {
+    "P95": {"file": "src/p95p98/policies/p95.py", "sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8"},
+    "P98": {"file": "src/p95p98/policies/p98.py", "sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83"}
+  },
+  "unchanged_host_modules": {
+    "src/p95p98/controller.py": "465ac1dfdceb08433fe9235a1a03665b12c1d25505624cbe2fa348d8bf01161f",
+    "src/p95p98/native/legacy_refine.py": "59cb3073e0d7cc505248720e54d005be806aa0a090e3069266530653e9bb5855"
+  },
+  "native_baseline": {
+    "rosetta": "5e498f1409c68ade56c8ce5842bf79e1b02e8db4",
+    "promod3": "6817e1819152078d2d0ab9fa1fd053d8057d4454",
+    "openstructure": "2.12.0",
+    "native_source_patch_required": false
+  },
+  "user_supplied_figure_sha256": {
+    "docs/figures/Training_Workflow_NGK.svg": "042e2bfcb1215a884f9c6e0715ed122996cc1545609c0a592ce0c2c97f96de53",
+    "docs/figures/method_comparison.pdf": "f13ce985afec9d5fbb20e72e77fe8adacff2ba89b898481b39f1eac95ecd2456"
+  },
+  "extraction": "Existing native host and routing, with explicit prepared-input binding, package imports, process isolation, installation, resource manifests and output adapters. No replacement policy algorithm."
+}

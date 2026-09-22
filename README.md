@@ -1,160 +1,62 @@
-Rosetta Biomolecular Modeling Library
-=====================================
+# P95 / P98
 
-The Rosetta software suite includes algorithms for computational modeling and analysis of protein structures. It has enabled notable scientific advances in computational biology, including de novo protein design, enzyme design, ligand docking, and structure prediction of biological macromolecules and macromolecular complexes.
+**LLM-discovered control programs for budgeted protein loop modeling.**
 
-Rosetta is maintained by the RosettaCommons, a collaboration of 50+ academic research groups, who have been developing Rosetta for over 20 years.
-See <https://www.rosettacommons.org> for more information about Rosetta and the RosettaCommons.
+P95 and P98 use source-structure observations and search history to choose
+native modeling operations, retain candidates and stop. Deployment runs on CPUs
+without an LLM account or OpenEvolve installation.
 
-Rosetta Code
-============
+[Installation and usage](p95-p98/README.md) ·
+[Method](p95-p98/docs/METHOD.md) ·
+[Validation](p95-p98/docs/VALIDATION.md) ·
+[Source code](p95-p98/src/p95p98)
 
-While the Rosetta source code is published on GitHub, it is not "Open Source" (according to the OSI definition). Most notably, use for commercial purposes requires purchase of a separate license. See LICENSE.md for further information.
+## Method
 
-The main GitHub repository on https://github.com/RosettaCommons/rosetta integrates all the Rosetta-associated code base.
-It should be noted that many parts of Rosetta are structured as separate GitHub repositories, which the main repository conveniently presents as submodules.
-A significant number are external software packages that Rosetta is redistributing, which helps synchronize development to exact versions of those external softwares across software distributions
-and thus support users and developers in their communication.
+![Program discovery and the controlled NGK refinement loop](p95-p98/docs/figures/Training_Workflow_NGK.svg)
 
-It is not required to manually retrieve those subprojects.
-Instead, the scons build management will auto-retrieve only those external repositories that are required for the build.
-The retrieval of external source trees is independent from the software that may already be installed via the Operating System, which is intentional.
+The frozen programs control routing, candidate retention, stopping and exposed
+NGK callbacks. Native KIC closure, packing, minimization and Monte Carlo remain
+provided by Rosetta. ProMod3 supplies native database and sampling operations.
 
-``` sh
-git clone https://github.com/RosettaCommons/rosetta
-```
-and change to that directory
-``` sh
-cd rosetta
-```
+## Computational time and structure quality
 
-Getting Started Using Rosetta
-=============================
+[![BENCH48 method comparison](p95-p98/docs/figures/method_comparison.png)](p95-p98/docs/figures/method_comparison.pdf)
 
-Start here: https://www.rosettacommons.org/docs/latest/getting_started/Getting-Started
+[Vector PDF](p95-p98/docs/figures/method_comparison.pdf) ·
+[Measurements and sample counts](p95-p98/docs/figures/CAPTION.md)
 
-The fastest way to address your scientific modeling challenge at hand may be with the official Docker images.
-Accessible from the official Docker hub at https://hub.docker.com/r/rosettacommons/rosetta,
-the images have both Rosetta and PyRosetta pre-installed, such that Rosetta tutorials can be followed.
-You may also conveniently inspect the Dockerfiles
-(see [docker/README.md](https://github.com/RosettaCommons/rosetta/blob/main/docker/README.md))
-as a templated for the Rosetta installation on your local system.
+These are the completed BENCH48 development results, not an independent test
+set. The two Agent pilots each contain three inputs. Recorded CPU excludes
+program-discovery cost; the caption describes timing scope and method identities.
 
-Questions about how to use Rosetta are best directed to the RosettaCommons forums <https://www.rosettacommons.org/forum>
+## Run
 
-Installing using Conda
-----------------------
+The installable package is in [`p95-p98/`](p95-p98/). It requires Linux Python
+3.12, the pinned licensed PyRosetta build, and a separately configured ProMod3
+environment. Dependency versions, source-excluded database construction and the
+public input example are documented in the [installation guide](p95-p98/README.md).
 
-Rosetta binaries are avaliable as a `rosetta` Conda package in the **RosettaCommons Conda Channel**. All binaries are built using `serialization` and `cxx11thread` extras. Currently RosettaCommons has two mirrors of this channel. To use them please edit `~/.condarc` and add snippets for either East or West mirrors:
-
-Example `~/.condarc` for US WEST coast (if unsure use this mirror): 
-
-```
-channels: 
-- https://conda.rosettacommons.org
-- conda-forge
+```sh
+git clone --filter=blob:none --sparse --branch codex/p95-p98 https://github.com/Raalmonk/p95-p98.git p95p98-rosetta
+cd p95p98-rosetta
+git sparse-checkout set p95-p98
+cd p95-p98
+python -m pip install .
+p95p98 verify
 ```
 
-Example `~/.condarc` for US EAST coast:
+Both installed policies completed the public 1L2Y example. The release also
+passed 54 software tests and a native ProMod3 database/compatibility check.
+[Actual example outputs and receipts](p95-p98/examples/outputs/summary.json)
+are separate from the benchmark comparison above.
 
-```
-channels: 
-- https://conda.graylab.jhu.edu
-- conda-forge
-```
+## Rosetta source and license
 
-
-Compiling Rosetta
------------------
-
-To use Rosetta without Docker, or to modify and extend Rosetta yourself, you can compile the Rosetta source tree yourself.
-(See also <https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation> for details.)
-
-The Rosetta source tree ships with all its run-time dependencies, just when building you
-need to install the C++ compiler (g++ or clang). Also you need the scripting language Python to be installed,
-The compilation is then performed by:
-
-``` sh
-$ cd source
-$ ./scons.py -j<NumOfJobs> mode=release bin
-```
-
-The Rosetta source tree is big and uses a series of advanced features of the C++ language.
-While we endeavor to support most compilers where possible, some C++ compilers may not yet perfectly master these features.
-Later versions of those compilers may have that fixed.
-Please let us know if you run into issues.
-
-Docker
-======
-
-Official Rosetta/PyRosetta images could be found at https://hub.docker.com/r/rosettacommons/rosetta.
-Both `serial` and `mpi` Rosetta builds provided as well as the number of PyRosetta builds including fully functional Jupyter setups with PyRosetta pre-installed and experimenta builds with `libtorch` and `tensorflow` integration.
-Please see https://hub.docker.com/r/rosettacommons/rosetta for more information.
-
-Various reference Docker files could be found in `rosetta/docker` dir.
-
-PyRosetta
-=========
-
-PyRosetta are Python bindings to the Rosetta library. These can be built from the Rosetta source code.
-
-See <https://www.pyrosetta.org> for more information about PyRosetta.
-
-The Docker image referenced above already ships with PyRosetta.
-To prepare the PyRosetta Python module locally from this source tree,
-you need
- * a C++ compiler, like the one you used to compile the other parts of Rosetta
- * the Ninja ([conda](https://anaconda.org/conda-forge/ninja), [Debian](https://tracker.debian.org/pkg/ninja-build)) build management tool
- * and also CMake ([conda](https://anaconda.org/conda-forge/cmake), [Debian](https://tracker.debian.org/pkg/cmake))
-which should all be readily available from your regular Linux distribution.
-
-``` sh
-$ cd source/src/python/PyRosetta
-$ python3 build.py -j24 --create-package $HOME/my_pyrosetta_package
-$ cd $HOME/my_pyrosetta_package/setup
-$ python3 setup.py install
-```
-
-Developing Rosetta
-==================
-
-We welcome contributions to improve Rosetta. We use a fork-and-PR system for contribution.
-To contribute to Rosetta, please fork the Rosetta repo(s) under your own Github user space.
-You can then develop your additions in your own space. Once you're ready to contribute it back, open a PR agaist the main Rosetta repos.
-You will need to sign the Rosetta Contributor License Agreement before your contribution can be accepted.
-
-See CONTRIBUTING.md for more details.
-
-Rosetta Code Organization
-=========================
-
-Due to its size, Rosetta uses git submodules to help in organization.
-
-The main repository (RosettaCommons/rosetta) contains the Rosetta source code, database, unit test and integration tests
-* rosetta/source/src -- The Rosetta source
-* rosetta/database/ -- The Rosetta database (used during runtime)
-* rosetta/source/test/ -- The compiled unit tests
-* rosetta/tests/integration/ -- The integration tests
-* rosetta/source/bin/ -- The location of the (symlinks to) the Rosetta executables -- (created during compilation)
-* rosetta/source/build/ -- The location of the built libraries -- (created during compilation)
-
-Additional information is located in submodules:
-* rosetta/documentation/ -- https://github.com/RosettaCommons/documentation -- Source for the online documentation
-* rosetta/demos/ -- https://github.com/RosettaCommons/demos -- Various demos on using Rosetta
-* rosetta/tools/ -- https://github.com/RosettaCommons/tools -- Additional helper scripts and protocols
-* rosetta/rosetta_scripts_scripts -- https://github.com/RosettaCommons/rosetta_scripts_scripts -- Example XML scripts for use with RosettaScripts
-* rosetta/pyrosetta_scripts -- https://github.com/RosettaCommons/pyrosetta_scripts -- Example PyRosetta scripts
-* rosetta/PyRosetta.notebooks -- https://github.com/RosettaCommons/PyRosetta.notebooks -- Example Jupyter notebooks using PyRosetta.
-* rosetta/source/external/... -- Various 'venderized' external dependencies
-
-The default clone does not pull down submodules, leaving an empty directory. 
-The compilation script will automatically clone the submodules needed for compilation, but not others.
-To obtain the contents of submodules which aren't currently cloned:
-
-    git submodule update --init -- ./submodule_directory_name
-    # e.g. git submodule update --init -- ./tools/
-
-or if you want to get all the submodules
-
-    git submodule update --init --recursive
-
+This is a full fork of [RosettaCommons/rosetta](https://github.com/RosettaCommons/rosetta).
+The release branch starts at the compatible Rosetta commit
+`5e498f1409c68ade56c8ce5842bf79e1b02e8db4`; its native source is unchanged.
+The original [Rosetta README](README.Rosetta.md) and [license](LICENSE.md) are
+retained. Original controller/harness code has its own
+[license](p95-p98/LICENSE), which excludes the Rosetta-derived scheduler.
+Runtime binaries and separately obtained databases are not bundled in the package.

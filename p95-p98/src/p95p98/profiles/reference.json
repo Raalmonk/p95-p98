@@ -1,0 +1,39 @@
+{
+  "schema": "p95p98-work-profile-v1",
+  "name": "retained-reference-tariff",
+  "scope": "historical_reference_tariff_not_input_specific_calibration",
+  "unit": "frozen_reference_cpu_work",
+  "operation_prices": {
+    "archive_save": 0.0019104355000001405,
+    "controller": 0.002301375945312499,
+    "kic": 0.01936015274609795,
+    "minimize": 0.10257171787141578,
+    "observe_state": 0.08566933899999984,
+    "repack": 0.8286170794573924,
+    "restore": 0.02649725199999997,
+    "rotamer_trials": 0.27815730942435624
+  },
+  "tariff": {
+    "status": "MEASURED",
+    "view": 0.00011734149999931276,
+    "fresh_state": 0.044032855500000245,
+    "cached_state": 0.0000074190000001195244,
+    "archive_displacement": 0.0035098580000001434
+  },
+  "policy_setup_work": 0.04818388399999967,
+  "delivery_reserve_cpu_seconds": 19,
+  "original_limits": {
+    "atomic_cpu_ceiling_seconds": 1800,
+    "atomic_wall_ceiling_seconds": 5400,
+    "ngk_atomic_cpu_seconds": 1800,
+    "ngk_atomic_wall_seconds": 5400,
+    "overall_wall_seconds": 5400,
+    "physical_cpu_budget_seconds": 1800,
+    "reference_cpu_seconds": 1800
+  },
+  "provenance_sha256": {
+    "production_receipt": "61da87427907335d2c46a84b89b64b791b71c1fda27224132299f808e19a0317",
+    "setup_receipt": "63ee578a3f35dcb002181408b2aaa8a33c73e2b8c67c2521c3e9106741d76bba",
+    "observation_receipt": "76a8d919a071cda20968c80739af4fad90122148ada67b5409898f64ee9778f3"
+  }
+}

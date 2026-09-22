@@ -1,0 +1,38 @@
+{
+  "purpose": "Installed-package smoke test, not a new performance benchmark",
+  "input": "PDB 1L2Y model 1 chain A; loop 10-15, cut 12; seed 20260922",
+  "input_pdb_sha256": "e133b0d0adc0e3f771f96973b040aa3a6f650773e52392800805f6ca079c387c",
+  "cpu_limit_seconds": 1800,
+  "wall_limit_seconds": 5400,
+  "work_profile": "retained-reference-tariff",
+  "result_cache_used": false,
+  "target_structure_used": false,
+  "llm_calls": 0,
+  "results": [
+    {
+      "policy": "P95", "status": "COMPLETE", "geometry_valid": true,
+      "actions": {"ngk_refine": 1, "minimize": 1},
+      "physical_cpu_seconds": 109.83812400000001,
+      "wall_seconds": 142.008696332,
+      "logical_work": 365.4424131498343,
+      "structure": "p95_1l2y.pdb",
+      "structure_sha256": "0eb0dd54d4b88ff1e23b94c0f2bfbd3520980c4c9aaa1048fdfc2522987fac78"
+    },
+    {
+      "policy": "P98", "status": "COMPLETE", "geometry_valid": true,
+      "actions": {"ngk_refine": 1},
+      "physical_cpu_seconds": 45.792649999999995,
+      "wall_seconds": 58.916466649000085,
+      "logical_work": 148.4942141476398,
+      "structure": "p98_1l2y.pdb",
+      "structure_sha256": "98082aa94ecc357c3e9ec0ab68876679007b1e59d936f2757eb420c51dd28ba3"
+    }
+  ],
+  "resource_preparation": {
+    "new_structure_records": 8632,
+    "cpu_seconds": 29.36,
+    "process_wall_seconds": 30.86,
+    "structure_sha256": "1af6a2ef1f5677fd7955f3848b34bc350b3e520ab82b93a3cbf459ae6d6c85f8",
+    "fragment_sha256": "6757338ac79fe7cfc1c8ce375d1b7b4d0774cabc0197adae9920116aea361a26"
+  }
+}

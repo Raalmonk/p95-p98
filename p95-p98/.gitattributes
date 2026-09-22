@@ -1,0 +1,2 @@
+# PDB column padding and line bytes are part of retained structure identity.
+*.pdb -text -whitespace

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "p95p98"
+version = "0.1.0"
+description = "Frozen P95/P98 controllers for budgeted local protein-structure search"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = {file = "LICENSE"}
+dependencies = ["numpy>=1.26,<3"]
+
+[project.scripts]
+p95p98 = "p95p98.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+p95p98 = ["profiles/*.json", "promod/*.cpp"]
