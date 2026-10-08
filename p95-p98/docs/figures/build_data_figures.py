@@ -152,47 +152,49 @@ def point_label(ax, x, y, text, color, ha="left", leader=None):
 
 
 def quality_cost(data):
-    fig = base("New proteins: CPU vs accuracy, by starting model",
-               "Mean results on six targets per starting model", (16, 9.5))
+    fig = base("New proteins: CPU time and accuracy",
+               "Mean results on six targets per starting model", (16, 11))
     panels = data["casp15_quality_cost"]
-    axes = [fig.add_axes([.075, .19, .40, .575]), fig.add_axes([.565, .19, .40, .575])]
-    limits = {"AlphaFold2": (1.55, 1.95), "ESMFold": (5.40, 5.80)}
-    label_specs = {
-        "AlphaFold2": {
-            "P95": (126, 1.857, "left", [(98.586916, 1.7548), (136, 1.789)]),
-            "P98": (8, 1.722, "left", [(14.447970, 1.6016), (30, 1.654)]),
-            "native_NGK": (138, 1.720, "left", [(216.944135, 1.6297), (224, 1.652)]),
-            "short_NGK": (8, 1.927, "left", [(48.435812, 1.8174), (48, 1.859)]),
-        },
-        "ESMFold": {
-            "P95": (95, 5.552, "left", [(191.199437, 5.7553), (127, 5.718), (127, 5.559)]),
-            "P98": (255, 5.669, "right", [(247.340918, 5.7425), (247, 5.676)]),
-            "native_NGK": (8, 5.788, "left", [(163.263967, 5.7804), (129, 5.771)]),
-            "short_NGK": (8, 5.659, "left", [(34.712240, 5.6971), (34.7, 5.666)]),
-        },
-    }
-    for panel_index, (ax, start) in enumerate(zip(axes, panels)):
+    for panel_index, start in enumerate(("AlphaFold2", "ESMFold")):
         group = panels[start]
-        clean_axis(ax)
-        ax.set(xlim=(0, 260), ylim=limits[start], xticks=[0, 50, 100, 150, 200, 250])
-        ax.set_yticks([limits[start][0] + .1 * i for i in range(5)])
-        ax.yaxis.set_major_formatter(plt.FormatStrFormatter("%.2f"))
-        ax.set_xlabel("Mean method CPU per input (s)", labelpad=15, fontsize=14)
-        ax.set_ylabel("Mean local backbone RMSD (Å)", labelpad=11, fontsize=14)
-        ax.set_title(f"{'A' if panel_index == 0 else 'B'}   {start} starts (n = 6)", loc="left", fontsize=18, fontweight="bold", pad=19)
+        bottom = .535 if panel_index == 0 else .145
+        cpu_ax = fig.add_axes([.165, bottom, .365, .225])
+        rmsd_ax = fig.add_axes([.625, bottom, .33, .225])
+        fig.text(.055, bottom + .303, f"{start} starts (n = 6)", fontsize=21,
+                 fontweight="bold", va="bottom")
+        for ax in (cpu_ax, rmsd_ax):
+            clean_axis(ax)
+            ax.grid(axis="y", visible=False)
+            ax.set_ylim(3.65, -.65)
+            ax.tick_params(labelsize=14)
+            ax.spines["left"].set_visible(False)
+        cpu_ax.set(xlim=(0, 400), xticks=[0, 100, 200, 300, 400])
+        rmsd_ax.set(xlim=(0, 6.5), xticks=[0, 1, 2, 3, 4, 5, 6])
+        cpu_ax.set_yticks(range(4), [NAMES[m] for m in METHODS], fontsize=16)
+        rmsd_ax.set_yticks([])
+        cpu_ax.set_title("CPU time (s) · % of NGK", loc="left", fontsize=18, fontweight="bold", pad=36)
+        rmsd_ax.set_title("Local backbone RMSD (Å)", loc="left", fontsize=18,
+                          fontweight="bold", pad=36)
         source = group["source_mean_local_bb_rmsd_A"]
-        ax.axhline(source, color=MUTED, linestyle=(0, (5, 4)), linewidth=1.3)
-        ax.text(256, limits[start][0] + .009, f"Untouched source: {source:.4f} Å", ha="right", va="bottom", fontsize=13, color=MUTED)
-        for method in METHODS:
+        rmsd_ax.axvline(source, color=INK, linestyle=(0, (4, 4)), linewidth=1.5, zorder=4)
+        rmsd_ax.text(0, 1.075, f"Dashed line: untouched source {source:.3f} Å",
+                     transform=rmsd_ax.transAxes, fontsize=13, color=MUTED, va="bottom")
+        for row_index, method in enumerate(METHODS):
             item = group["methods"][method]
-            cpu, rmsd, ratio = item["mean_method_cpu_seconds"], item["mean_local_bb_rmsd_A"], item["cpu_percent_native"]
-            ax.scatter(cpu, rmsd, s=145 if method == "P98" else 110, marker=MARKERS[method], color=COLORS[method], edgecolor="white", linewidth=1.4, zorder=4)
-            x, y, ha, leader = label_specs[start][method]
-            leader[0] = (cpu, rmsd)
-            label = f"{NAMES[method]}\n{cpu:.3f} s · {rmsd:.4f} Å\n{ratio:.2f}% of native"
-            point_label(ax, x, y, label, BLUE if method == "P98" else INK, ha, leader)
-    fig.text(.075, .072, "Lower RMSD is better. Both panels use the same CPU scale and the same 0.40 Å vertical span.", fontsize=13, color=MUTED)
-    save(fig, "casp15_quality_cost")
+            cpu = item["mean_method_cpu_seconds"]
+            rmsd = item["mean_local_bb_rmsd_A"]
+            ratio = item["cpu_percent_native"]
+            cpu_ax.barh(row_index, cpu, height=.54, color=COLORS[method], zorder=3)
+            rmsd_ax.barh(row_index, rmsd, height=.54, color=COLORS[method], zorder=3)
+            cpu_ax.text(cpu + 6, row_index, f"{cpu:.1f} s · {ratio:.1f}%", va="center",
+                        fontsize=15, color=INK, zorder=5)
+            rmsd_ax.text(rmsd + .10, row_index, f"{rmsd:.3f}", va="center",
+                         fontsize=15, color=INK, zorder=5)
+    fig.text(.165, .060, "Lower is better in both columns.",
+             fontsize=14, color=MUTED)
+    # Embed glyph outlines for this chart so GitHub does not substitute fonts.
+    with plt.rc_context({"svg.fonttype": "path"}):
+        save(fig, "casp15_quality_cost")
 
 
 def early_stopping(data):
@@ -267,7 +269,7 @@ def main():
     quality_cost(data)
     early_stopping(data)
     subgroup_deltas(data)
-    data["export"] = {"format": ["SVG with selectable text", "PNG"], "png_dpi": 180,
+    data["export"] = {"format": ["SVG: outlined text in casp15_quality_cost; selectable text in the other two figures", "PNG"], "png_dpi": 180,
                       "builder_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                       "style_sha256": hashlib.sha256((OUT / "figure_style.py").read_bytes()).hexdigest(),
                       "figures": {name: {suffix: hashlib.sha256((OUT / f"{name}.{suffix}").read_bytes()).hexdigest()

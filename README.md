@@ -1,6 +1,6 @@
 # NGNGK: letting an LLM write the decision rules for protein-loop modeling
 
-NGNGK uses LLM-guided program search to find decision rules for protein-loop modeling. We wanted to know: **can a language model write a small, readable program that decides when to look up a candidate, when to sample a new structure, and when to stop?**
+NGNGK is our name for this project, which uses LLM-guided program search to control Rosetta's NGK loop-modeling method. We wanted to know: **can a language model write a small, readable program that decides when to look up a candidate, when to sample a new structure, and when to stop?**
 
 To find out, we had a general-purpose LLM propose about 100 versions of a "decision program" for one well-known protein-modeling procedure (Rosetta's NGK loop modeling). We checked each version, tested it on real proteins, and kept two: P95 and P98. The names just mean they were proposals #95 and #98.
 
@@ -22,28 +22,24 @@ The search loop is built on [OpenEvolve](https://github.com/algorithmicsuperinte
 
 ## What we found
 
-We measure accuracy with RMSD: the average distance, in ångströms (Å), between the model's atoms and the experimental structure. Lower is better.
+We measure accuracy with RMSD: the root-mean-square distance, in ångströms (Å), between matched model and experimental atoms after alignment. Lower is better.
+
+The BENCH48 figure uses a common CA-only scaffold fit to show both input types together; the frozen search scores keep their original definitions: backbone atoms over an expanded region for W/S, and loop CA atoms for hard cases. CASP15 measures backbone atoms in the loop window after fitting its flanks, to assess changes around the predicted loop. These serve different comparisons, so their absolute values are not interchangeable. [BENCH48 definitions](p95-p98/docs/closeout/RESULTS.md#metric-definitions) · [CASP15 definitions](p95-p98/docs/closeout/casp15/INTERPRETATION.md#how-we-measured)
 
 ### 1. On the development set: similar quality, much less work
 
 On BENCH48, the 48 cases we used while searching and selecting, both programs had lower median error than standard NGK while doing far less work. Instead of one long search everywhere, they chose case by case among a database lookup, a rebuild, refinement, and a quick energy minimization.
 
-| Program | Work compared to standard NGK | Geometry-valid structures | Median local error (CA RMSD) |
-|---|---:|---:|---:|
-| P95 | 16.11% | 48 / 48 | 0.820 Å |
-| P98 | 25.13% | 48 / 48 | 0.780 Å |
-| Standard NGK | 100% | 47 / 48 | 0.878 Å |
+[![Quality vs. cost on the development set](p95-p98/docs/figures/method_comparison.png)](p95-p98/docs/figures/method_comparison.pdf)
+
+[What the figure shows](p95-p98/docs/figures/CAPTION.md) · [All 144 rows of development data](p95-p98/docs/closeout/results/per_input.csv)
 
 What to keep in mind:
 
 - It isn't an independent test. We chose the programs on this data, and the 48 cases come from only 32 groups of related proteins (homology components).
 - On the hard group of cases, both programs had worse raw RMSD than standard NGK. See the [complete report](p95-p98/docs/closeout/RESULTS.md).
 - Each program made 11 database lookups, 37 NGK refinements, and 2 NGK rebuilds (one case can use several). We measured the workflow as a whole, not what the lookups contributed on their own.
-- "Work" counts the study's logical computation, not seconds. The RMSD here is the display metric used in the table and figure: alpha-carbon (CA) atoms fitted to the surrounding scaffold. It is separate from the frozen raw quality metrics in the complete report, and differs from the metric in the new-protein test below.
-
-[![Quality vs. cost on the development set](p95-p98/docs/figures/method_comparison.png)](p95-p98/docs/figures/method_comparison.pdf)
-
-[What the figure shows](p95-p98/docs/figures/CAPTION.md) · [All 144 rows of development data](p95-p98/docs/closeout/results/per_input.csv)
+- "Work" counts the study's logical computation, not seconds. The RMSD here is the display metric used in the figure: alpha-carbon (CA) atoms fitted to the surrounding scaffold. It is separate from the frozen raw quality metrics in the complete report, and differs from the metric in the new-protein test below.
 
 ### 2. On new proteins: savings without a database lookup
 
@@ -53,18 +49,34 @@ We then gave the frozen programs six unseen CASP15 targets, each with an existin
 
 The savings came from control decisions, mainly stopping early: all six runs stopped inside NGK after just 0, 0, 13, 2, 0, and 27 KIC attempts (KIC is the step that closes each proposed loop shape). Against a fixed short NGK run, P98 used 29.83% of the CPU and had lower error (1.602 Å vs. 1.817 Å).
 
+Here is one stopping branch from the frozen [P98 program](p95-p98/src/p95p98/policies/p98.py#L275-L281), with the LLM's original comments:
+
+```python
+elif control['cleanup_only'] and control['cleanup_ready']:
+    # Initialization acceptance has resolved. Stop alone.
+    decision['stop'] = True
+elif control['response_ready']:
+    # Native acceptance was confirmed in the same epoch.
+    # Stop alone; native_low remains the native endpoint.
+    decision['stop'] = True
+```
+
+Earlier code sets these flags from geometry, energy and confirmation that a move was accepted. The program can then stop once a qualifying response has finished. It never sees the experimental RMSD.
+
 | Starting models | P98 CPU (mean) | Standard NGK CPU (mean) | P98 / NGK CPU | Starting model RMSD | P98 RMSD | Standard NGK RMSD |
 |---|---:|---:|---:|---:|---:|---:|
 | AlphaFold2, 6 targets | 14.45 s | 216.94 s | 6.66% | 1.596 Å | 1.602 Å | 1.630 Å |
 | ESMFold, same 6 targets | 247.34 s | 163.26 s | 151.50% | 5.433 Å | 5.743 Å | 5.780 Å |
 | All 12 inputs | 130.89 s | 190.10 s | 68.85% | 3.515 Å | 3.672 Å | 3.705 Å |
 
+The ESMFold row shows where the compute savings run out. P98 stopped early on all six AlphaFold2 starts, but only three of six ESMFold starts; the other three completed the full sampling schedule. P98 saves time when its stopping conditions are met. On these poorer starting models, it continued sampling for longer and spent more CPU than native NGK overall. [Per-run decisions](p95-p98/docs/closeout/casp15/mc_control_counts.csv)
+
 ![New proteins: CPU vs accuracy, by starting model](p95-p98/docs/figures/casp15_quality_cost.svg)
+
+Extra Rosetta refinement did not improve mean local RMSD on this panel: pooled across all 12 inputs, P95, P98 and both fixed NGK schedules all had higher mean error than the untouched predictions. That limitation is shared by the tested refinement workflows. P98's AlphaFold2 result was 0.0053 Å worse than the starting models; this difference uses unrounded means, while the table rounds them to three decimals.
 
 What it did not do:
 
-- It didn't beat the AlphaFold2 predictions themselves: P98's mean error was 0.0053 Å higher. Pooled over all 12 inputs, all four methods (P95, P98, standard NGK, short NGK) ended with higher mean error than the untouched inputs.
-- On the ESMFold starts, P98 used more CPU than standard NGK.
 - We can't separate any benefit from changing the Monte Carlo acceptance temperature (its willingness to take worse moves) from the effect of stopping early.
 - It's a small test: 48 runs covering six targets with one random seed, so it is not statistical proof.
 
@@ -76,7 +88,9 @@ Full numbers, including P95, the short baseline, energies, every target, and rep
 
 Scientific workflows rely on hand-written rules of thumb. We tested whether program search can turn rules like these into plain code that people can read, test, and argue about. We only tried Rosetta; other biomolecular tools are untested. The [research overview](p95-p98/docs/RESEARCH_OVERVIEW.md) relates this to OpenEvolve, AlphaEvolve, and AI-assisted scientific computing, and shows a real rule from a discovered program.
 
-The search was small and bounded: 101 LLM starts, 100 returned programs, and 99 valid ones that we evaluated. We trained no neural network and didn't test whether a longer search would do better. Our records link each proposal to its scores, the frozen programs, and their decisions on new proteins, including successful edits, a rejected candidate, and one start that never returned an answer. The [discovery account](p95-p98/docs/closeout/DISCOVERY.md) separates what humans framed, what a coding assistant built, and what the automated search found.
+We used GPT-6 Astra (`gpt-6-astra`, `ultra` reasoning) through a Codex subscription. The recorded search spanned about 32 hours, including pauses and recovery. After P1, evaluations ran on a 64-vCPU Intel Xeon 6981E-C server with about 123 GiB RAM and up to 56 shared modeling and validation workers. The LLM ran through the subscription service, not on that CPU server. [Run details](p95-p98/docs/closeout/discovery/run_context.json)
+
+The search made 101 proposals: 101 LLM starts, 100 returned programs, and 99 valid ones that we evaluated. After P1, each wave contained at most two proposals. We trained no neural network and didn't test whether a longer search would do better. Our records link each proposal to its scores, the frozen programs, and their decisions on new proteins, including successful edits, a rejected candidate, and one start that never returned an answer. The [discovery account](p95-p98/docs/closeout/DISCOVERY.md) separates what humans framed, what a coding assistant built, and what the automated search found.
 
 ## Try it
 

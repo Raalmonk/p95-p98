@@ -388,16 +388,16 @@
   ],
   "export": {
     "format": [
-      "SVG with selectable text",
+      "SVG: outlined text in casp15_quality_cost; selectable text in the other two figures",
       "PNG"
     ],
     "png_dpi": 180,
-    "builder_sha256": "b5ac1a2c37efb08c77fbde93211a9f23b3d85a6d4f20ba38a850ace967f3786e",
+    "builder_sha256": "d5905ae91622e49e48688dd12e44175dc930d42df574d682217ea5c8d7bd0c79",
     "style_sha256": "55e25a5592c4ad7808517013bf1aacd10657658ea08a8efe3520c2349108bfe9",
     "figures": {
       "casp15_quality_cost": {
-        "svg": "b7cc7a2d110033be029329595778c3881f2c05cdd785171aa9eef669c445353e",
-        "png": "17cb8d879a879e3dede0893e9afb8ad3151a95c73cee6a9ed3ae0a7cbf91e14c"
+        "svg": "9153f3ce0d39a6828c5e231e1e832a1c98a0211fb52e70f1437c8a80af622bf6",
+        "png": "d516dd0ffba671f7045a838170943af3321b46128788d2b94793070c8d8366fc"
       },
       "casp15_early_stopping": {
         "svg": "404b78b2cf031e663574bcc99265e4c0dd28810c72591bad3d23d396a5f934ff",

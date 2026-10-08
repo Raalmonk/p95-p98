@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "ultra",
+  "provider": "Codex subscription",
+  "model_executed_on_evaluation_server": false,
+  "proposal_reservations": 101,
+  "model_starts": 101,
+  "returned_programs": 100,
+  "legal_programs_evaluated": 99,
+  "first_reservation_epoch": 1789889397.408941,
+  "completion_epoch": 1790003789.927862,
+  "elapsed_hours_approx": 31.7757,
+  "elapsed_scope": "First proposal reservation to final continuation completion, including pauses and recovery; not CPU time or active-only search time.",
+  "evaluation_hardware_after_P1": {
+    "cpu_model": "Intel Xeon 6981E-C",
+    "logical_cpus": 64,
+    "memory_gib_approx": 123,
+    "shared_native_and_molprobity_worker_slots": 56,
+    "max_concurrent_proposals": 2
+  },
+  "P1_contract_shared_workers": 12,
+  "source_records": [
+    "call-0001.json",
+    "CONTINUATION_COMPLETE.json",
+    "HOST_UPGRADE_RESUME100.json",
+    "CONTRACT.json",
+    "../results/discovery_costs.json"
+  ]
+}
