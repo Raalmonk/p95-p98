@@ -1,0 +1,15 @@
+{
+  "route_validator": {
+    "entrypoint": "validate_route",
+    "public_path": "src/p95p98/controller.py",
+    "release_file_sha256": "465ac1dfdceb08433fe9235a1a03665b12c1d25505624cbe2fa348d8bf01161f",
+    "retained_development_file_sha256": "465ac1dfdceb08433fe9235a1a03665b12c1d25505624cbe2fa348d8bf01161f"
+  },
+  "scope": "File identity checked during closeout. No current validator execution or claim that this file hash independently dates the historical validation. Historical outcomes remain separate.",
+  "source_validator": {
+    "entrypoint": "validate_source",
+    "public_path": "src/p95p98/policy_runtime/core.py",
+    "release_file_sha256": "e9d94a94051e35e2431bda625042fdb750732f5213936f897a147f4846d4bf88",
+    "retained_development_file_sha256": "e9d94a94051e35e2431bda625042fdb750732f5213936f897a147f4846d4bf88"
+  }
+}

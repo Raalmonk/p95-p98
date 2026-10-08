@@ -1,0 +1,245 @@
+--- parent.py
++++ child.py
+@@ -1,26 +1,29 @@
+ def decide(view):
+-    # One unevaluated candidate: completed-startup polish and Pareto-qualified
+-    # accepted-state resolution, preserving independent-record MC patience.
+-    # Same-binding e9 gains both energies over current but loses both RMSDs
+-    # and efficiency. Peer 561 gains four axes but narrowly loses local RMSD.
+-    # Peers 551/de9/633 gain energies and efficiency at costs to both RMSDs.
+-    # These component-balanced tradeoffs do not isolate individual mechanisms.
++    # One unevaluated proposal: retain independent-record patience while
++    # movable strain is unresolved; qualify collateral regression only when
++    # complete accepted-state evidence shows low strain and intact local seams.
++    # Also permit bounded repeat descent after an inexpensive successful repair.
++    # Same-binding e9 has identical quality fitnesses and higher reported
++    # efficiency than current; this does not isolate a causal algorithmic gain.
++    # Peer 7dea improves energies and efficiency but loses both RMSD fitnesses.
++    # Peers 551/633 favor local energy and efficiency at other quality costs.
++    # Keep all five objectives separate; component-balanced summaries do not
++    # establish uniform row gains or identify individual mechanism effects.
+     # Paired WS effects versus matched NGK favor RMSDs, not energies; hard
+     # gains local energy but loses global energy and RMSDs on 15/16 valid pairs.
+-    # Fixed-router and native-ProMod3 quality deltas favor current on their
+-    # reported both-valid subsets. RAW/MIN1 remain historical references.
+-    # Current and peers report 48/48 VALID, complete MP and no timeouts.
++    # Current and supplied peers report 48/48 VALID, complete MP, no timeouts.
+     # Full paired row/component tables and retention-quality scores are absent.
+-    # Both startup examples decrease energies under native acceptance but lack
+-    # matched offline quality; the database child and new continuations are unscored.
++    # Both startup examples retain native acceptance on decreasing energies;
++    # neither has matched offline quality, and the database child is unscored.
+     # Direct-parent availability conflicts between card and log; native_seed
+-    # is unavailable. TRAIN48 has 32 components and incomplete routing coverage.
+-    # No evaluator is exposed: evaluate this single candidate on all TRAIN48
+-    # and assimilate all five objectives before another proposal wave.
+-    # Preserve live qualifications, charged preparation/specialist reuse,
+-    # cumulative allowances and native-low delivery. CPU, logical work,
++    # is unavailable. Three controls are matched; RAW/MIN1 remain historical.
++    # TRAIN48 has 32 components and uneven, incomplete routing coverage.
++    # No evaluator is exposed. Evaluate this single proposal on fixed TRAIN48
++    # and assimilate all five objectives before another wave; gains are unknown.
++    # Preserve qualified RAW preparation, charged specialist reuse, cumulative
++    # allowances, delivery reserves and native-low delivery. CPU, logical work,
+     # waiting and offline scoring remain separate; hardware speed is not a gain.
+-    # Source geometry and displacement never certify reference accuracy.
++    # Neither low strain nor source displacement certifies reference accuracy.
+     event = view['event']
+     observation = view['observation']
+     memory = view['memory']
+@@ -371,7 +374,10 @@
+         # produced the incumbent. Historical cost is not a future work price.
+         repeat_descent = False
+         descent_count = sum([1 for name in attempts if name == 'minimize'])
+-        if len(names) == 0 and raw_valid and best['slot'] != 0:
++        # Necessary repair displacement must not permanently prohibit cheap
++        # cleanup. Require a valid incumbent; the actual-parent progress,
++        # residual-strain and cumulative expenditure gates below still apply.
++        if len(names) == 0 and best['slot'] != 0 and best['source']['geometry_valid'] is True:
+             if 0 < len(attempts) < 3 and attempts[-1] == 'minimize' and descent_count == 1:
+                 history = observation['history']
+                 if history is not None and len(history) > 0 and left > 24.0:
+@@ -439,7 +445,7 @@
+                                 }
+                                 loop_count = len(raw['source']['loop_intervals'])
+                                 measured = (
+-                                    loop_count > 0
++                                    0 < loop_count <= 64
+                                     and len(before_loops) == loop_count
+                                     and len(after_loops) == loop_count
+                                     and len(before['per_loop']) == loop_count
+@@ -451,11 +457,16 @@
+                                     elif after_loops[index] > before_loops[index]:
+                                         progressing = False
+                                 for loop in after['per_loop']:
+-                                    # Absolute child displacement bounds intervention;
+-                                    # it is neither a pairwise distance nor target RMSD.
++                                    # Preserve the original displacement bound
++                                    # for valid sources. For repaired sources,
++                                    # require measurement without interpreting
++                                    # necessary repair motion as failed cleanup.
++                                    # These are absolute, not pairwise distances.
+                                     if 'source_displacement_A' not in loop or loop['source_displacement_A'] is None:
+                                         measured = False
+-                                    elif not 0 <= loop['source_displacement_A'] <= 0.5:
++                                    elif loop['source_displacement_A'] < 0:
++                                        measured = False
++                                    elif raw_valid and loop['source_displacement_A'] > 0.5:
+                                         measured = False
+                             if progressing and measured:
+                                 # Require a measured remaining reason for the
+@@ -563,15 +574,106 @@
+                 if left <= control['cutoff']:
+                     decision['stop'] = True
+                 elif observation['site'] == 'choose_loop' and not control['repair']:
+-                    # Missing accepted-state evidence cannot renew patience.
+-                    # Never substitute a potentially rejected working proposal.
+-                    # The cumulative cutoff above remains independently active.
++                    # Only complete accepted-state energy observations renew
++                    # patience. Missing evidence leaves the cumulative cutoff
++                    # active, never substitutes a potentially rejected proposal.
+                     state = observation['accepted_current']
+-                    if state is not None and len(state['loop_energies']) > 0:
++                    intervals = observation['loop_intervals_zero_based']
++                    measured = state is not None and 0 < len(intervals) <= 64
++                    values = {}
++                    if measured:
++                        measured = (
++                            state['fixed']['total'] is not None
++                            and len(state['loop_energies']) == len(intervals)
++                        )
++                        for loop in state['loop_energies']:
++                            index = loop['loop_index']
++                            value = loop['fixed_energy']
++                            key = str(index)
++                            if index is None or not 0 <= index < len(intervals):
++                                measured = False
++                            elif key in values or value is None:
++                                measured = False
++                            else:
++                                values[key] = value
++                        if len(values) != len(intervals):
++                            measured = False
++                    if measured:
+                         global_energy = state['fixed']['total']
+-                        local_energy = sum([
+-                            loop['fixed_energy'] for loop in state['loop_energies']
+-                        ])
++                        local_energy = sum([values[key] for key in values])
++
++                        # Narrow the peer's collateral-regression restriction
++                        # to measured low-strain neighborhoods. Unknown or
++                        # unresolved strain retains independent-record patience.
++                        # No source-displacement threshold estimates accuracy.
++                        low_strain = sum([
++                            1 for key in values if values[key] > 0.0
++                        ]) == 0
++                        source = state['source']
++                        if low_strain:
++                            loop_ids = []
++                            if len(source['loops']) != len(intervals):
++                                low_strain = False
++                            for loop in source['loops']:
++                                index = loop['loop_index']
++                                if index is None or not 0 <= index < len(intervals) or index in loop_ids:
++                                    low_strain = False
++                                else:
++                                    loop_ids = loop_ids + [index]
++                                    start = intervals[index][0]
++                                    end = intervals[index][1]
++                                    if end < start or loop['start'] != start or loop['end'] != end:
++                                        low_strain = False
++                                    first_edge = max(0, start - 1)
++                                    last_edge = min(source['sequence_length'] - 2, end)
++                                    edges = []
++                                    for connection in loop['connections']:
++                                        pair = connection['residues']
++                                        if len(pair) != 2:
++                                            low_strain = False
++                                        elif pair[1] != pair[0] + 1 or not first_edge <= pair[0] <= last_edge or pair[0] in edges:
++                                            low_strain = False
++                                        else:
++                                            edges = edges + [pair[0]]
++                                        distance = connection['distance_A']
++                                        if connection['missing_c'] or connection['missing_n'] or not connection['polymer_edge_present']:
++                                            low_strain = False
++                                        if not distance['available'] or distance['value'] is None:
++                                            low_strain = False
++                                        elif not 1.2 <= distance['value'] <= 1.5:
++                                            low_strain = False
++                                    if len(edges) != max(0, last_edge - first_edge + 1):
++                                        low_strain = False
++                            if len(loop_ids) != len(intervals):
++                                low_strain = False
++
++                        if low_strain:
++                            seen = {}
++                            for residue in source['residues']:
++                                index = residue['index']
++                                movable = False
++                                for interval in intervals:
++                                    if interval[0] <= index <= interval[1]:
++                                        movable = True
++                                if movable:
++                                    key = str(index)
++                                    if key in seen:
++                                        low_strain = False
++                                    seen[key] = index
++                                    if residue['backbone_missing_count'] != 0 or not residue['in_loop']:
++                                        low_strain = False
++                                    energy = residue['fixed_weighted_residue_energy']
++                                    if energy is None or energy > 5.0:
++                                        low_strain = False
++                                elif residue['in_loop']:
++                                    low_strain = False
++                            for interval in intervals:
++                                observed = sum([
++                                    1 for key in seen
++                                    if interval[0] <= seen[key] <= interval[1]
++                                ])
++                                if observed != interval[1] - interval[0] + 1:
++                                    low_strain = False
+                         epoch = observation['score_epoch']
+                         control['epoch'] = epoch
+                         # Fixed evaluation weights remain comparable across
+@@ -588,15 +690,12 @@
+                             control['local_witness_visit'] = observation['step']
+                             control['progress_left'] = left
+                         else:
+-                            # Transfer independent material-record patience from
+-                            # the matched RMSD-oriented peers. A useful energy
+-                            # tradeoff need not improve the other axis relative
+-                            # to an old witness. Each record still belongs to
+-                            # an actual accepted visit, with its own diagnostics.
+-                            # Records are not an archive or simultaneous gains.
+-                            # Their own-axis thresholds decrease monotonically;
+-                            # revisiting an old tradeoff cannot renew patience.
+-                            # The original cutoff and stagnation limits remain.
++                            # Preserve independent material-record patience
++                            # during unresolved repair of movable strain.
++                            # Only complete low-strain evidence activates the
++                            # peer's bounded collateral-regression criterion.
++                            # Each witness belongs to an actual accepted visit;
++                            # neither diagnostic minima nor witnesses are slots.
+                             control['low_global'] = min(control['low_global'], global_energy)
+                             control['low_local'] = min(control['low_local'], local_energy)
+                             global_progress = (
+@@ -605,6 +704,18 @@
+                             local_progress = (
+                                 local_energy < control['progress_local'] - 0.25
+                             )
++                            if low_strain:
++                                global_progress = (
++                                    global_progress
++                                    and local_energy <= control['global_witness_local'] + 0.25
++                                )
++                                local_progress = (
++                                    local_progress
++                                    and global_energy <= control['local_witness_global'] + 0.5
++                                )
++                            # Own-axis thresholds still decrease monotonically.
++                            # Changing strain classification cannot itself renew
++                            # patience, reset witnesses or extend any allowance.
+                             if global_progress:
+                                 control['progress_global'] = global_energy
+                                 control['global_witness_local'] = local_energy

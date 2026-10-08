@@ -1,0 +1,223 @@
+<<<<<<< SEARCH
+    # One unevaluated recombination: broad bounded startup and measured
+    # startup reassessment, preserving paired patience and one descent only.
+    # Same-binding peer 321cc837 improves four component-balanced quality
+    # objectives over current but loses efficiency; its mechanisms are not
+    # separately identified. Do not transfer its additional descent.
+    # Paired WS effects versus matched NGK favor RMSD, not energies;
+    # hard both-valid RMSD regresses. Preserve the existing repair route.
+    # Supplied endpoints are 48/48 VALID with complete MP and no timeouts.
+    # Full paired row/component tables and retention-quality scores are absent.
+    # Minimize has a scored example; startup and database intermediates do not.
+    # Direct-parent availability conflicts between the current card and log.
+    # TRAIN48 covers 32 components with uneven, incomplete routing coverage.
+    # No evaluator is exposed here; this proposal has no measured gains.
+    # CPU, logical work, waiting and offline scoring remain separate.
+    # Neither source proximity nor hardware speed establishes quality gains.
+=======
+    # One unevaluated proposal: strain-gated independent-progress patience
+    # and a bounded startup-tradeoff parent for the existing single descent.
+    # Same-binding peers 321cc837 and f1a50005 improve both RMSD fitnesses
+    # and global-energy fitness over current, but lose local-energy fitness
+    # and efficiency. Current dominates supplied peer 8a9f0e63 on all five.
+    # Paired WS comparisons with matched NGK favor RMSD, not energies;
+    # hard both-valid RMSD regresses. Preserve repair routing.
+    # Supplied programs have 48/48 VALID endpoints, complete MP, no timeouts.
+    # Full row/component paired tables and retention-quality scores are absent.
+    # Startup examples show source-energy changes without matched quality
+    # scores; database intermediates and alternative continuations are unscored.
+    # Direct-parent availability conflicts between the current card and log.
+    # TRAIN48 has 32 components and uneven, incomplete routing coverage.
+    # No evaluator is exposed here; this proposal has no measured gains.
+    # RAW/MIN1 are historical, not the three matched strong controls.
+    # CPU, logical work, waiting and offline scoring remain separate.
+    # Source displacement bounds intervention, not target accuracy.
+=======
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+        left = observation['remaining_work']
+        origin = routing['initial_remaining']
+        ngk_used = 'ngk_refine' in attempts or 'ngk_rebuild' in attempts
+=======
+        left = observation['remaining_work']
+        origin = routing['initial_remaining']
+
+        # Separate delivery from a narrowly bounded exploration parent.
+        # A startup child with better global energy but a small local-energy
+        # regression may receive the already-planned single descent. Retain
+        # the delivery incumbent throughout; no extra action is authorized.
+        polish_slot = None
+        polish_global = None
+        startup = False
+        if 'ngk_control' in memory:
+            control = memory['ngk_control']
+            startup = control['startup_only'] or control['startup_resolved']
+        if 'minimize' in names and raw_valid and startup:
+            if len(attempts) == 1 and attempts[0] == 'ngk_refine':
+                history = observation['history']
+                if history is not None and len(history) > 0:
+                    last = history[-1]
+                    completed = (
+                        'action' in last and last['action'] is not None
+                        and last['action'][:11] == 'ngk_refine:'
+                        and 'outcome' in last and last['outcome'] == 'COMPLETED'
+                        and 'result_slots' in last and last['result_slots'] is not None
+                    )
+                    base = best['source']
+                    intervals = raw['source']['loop_intervals']
+                    if completed and intervals is not None and len(intervals) > 0:
+                        for state in states:
+                            source = state['source']
+                            eligible = (
+                                state['slot'] != best['slot']
+                                and state['slot'] in last['result_slots']
+                                and source['geometry_valid'] is True
+                                and base['geometry_valid'] is True
+                                and source['fixed_global_energy'] is not None
+                                and source['fixed_local_energy'] is not None
+                                and base['fixed_global_energy'] is not None
+                                and base['fixed_local_energy'] is not None
+                            )
+                            if eligible:
+                                eligible = (
+                                    source['fixed_global_energy'] < base['fixed_global_energy'] - 0.5
+                                    and base['fixed_local_energy'] < source['fixed_local_energy']
+                                    <= base['fixed_local_energy'] + 0.25
+                                )
+                            if eligible:
+                                ids = []
+                                if 'per_loop' not in source or source['per_loop'] is None:
+                                    eligible = False
+                                else:
+                                    if len(source['per_loop']) != len(intervals):
+                                        eligible = False
+                                    for loop in source['per_loop']:
+                                        if 'loop_index' not in loop or loop['loop_index'] is None:
+                                            eligible = False
+                                        else:
+                                            index = loop['loop_index']
+                                            if not 0 <= index < len(intervals) or index in ids:
+                                                eligible = False
+                                            else:
+                                                ids = ids + [index]
+                                        if 'source_displacement_A' not in loop or loop['source_displacement_A'] is None:
+                                            eligible = False
+                                        elif not 0 <= loop['source_displacement_A'] <= 0.5:
+                                            eligible = False
+                                    if len(ids) != len(intervals):
+                                        eligible = False
+                            if eligible:
+                                value = source['fixed_global_energy']
+                                if polish_global is None or value < polish_global:
+                                    polish_slot = state['slot']
+                                    polish_global = value
+
+        ngk_used = 'ngk_refine' in attempts or 'ngk_rebuild' in attempts
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+                for cap in observation['available_actions']:
+                    if cap['name'] == name and selected_parent in cap['parent_slots']:
+                        required = [0]
+                        if best['slot'] != 0:
+                            required = required + [best['slot']]
+                        capacity = 9 - cap['max_outputs']
+                        price = cap['maximum_work']
+                        # Only current parent-specific qualifications apply.
+                        # The host separately enforces cumulative CPU/wall,
+                        # chemistry, frozen preparation charges and delivery.
+                        if price is not None and 0 <= price <= left and len(required) <= capacity:
+                            action = cap['token']
+                            parent = selected_parent
+=======
+                for cap in observation['available_actions']:
+                    cap_parent = selected_parent
+                    if cap['name'] == name and name == 'minimize' and polish_slot is not None:
+                        required_count = 2 + int(best['slot'] != 0)
+                        if polish_slot in cap['parent_slots'] and required_count + cap['max_outputs'] <= 9:
+                            cap_parent = polish_slot
+                    if cap['name'] == name and cap_parent in cap['parent_slots']:
+                        required = [0]
+                        if best['slot'] != 0:
+                            required = required + [best['slot']]
+                        if cap_parent not in required:
+                            required = required + [cap_parent]
+                        capacity = 9 - cap['max_outputs']
+                        price = cap['maximum_work']
+                        # Live parent qualification and cumulative affordability
+                        # remain authoritative, including chemistry, preparation
+                        # reuse charges, CPU/wall limits and delivery reserves.
+                        if price is not None and 0 <= price <= left and len(required) <= capacity:
+                            action = cap['token']
+                            parent = cap_parent
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+                        if control['low_global'] is None:
+                            control['low_global'] = global_energy
+                            control['low_local'] = local_energy
+                            control['progress_global'] = global_energy
+                            control['progress_local'] = local_energy
+                            control['progress_left'] = left
+                        else:
+                            # Keep independent diagnostic minima, but renew
+                            # patience only from one actually observed state.
+                            # Alternating incompatible energy improvements
+                            # must not jointly manufacture continuing progress.
+                            # Fixed weights remain comparable across epochs.
+                            control['low_global'] = min(control['low_global'], global_energy)
+                            control['low_local'] = min(control['low_local'], local_energy)
+                            progress = False
+                            if global_energy <= control['progress_global'] and local_energy <= control['progress_local']:
+                                if global_energy < control['progress_global'] - 0.5 or local_energy < control['progress_local'] - 0.25:
+                                    progress = True
+                            if progress:
+                                control['progress_global'] = global_energy
+                                control['progress_local'] = local_energy
+                                control['progress_left'] = left
+=======
+                        if control['low_global'] is None:
+                            control['low_global'] = global_energy
+                            control['low_local'] = local_energy
+                            control['progress_global'] = global_energy
+                            control['progress_local'] = local_energy
+                            control['axis_global'] = global_energy
+                            control['axis_local'] = local_energy
+                            control['progress_left'] = left
+                        else:
+                            # Preserve paired-state progress for relaxed loops.
+                            # Transfer independent-progress patience only while
+                            # positively observed movable-region strain persists.
+                            # Missing diagnostics cannot authorize an extension.
+                            strained = False
+                            for loop in state['loop_energies']:
+                                if loop['fixed_energy'] is not None and loop['fixed_energy'] > 0.0:
+                                    strained = True
+                            for residue in state['source']['residues']:
+                                if residue['in_loop'] and residue['backbone_missing_count'] == 0:
+                                    energy = residue['fixed_weighted_residue_energy']
+                                    if energy is not None and energy > 5.0:
+                                        strained = True
+
+                            control['low_global'] = min(control['low_global'], global_energy)
+                            control['low_local'] = min(control['low_local'], local_energy)
+                            axis_progress = False
+                            if control['low_global'] < control['axis_global'] - 0.5:
+                                control['axis_global'] = control['low_global']
+                                axis_progress = True
+                            if control['low_local'] < control['axis_local'] - 0.25:
+                                control['axis_local'] = control['low_local']
+                                axis_progress = True
+
+                            progress = False
+                            if global_energy <= control['progress_global'] and local_energy <= control['progress_local']:
+                                if global_energy < control['progress_global'] - 0.5 or local_energy < control['progress_local'] - 0.25:
+                                    progress = True
+                            if progress:
+                                # These two values always describe one visit.
+                                control['progress_global'] = global_energy
+                                control['progress_local'] = local_energy
+                            if progress or (strained and axis_progress):
+                                # Independent extrema are stopping diagnostics,
+                                # never a synthetic structure or delivery state.
+                                # The original cumulative cutoff still applies.
+                                control['progress_left'] = left
+>>>>>>> REPLACE

@@ -1,0 +1,462 @@
+--- parent.py
++++ child.py
+@@ -1,11 +1,18 @@
+ def decide(view):
+     # One unevaluated crossover; no evaluator is exposed here.
+-    # Same-binding peers show separate quality/work tradeoffs and 48/48
+-    # valid endpoints versus the current 46/48, not universal dominance.
+-    # Combine one qualified endpoint polish with cross-epoch fixed-score
+-    # stopping. This combination's five-axis effects remain unmeasured.
+-    # Full rowwise/component-paired effects and scored retention gaps are
+-    # unavailable. TRAIN48 covers 32 components with uneven state coverage.
++    # The same-binding strain-patience peer improves RMSD/work fitness
++    # versus this parent while losing both energy fitnesses.
++    # Test its bounded patience with one selected-endpoint polish and
++    # confirmed low-strain response exits, without repeat polishing.
++    # Current and supplied peers report 48/48 valid endpoints and no timeouts.
++    # Paired matched-control effects remain mixed; no dominance is claimed.
++    # Full rowwise/component pairs, action-failure detail, retention gaps
++    # and matched inner/DB continuation quality are unavailable.
++    # Direct-parent availability conflicts between the card and log.
++    # TRAIN48 covers 32 uneven components, not all routing states.
++    # RAW/MIN1 are historical references. Source motion is not target RMSD.
++    # CPU, logical work, active wall, waiting and teacher/MP costs remain
++    # distinct; no hardware-speed improvement is credited to this program.
+     event = view['event']
+     observation = view['observation']
+     memory = view['memory']
+@@ -74,6 +81,7 @@
+         names = []
+         cleanup_only = False
+         polish = False
++        epoch_opportunity = False
+ 
+         if len(attempts) == 0:
+             if raw_valid:
+@@ -131,6 +139,34 @@
+                                 cleanup_only = False
+                 if expected <= 0 or len(observed) != expected:
+                     cleanup_only = False
++
++                # Only complete, measured initial loop strain authorizes
++                # epoch-local patience. No input identity or domain selector.
++                complete = (
++                    0 < len(intervals) <= 32 and 0 < expected <= 256
++                    and len(loops) == len(intervals)
++                )
++                seen = {}
++                strained = False
++                if complete:
++                    for loop in loops:
++                        index = loop['loop_index'] if 'loop_index' in loop else None
++                        energy = loop['fixed_energy'] if 'fixed_energy' in loop else None
++                        if index is None or not 0 <= index < len(intervals):
++                            complete = False
++                        else:
++                            key = str(index)
++                            length = intervals[index][1] - intervals[index][0] + 1
++                            if key in seen or length <= 0:
++                                complete = False
++                            if 'length' not in loop or loop['length'] != length:
++                                complete = False
++                            if energy is None:
++                                complete = False
++                            elif energy > length:
++                                strained = True
++                            seen[key] = True
++                epoch_opportunity = complete and strained and len(seen) == len(intervals)
+             else:
+                 names = ['promod3_database', 'ngk_rebuild',
+                          'ngk_refine', 'minimize']
+@@ -138,12 +174,17 @@
+             names = ['promod3_database', 'ngk_rebuild',
+                      'ngk_refine', 'minimize']
+         elif best['source']['geometry_valid'] is True and len(attempts) < 3:
+-            if 'minimize' not in attempts:
++            polish_supported = best['slot'] != 0
++            if raw_valid and 'ngk_control' in memory:
++                if memory['ngk_control']['cleanup_only']:
++                    polish_supported = True
++            if 'minimize' not in attempts and polish_supported:
+                 if best['source']['fixed_global_energy'] is not None:
+                     if best['source']['fixed_local_energy'] is not None:
+-                        # One polish after either refinement or repair.
+-                        # Keep its actual parent as a delivery alternative.
+-                        # Negative energy alone does not prohibit descent.
++                        # One polish of the actual selected endpoint.
++                        # Preserve initialization's RAW-cleanup fallback, but
++                        # do not substitute RAW after unsuccessful sampling.
++                        # An inner response is not an outer retained state.
+                         polish = True
+                         names = ['minimize']
+ 
+@@ -191,6 +232,11 @@
+                                     'repair': not raw_valid,
+                                     'cleanup_only': cleanup_only,
+                                     'cleanup_ready': False,
++                                    'epoch_opportunity': epoch_opportunity,
++                                    'epoch': None,
++                                    'loop_lows': {},
++                                    'response_pending': None,
++                                    'response_ready': False,
+                                     'low_global': None,
+                                     'low_local': None,
+                                     'progress_left': None
+@@ -207,50 +253,136 @@
+         if 'ngk_control' in memory:
+             control = memory['ngk_control']
+             left = observation['remaining_work']
++            pending = control['response_pending'] if 'response_pending' in control else None
++            control['response_ready'] = False
++            if pending is not None:
++                history = observation['history']
++                if history is not None and len(history) > 0:
++                    last = history[-1]
++                    matched = observation['score_epoch'] == pending['score_epoch']
++                    for field in ['site', 'step', 'score_epoch', 'outer', 'inner',
++                                  'round', 'candidate_energy']:
++                        if field not in last or last[field] != pending[field]:
++                            matched = False
++                    if matched and last['accepted'] is True:
++                        control['response_ready'] = True
++                # Missing confirmation means ordinary continuation. Never
++                # transfer pending evidence to another proposal or epoch.
++                control['response_pending'] = None
+             if left is not None:
+                 if left <= control['cutoff']:
+                     decision['stop'] = True
+                 elif control['cleanup_only'] and control['cleanup_ready']:
+                     # Initialization acceptance has resolved. Stop alone.
+                     decision['stop'] = True
++                elif control['response_ready']:
++                    # Native acceptance was confirmed in the same epoch.
++                    # Stop alone; native_low remains the native endpoint.
++                    decision['stop'] = True
+                 elif observation['site'] == 'choose_loop':
+                     state = observation['accepted_current']
+                     if state is None:
+                         state = observation['working_state']
+-                    if state is not None and len(state['loop_energies']) > 0:
+-                        global_energy = state['fixed']['total']
+-                        local_energy = sum([loop['fixed_energy'] for loop in state['loop_energies']])
+-                        movable_count = sum([
+-                            interval[1] - interval[0] + 1
+-                            for interval in observation['loop_intervals_zero_based']
+-                        ])
+-                        global_step = max(0.5, 0.05 * movable_count)
+-                        local_step = max(0.25, 0.025 * movable_count)
+-
+-                        # Fixed-weight milestones remain comparable across
+-                        # score epochs. Schedule changes do not renew patience.
+-                        # Independent minima are progress traces, not a
+-                        # synthetic archived structure or reference estimate.
+-                        if control['low_global'] is None:
+-                            control['low_global'] = global_energy
+-                            control['low_local'] = local_energy
+-                            control['progress_left'] = left
++                    if not control['repair']:
++                        intervals = observation['loop_intervals_zero_based']
++                        epoch = observation['score_epoch']
++                        complete = state is not None and intervals is not None
++                        complete = complete and epoch is not None
++                        values = {}
++                        steps = {}
++                        movable_count = 0
++                        opportunity = (
++                            'epoch_opportunity' in control
++                            and control['epoch_opportunity']
++                        )
++                        if complete:
++                            complete = 0 < len(intervals) <= 32
++                            complete = complete and len(state['loop_energies']) == len(intervals)
++                            complete = complete and state['fixed']['total'] is not None
++                        if complete:
++                            for loop in state['loop_energies']:
++                                index = loop['loop_index']
++                                energy = loop['fixed_energy']
++                                if index is None or energy is None:
++                                    complete = False
++                                elif not 0 <= index < len(intervals):
++                                    complete = False
++                                else:
++                                    key = str(index)
++                                    length = intervals[index][1] - intervals[index][0] + 1
++                                    if key in values or length <= 0:
++                                        complete = False
++                                    values[key] = energy
++                                    movable_count += length
++                                    steps[key] = max(0.25, 0.025 * length)
++                                    if opportunity:
++                                        steps[key] = max(0.1, 0.01 * length)
++                            complete = complete and len(values) == len(intervals)
++                            complete = complete and 0 < movable_count <= 256
++
++                        if not complete:
++                            # Unknown diagnostics cannot establish stagnation.
++                            # The absolute cumulative cutoff remains active.
++                            control['low_global'] = None
++                            control['low_local'] = None
++                            control['loop_lows'] = {}
++                            control['progress_left'] = None
+                         else:
+-                            progress = False
+-                            if global_energy < control['low_global'] - global_step:
++                            global_energy = state['fixed']['total']
++                            local_energy = sum([values[key] for key in values])
++                            global_step = max(0.5, 0.05 * movable_count)
++                            local_step = max(0.25, 0.025 * movable_count)
++                            if opportunity:
++                                global_step = max(0.25, 0.025 * movable_count)
++                                local_step = max(0.1, 0.01 * movable_count)
++
++                            # Strained sources receive epoch-local patience;
++                            # other fixed-weight milestones span epochs.
++                            # Neither policy renews work, RNG or native schedule.
++                            previous_epoch = control['epoch'] if 'epoch' in control else None
++                            reset = control['low_global'] is None
++                            if opportunity and previous_epoch != epoch:
++                                reset = True
++                            control['epoch'] = epoch
++                            if reset:
+                                 control['low_global'] = global_energy
+-                                progress = True
+-                            if local_energy < control['low_local'] - local_step:
+                                 control['low_local'] = local_energy
+-                                progress = True
+-                            if progress:
++                                control['loop_lows'] = values
+                                 control['progress_left'] = left
+-                            history = observation['history']
+-                            spent = control['origin'] - left
+-                            stalled = control['progress_left'] - left
+-                            if not control['repair'] and history is not None and len(history) >= 16:
+-                                if spent >= 0.15 * control['origin'] and stalled >= max(48.0, 0.08 * control['origin']):
+-                                    decision['stop'] = True
++                            else:
++                                progress = False
++                                if global_energy < control['low_global'] - global_step:
++                                    control['low_global'] = global_energy
++                                    progress = True
++                                if local_energy < control['low_local'] - local_step:
++                                    control['low_local'] = local_energy
++                                    progress = True
++
++                                lows = control['loop_lows'] if 'loop_lows' in control else {}
++                                next_lows = {}
++                                rebaseline = False
++                                for key in values:
++                                    if key not in lows:
++                                        next_lows[key] = values[key]
++                                        rebaseline = True
++                                    elif values[key] < lows[key] - steps[key]:
++                                        next_lows[key] = values[key]
++                                        progress = True
++                                    else:
++                                        next_lows[key] = lows[key]
++                                control['loop_lows'] = next_lows
++                                if progress or rebaseline:
++                                    control['progress_left'] = left
++
++                                # Independent milestones are not a synthetic
++                                # archived state. A progressing loop must not
++                                # be hidden by deterioration in another loop.
++                                history = observation['history']
++                                spent = control['origin'] - left
++                                stalled = control['progress_left'] - left
++                                if history is not None and len(history) >= 16:
++                                    if spent >= 0.15 * control['origin'] and stalled >= max(48.0, 0.08 * control['origin']):
++                                        decision['stop'] = True
+ 
+     elif event == 'accept':
+         decision = {'mode': 'native', 'probability': None, 'temperature_multiplier': None}
+@@ -259,19 +391,181 @@
+             if control['cleanup_only'] and observation['site'] == 'initial_repack':
+                 control['cleanup_ready'] = True
+             if not control['repair'] and not control['cleanup_only']:
++                control['response_pending'] = None
+                 delta = observation['working_minus_current']
+                 current = observation['accepted_current']
+                 candidate = observation['working_state']
++                intervals = observation['loop_intervals_zero_based']
+                 active_delta = observation['energy_delta']
+-                if delta is not None and current is not None and candidate is not None:
+-                    displacement = delta['loop_ca_displacement']
+-                    mean = displacement['mean_A']
+-                    if active_delta is not None and active_delta > 0 and delta['fixed_energy'] > 0:
+-                        if displacement['missing_count'] == 0 and displacement['observed_count'] > 0 and mean is not None and mean > 0.5:
+-                            if len(current['loop_energies']) > 0 and len(candidate['loop_energies']) == len(current['loop_energies']):
+-                                before = sum([loop['fixed_energy'] for loop in current['loop_energies']])
+-                                after = sum([loop['fixed_energy'] for loop in candidate['loop_energies']])
+-                                if after > before:
++                candidate_energy = observation['candidate_energy']
++                lowest_energy = observation['lowest_energy']
++                expected = 0
++                before = {}
++                after = {}
++                changes = {}
++                matched = delta is not None and current is not None and candidate is not None
++                matched = matched and intervals is not None
++                if matched:
++                    expected = sum([interval[1] - interval[0] + 1 for interval in intervals])
++                    matched = 0 < len(intervals) <= 32 and 0 < expected <= 256
++                    matched = matched and len(current['loop_energies']) == len(intervals)
++                    matched = matched and len(candidate['loop_energies']) == len(intervals)
++                if matched:
++                    for loop in current['loop_energies']:
++                        index = loop['loop_index']
++                        key = str(index)
++                        energy = loop['fixed_energy']
++                        if index is None or not 0 <= index < len(intervals):
++                            matched = False
++                        elif key in before or energy is None:
++                            matched = False
++                        else:
++                            before[key] = energy
++                    for loop in candidate['loop_energies']:
++                        key = str(loop['loop_index'])
++                        energy = loop['fixed_energy']
++                        if key not in before or key in after or energy is None:
++                            matched = False
++                        else:
++                            after[key] = energy
++                            changes[key] = energy - before[key]
++                    matched = matched and len(before) == len(after) == len(intervals)
++
++                response_ok = matched and active_delta is not None
++                response_ok = response_ok and candidate_energy is not None and lowest_energy is not None
++                if response_ok:
++                    response_ok = active_delta <= 0.0 and candidate_energy < lowest_energy
++                    response_ok = response_ok and delta['fixed_energy'] <= -max(0.5, 0.05 * expected)
++                    for key in changes:
++                        if changes[key] > 0.0 or after[key] > 0.0:
++                            response_ok = False
++                    if sum([changes[key] for key in changes]) > -max(0.25, 0.025 * expected):
++                        response_ok = False
++
++                # A response exit requires this actual pair's independent
++                # global/local progress and complete candidate measurements.
++                # Low energy or valid local geometry alone is insufficient.
++                if response_ok:
++                    source = candidate['source']
++                    sequence = observation['sequence']
++                    seen_loops = {}
++                    if source['energy_supplied'] is not True:
++                        response_ok = False
++                    if len(source['loops']) != len(intervals):
++                        response_ok = False
++                    for loop in source['loops']:
++                        index = loop['loop_index']
++                        key = str(index)
++                        count = loop['end'] - loop['start'] + 1
++                        if index is None or not 0 <= index < len(intervals):
++                            response_ok = False
++                        else:
++                            interval = intervals[index]
++                            if loop['start'] != interval[0] or loop['end'] != interval[1]:
++                                response_ok = False
++                        if key in seen_loops or key not in changes:
++                            response_ok = False
++                        seen_loops[key] = True
++                        if count <= 0 or loop['ca_displacement_missing_count'] != 0:
++                            response_ok = False
++                        if loop['ca_displacement_observed_count'] != count:
++                            response_ok = False
++                        mean = loop['ca_displacement_mean_A']
++                        maximum = loop['ca_displacement_max_A']
++                        if not mean['available'] or mean['value'] is None:
++                            response_ok = False
++                        elif not 0.0 <= mean['value'] <= 0.5:
++                            response_ok = False
++                        if not maximum['available'] or maximum['value'] is None:
++                            response_ok = False
++                        elif not 0.0 <= maximum['value'] <= 1.0:
++                            response_ok = False
++
++                        edges = {}
++                        expected_edges = count - 1
++                        expected_edges += int(loop['start'] > 0)
++                        expected_edges += int(loop['end'] + 1 < len(sequence))
++                        for connection in loop['connections']:
++                            pair = connection['residues']
++                            if len(pair) != 2:
++                                response_ok = False
++                            else:
++                                edge = str(pair[0])
++                                if edge in edges or pair[1] != pair[0] + 1:
++                                    response_ok = False
++                                if not max(0, loop['start'] - 1) <= pair[0] <= min(loop['end'], len(sequence) - 2):
++                                    response_ok = False
++                                edges[edge] = True
++                            distance = connection['distance_A']
++                            if connection['missing_c'] or connection['missing_n']:
++                                response_ok = False
++                            if connection['polymer_edge_present'] is not True:
++                                response_ok = False
++                            if not distance['available'] or distance['value'] is None:
++                                response_ok = False
++                            elif not 1.15 <= distance['value'] <= 1.55:
++                                response_ok = False
++                        if len(edges) != expected_edges:
++                            response_ok = False
++
++                    observed = {}
++                    for residue in source['residues']:
++                        if residue['in_loop']:
++                            index = residue['index']
++                            key = str(index)
++                            belongs = False
++                            if index is not None:
++                                for interval in intervals:
++                                    if interval[0] <= index <= interval[1]:
++                                        belongs = True
++                            if key in observed or not belongs:
++                                response_ok = False
++                            observed[key] = True
++                            if residue['backbone_missing_count'] != 0:
++                                response_ok = False
++                            energy = residue['fixed_weighted_residue_energy']
++                            if energy is None or energy > 5.0:
++                                response_ok = False
++                            omega = residue['torsions_degrees']['omega']
++                            if not omega['available'] or omega['value'] is None:
++                                response_ok = False
++                            else:
++                                angle = abs(omega['value'])
++                                trans = abs(180.0 - angle) <= 30.0
++                                cis_proline = False
++                                if index is not None and 0 <= index + 1 < len(sequence):
++                                    cis_proline = angle <= 30.0 and sequence[index + 1] == 'P'
++                                if not trans and not cis_proline:
++                                    response_ok = False
++                    if len(observed) != expected or len(seen_loops) != len(intervals):
++                        response_ok = False
++
++                    if response_ok and observation['site'] is not None:
++                        if observation['step'] is not None and observation['score_epoch'] is not None:
++                            # Acceptance stays native. Store only proposal
++                            # identity until the next callback confirms it.
++                            # These checks neither estimate target accuracy
++                            # nor replace host-owned chemistry qualification.
++                            control['response_pending'] = {
++                                'site': observation['site'],
++                                'step': observation['step'],
++                                'score_epoch': observation['score_epoch'],
++                                'outer': observation['outer'],
++                                'inner': observation['inner'],
++                                'round': observation['round'],
++                                'candidate_energy': candidate_energy
++                            }
++
++                if matched and active_delta is not None:
++                    if active_delta > 0.0 and delta['fixed_energy'] > 0.0:
++                        displacement = delta['loop_ca_displacement']
++                        mean = displacement['mean_A']
++                        if displacement['missing_count'] == 0 and displacement['observed_count'] == expected:
++                            if mean is not None and mean > 0.5:
++                                deltas = [changes[key] for key in changes]
++                                if min(deltas) >= 0.0 and max(deltas) > 0.0:
++                                    # Preserve native exploration if any loop
++                                    # improves, even when aggregate energy rises.
+                                     decision = {'mode': 'temperature', 'probability': None,
+                                                 'temperature_multiplier': 0.75}
+ 

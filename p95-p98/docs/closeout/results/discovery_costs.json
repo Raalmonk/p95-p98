@@ -1,0 +1,41 @@
+{
+  "route_costs": {
+    "route_cpu_seconds": 1369571.5783102617,
+    "controls_route_cpu_seconds": 70671.556035977,
+    "additional_route_cpu_seconds": 1342354.5467708744,
+    "logical": 1193882.2825244318
+  },
+  "model_counts_and_usage": {
+    "reservations": 101,
+    "turn_started": 101,
+    "complete_responses": 100,
+    "input_rejections_before_start": 1,
+    "usage_complete_calls": 100,
+    "missing_usage_proposals": [
+      96
+    ],
+    "known_usage_totals": {
+      "cacheWriteInputTokens": 0,
+      "cachedInputTokens": 953728,
+      "inputTokens": 20914337,
+      "outputTokens": 616949,
+      "reasoningOutputTokens": 390824,
+      "totalTokens": 21531286
+    },
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra",
+    "provider": "Codex subscription",
+    "paid_api_calls": 0,
+    "cloud_price_not_supplied": true
+  },
+  "proposal_evaluation_costs": {
+    "programs": 100,
+    "quality_receipt_CPU_seconds": 761.1629610949989,
+    "MP_receipt_CPU_seconds": 32915.070921019,
+    "meaning": "Sum of 100 returned-program evaluation receipts including invalid-policy fallback and reuse; not fresh server consumption."
+  },
+  "currency_cost": null,
+  "LLM_wait_seconds": null,
+  "one_time_resource_build_CPU_seconds": null,
+  "missing_cost_meaning": "Null means no reconciled total in selected closeout records; no zero imputation."
+}

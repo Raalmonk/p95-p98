@@ -1,0 +1,2270 @@
+{
+  "binding": {
+    "api_sha256": "1ef1900434b6cebe64847850f4a1567e4917163c40cd1b0c51b759cb27d49c0d",
+    "calibration_sha256": "34c40db36112940104768775de12b7632fa176094d05f5020cdec0296e551000",
+    "evaluator_sha256": "ddfa02881026a88d0be2417abd5d66a5a2f9f1db593b841bc4ecf8306b3c99ed",
+    "panel_sha256": "fda84ef37caf263cb3f5ba326dd47adf1a706d68caf500f176e4baad89328511",
+    "resource_sha256": "9da0a24d9341998be745ff952eebe825329e37f804ee9060de7224de15a78994",
+    "seeds_sha256": "b8175cc7c8d6e97a5f50e3bf60c2a8fe21e4208eafc828fa9bca6e7dc52c9c8a"
+  },
+  "five_axes": {
+    "efficient_delivery_fitness": 0.8783075861070331,
+    "global_energy_fitness": 0.4386570715766824,
+    "global_rmsd_fitness": 0.5003620468817008,
+    "local_energy_fitness": 0.5182186906391858,
+    "local_rmsd_fitness": 0.5181629425249235
+  },
+  "original_receipt_sha256": "46304615a2717c139868874b6635b608885cd8b585108eb67a655f0b5f5d5898",
+  "program_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+  "rows": {
+    "0": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.105515710336617,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02282830100000055,
+      "physical_cpu_seconds": 20.697594359,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -144.04836527359242,
+        "global_rmsd": 0.028868511502192662,
+        "local_energy": -41.126606205007064,
+        "local_rmsd": 0.08984913089018427
+      },
+      "quality_cpu_seconds": 0.12203588699999557,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "1": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 452.1768008414679,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.022984654000026694,
+      "physical_cpu_seconds": 497.236384267,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 201.67531671398746,
+        "global_rmsd": 1.2315106783005143,
+        "local_energy": -20.335062554655266,
+        "local_rmsd": 2.4931911002195646
+      },
+      "quality_cpu_seconds": 0.22932456400002366,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "10": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 12.470510967068355,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.03548259500000128,
+      "physical_cpu_seconds": 24.727115815,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -26.30716579531407,
+        "global_rmsd": 1.215608122845474,
+        "local_energy": -41.554550031180995,
+        "local_rmsd": 1.1626571176546194
+      },
+      "quality_cpu_seconds": 0.2580988359999985,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "11": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 14.433570321025488,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.41370127000000423,
+      "physical_cpu_seconds": 26.328292149000003,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 73.26940477754377,
+        "global_rmsd": 0.03904851247638248,
+        "local_energy": -34.920518398981,
+        "local_rmsd": 0.11084288476432942
+      },
+      "quality_cpu_seconds": 0.13205670700000383,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "12": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.783277671558206,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.026195180999998513,
+      "physical_cpu_seconds": 18.086053265,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -87.96394750360427,
+        "global_rmsd": 0.17460255885841627,
+        "local_energy": -34.36534349074551,
+        "local_rmsd": 0.35782872025336543
+      },
+      "quality_cpu_seconds": 0.12160185899999831,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "13": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 10.778297107937792,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.659232142999997,
+      "physical_cpu_seconds": 19.733870913,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -115.91613477833936,
+        "global_rmsd": 0.3861831548625388,
+        "local_energy": -26.925065426215866,
+        "local_rmsd": 1.0112641343308069
+      },
+      "quality_cpu_seconds": 0.11971031199999871,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "14": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 442.6522655533325,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023427773000037178,
+      "physical_cpu_seconds": 486.701006371,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -267.289018846882,
+        "global_rmsd": 0.21808963552688998,
+        "local_energy": -49.118133464760376,
+        "local_rmsd": 0.5710926829641911
+      },
+      "quality_cpu_seconds": 0.12248857700001281,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "15": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 10.747575909548674,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.9300810239999997,
+      "physical_cpu_seconds": 18.882989169000002,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -172.97498265545866,
+        "global_rmsd": 0.3896711389908005,
+        "local_energy": -46.25015630677466,
+        "local_rmsd": 0.9011700589151798
+      },
+      "quality_cpu_seconds": 0.10984978200000128,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "16": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.091349250263733,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.0308233489999985,
+      "physical_cpu_seconds": 20.477656262999997,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -144.55812737274618,
+        "global_rmsd": 0.058831173039954165,
+        "local_energy": -40.98121757345927,
+        "local_rmsd": 0.1831104495624514
+      },
+      "quality_cpu_seconds": 0.13848332499999572,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "17": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 190.0782145275879,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02357714000001465,
+      "physical_cpu_seconds": 234.528882961,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 232.98824330115553,
+        "global_rmsd": 1.2042932785751463,
+        "local_energy": 98.69107945580971,
+        "local_rmsd": 2.347584854142165
+      },
+      "quality_cpu_seconds": 0.4129578360000039,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "18": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 8.465511646147823,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.25732888900000006,
+      "physical_cpu_seconds": 16.896094146,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -128.6714465881164,
+        "global_rmsd": 0.04636494834309667,
+        "local_energy": -31.27681594128878,
+        "local_rmsd": 0.12077782474465631
+      },
+      "quality_cpu_seconds": 0.11649135300000069,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "19": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 8.925093789495504,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.27782192500000136,
+      "physical_cpu_seconds": 17.936975484999998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -202.7456437692244,
+        "global_rmsd": 0.20614161013799676,
+        "local_energy": -55.64208428638412,
+        "local_rmsd": 0.5147473397525923
+      },
+      "quality_cpu_seconds": 0.11667017999999985,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "2": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 8.420007433704065,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024575194000000522,
+      "physical_cpu_seconds": 17.540776001,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -128.4592196829687,
+        "global_rmsd": 0.03683556037236023,
+        "local_energy": -30.915458729668913,
+        "local_rmsd": 0.09594709922879041
+      },
+      "quality_cpu_seconds": 0.11085961099999864,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "20": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 442.68411272613014,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.022748190999948292,
+      "physical_cpu_seconds": 471.881902251,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -80.18438088785643,
+        "global_rmsd": 3.6683160491001066,
+        "local_energy": -10.039228305182181,
+        "local_rmsd": 7.449748663718742
+      },
+      "quality_cpu_seconds": 0.26613199100000884,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "21": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 28.42681954121362,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023747267000004513,
+      "physical_cpu_seconds": 45.09497054,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -170.2122632395314,
+        "global_rmsd": 0.04680019444004478,
+        "local_energy": -32.42747307954361,
+        "local_rmsd": 0.15801539091841027
+      },
+      "quality_cpu_seconds": 0.1423890330000006,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "22": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.22482607461582,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02790053200000031,
+      "physical_cpu_seconds": 18.190429595,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -12.148231325945028,
+        "global_rmsd": 0.2011474874157851,
+        "local_energy": -11.561681430533975,
+        "local_rmsd": 0.46210436740358357
+      },
+      "quality_cpu_seconds": 0.11956628999999808,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "23": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 29.32028601325894,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024087119999997242,
+      "physical_cpu_seconds": 45.44552666599999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -187.6278681701565,
+        "global_rmsd": 0.24709140701829937,
+        "local_energy": -30.213046800838466,
+        "local_rmsd": 0.7298941517793092
+      },
+      "quality_cpu_seconds": 0.25555408999999685,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "24": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.810441481558794,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02367495299999689,
+      "physical_cpu_seconds": 21.572345338999998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -129.16700916129184,
+        "global_rmsd": 0.04979170519483299,
+        "local_energy": -51.06145104001426,
+        "local_rmsd": 0.15587260137966985
+      },
+      "quality_cpu_seconds": 0.12825713800000216,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "25": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.95255843773704,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.6681863999999962,
+      "physical_cpu_seconds": 18.062252202999996,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -41.26850567297671,
+        "global_rmsd": 0.07908582324391865,
+        "local_energy": -22.668096580185686,
+        "local_rmsd": 0.18228365312867179
+      },
+      "quality_cpu_seconds": 0.11807362500000096,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "26": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 271.1913310647525,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02453767299999754,
+      "physical_cpu_seconds": 303.779917615,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -49.40667683093136,
+        "global_rmsd": 1.202944631672661,
+        "local_energy": -21.323115830533766,
+        "local_rmsd": 1.0357023897740691
+      },
+      "quality_cpu_seconds": 0.23910484599997517,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "27": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 14.46155389913161,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.36192208699999995,
+      "physical_cpu_seconds": 25.840980904,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 73.13044364742082,
+        "global_rmsd": 0.05763198077574446,
+        "local_energy": -33.95397986478074,
+        "local_rmsd": 0.1636058120662183
+      },
+      "quality_cpu_seconds": 0.12889278700000162,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "28": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.465558029936792,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.03958427300000267,
+      "physical_cpu_seconds": 17.959286851,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -89.58120332130912,
+        "global_rmsd": 0.16292297331529515,
+        "local_energy": -31.566139235595244,
+        "local_rmsd": 0.33389269489944595
+      },
+      "quality_cpu_seconds": 0.11619008799999975,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "29": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 314.3179988509027,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02334800700003825,
+      "physical_cpu_seconds": 314.872156935,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -121.02565066936937,
+        "global_rmsd": 0.6579298153526466,
+        "local_energy": -22.396962522323822,
+        "local_rmsd": 1.7228646350864982
+      },
+      "quality_cpu_seconds": 0.10893903499999169,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "3": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.387583890589577,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.5291860719999981,
+      "physical_cpu_seconds": 18.808248375999998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -207.9295528537259,
+        "global_rmsd": 0.16712339942955826,
+        "local_energy": -60.72484830151029,
+        "local_rmsd": 0.41731653077019837
+      },
+      "quality_cpu_seconds": 0.11502765500000223,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "30": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 12.534758336627588,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024008968999996938,
+      "physical_cpu_seconds": 24.063640536,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -267.609411201257,
+        "global_rmsd": 0.19386823383255294,
+        "local_energy": -51.599885637461355,
+        "local_rmsd": 0.507666162384958
+      },
+      "quality_cpu_seconds": 0.130507374000004,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "31": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 10.729458884663632,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.14766818799999726,
+      "physical_cpu_seconds": 18.987591842,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -166.29196009982155,
+        "global_rmsd": 0.09658637302490493,
+        "local_energy": -44.511235772544154,
+        "local_rmsd": 0.22287893641928413
+      },
+      "quality_cpu_seconds": 0.11928394399999931,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "32": {
+      "action_counts": {
+        "minimize": 1,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 21.916148767179685,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02519018899999992,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 1.2009431046624204,
+            "loop_id": "loop0",
+            "loop_residue_energy": -5.68792679809626,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 2.998009844490075,
+            "loop_id": "loop1",
+            "loop_residue_energy": -2.192286151209944,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 2.2836732875233725,
+        "worst_loop_ca_rmsd_A": 2.998009844490075
+      },
+      "physical_cpu_seconds": 45.097862537,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -740.3755599615843,
+        "global_rmsd": 0.46258123608309043,
+        "local_energy": -7.8802129493062045,
+        "local_rmsd": 2.2836732875233725
+      },
+      "quality_cpu_seconds": 0.14945420299999768,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "33": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 31.029776009125005,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.025572037999992858,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 2.2907994747458473,
+            "loop_id": "loop0",
+            "loop_residue_energy": 3.5856988122769184,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 2.5082710574333076,
+            "loop_id": "loop1",
+            "loop_residue_energy": -4.315720466859114,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 2.4019977030644153,
+        "worst_loop_ca_rmsd_A": 2.5082710574333076
+      },
+      "physical_cpu_seconds": 61.444457851,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -589.6895771120955,
+        "global_rmsd": 0.5131746899026657,
+        "local_energy": -0.7300216545821956,
+        "local_rmsd": 2.4019977030644153
+      },
+      "quality_cpu_seconds": 0.13848333800000034,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "34": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 29.7440512236875,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023936462999998298,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 0.6619803561370913,
+            "loop_id": "loop0",
+            "loop_residue_energy": 24.116484549618104,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 0.826646037748366,
+            "loop_id": "loop1",
+            "loop_residue_energy": -11.080636911949334,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 0.7488530108227058,
+        "worst_loop_ca_rmsd_A": 0.826646037748366
+      },
+      "physical_cpu_seconds": 56.235487127000006,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -436.19956473220327,
+        "global_rmsd": 0.19755891079664556,
+        "local_energy": 13.035847637668768,
+        "local_rmsd": 0.7488530108227058
+      },
+      "quality_cpu_seconds": 0.13072156999999862,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "35": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 471.01267922893123,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024225298000033035,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 2.6125430090692108,
+            "loop_id": "loop0",
+            "loop_residue_energy": 95.73513359307341,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 2.03909393616904,
+            "loop_id": "loop1",
+            "loop_residue_energy": -5.468033902571316,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 2.343425383360622,
+        "worst_loop_ca_rmsd_A": 2.6125430090692108
+      },
+      "physical_cpu_seconds": 700.1225251589999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 735.9885344608406,
+        "global_rmsd": 0.3719839985510807,
+        "local_energy": 90.26709969050209,
+        "local_rmsd": 2.343425383360622
+      },
+      "quality_cpu_seconds": 0.11919068399993193,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "36": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 43.22301174174999,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.025569924999999216,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 3.552896722713456,
+            "loop_id": "loop0",
+            "loop_residue_energy": 2.15414317427226,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 2.768289553363674,
+            "loop_id": "loop1",
+            "loop_residue_energy": 19.025787285095102,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 3.184847105712491,
+        "worst_loop_ca_rmsd_A": 3.552896722713456
+      },
+      "physical_cpu_seconds": 102.53886415299999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -803.1107689505195,
+        "global_rmsd": 0.5572770949059298,
+        "local_energy": 21.179930459367363,
+        "local_rmsd": 3.1848471057124916
+      },
+      "quality_cpu_seconds": 0.18260029700000757,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "37": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 43.675004546375,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.025711988999987057,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 3.309446989228842,
+            "loop_id": "loop0",
+            "loop_residue_energy": 2.283264698611704,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 3.248109356293949,
+            "loop_id": "loop1",
+            "loop_residue_energy": -6.07294609096703,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 3.278921603588605,
+        "worst_loop_ca_rmsd_A": 3.309446989228842
+      },
+      "physical_cpu_seconds": 86.42040219699999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -592.8495656097616,
+        "global_rmsd": 0.6279479133594381,
+        "local_energy": -3.7896813923553263,
+        "local_rmsd": 3.278921603588605
+      },
+      "quality_cpu_seconds": 0.3637040779999978,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "38": {
+      "action_counts": {
+        "minimize": 1,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 31.42233210021094,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.025774841000000492,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 3.9188443543752705,
+            "loop_id": "loop0",
+            "loop_residue_energy": -8.57010466178134,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 0.8761231249044488,
+            "loop_id": "loop1",
+            "loop_residue_energy": -9.97208408531006,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 2.839448256599446,
+        "worst_loop_ca_rmsd_A": 3.9188443543752705
+      },
+      "physical_cpu_seconds": 60.31700471399999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -772.0984742681368,
+        "global_rmsd": 0.547047268453646,
+        "local_energy": -18.542188747091398,
+        "local_rmsd": 2.839448256599446
+      },
+      "quality_cpu_seconds": 0.16906139200000325,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "39": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 24.32079759896875,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.026520935000000634,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 0.5132839907562367,
+            "loop_id": "loop0",
+            "loop_residue_energy": -20.77935063667249,
+            "residues": 8
+          },
+          {
+            "ca_rmsd_A": 1.9382472785707854,
+            "loop_id": "loop1",
+            "loop_residue_energy": 21.763990036224218,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 1.4177910579584188,
+        "worst_loop_ca_rmsd_A": 1.9382472785707854
+      },
+      "physical_cpu_seconds": 46.909395952000004,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -266.83998704468866,
+        "global_rmsd": 0.36280053562281855,
+        "local_energy": 0.9846393995517264,
+        "local_rmsd": 1.4177910579584185
+      },
+      "quality_cpu_seconds": 0.12497248400000416,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "4": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 442.84692016168503,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02224730300002875,
+      "physical_cpu_seconds": 468.43685452099993,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -80.18438088785643,
+        "global_rmsd": 3.6683160491001066,
+        "local_energy": -10.039228305182181,
+        "local_rmsd": 7.449748663718742
+      },
+      "quality_cpu_seconds": 0.2765514950000352,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "40": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 423.05951865057096,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024688759000014215,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 0.4698670788060506,
+            "loop_id": "loop0",
+            "loop_residue_energy": -12.267644304376134,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 0.4698670788060506,
+        "worst_loop_ca_rmsd_A": 0.4698670788060506
+      },
+      "physical_cpu_seconds": 523.7286849919999,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -416.797349605125,
+        "global_rmsd": 0.0781755759247229,
+        "local_energy": -12.267644304376134,
+        "local_rmsd": 0.4698670788060506
+      },
+      "quality_cpu_seconds": 0.11005256700002519,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "41": {
+      "action_counts": {
+        "minimize": 1,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 12.333134443937505,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.02492264199999994,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 7.22624271293079,
+            "loop_id": "loop0",
+            "loop_residue_energy": -24.734733187449272,
+            "residues": 12
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 7.22624271293079,
+        "worst_loop_ca_rmsd_A": 7.22624271293079
+      },
+      "physical_cpu_seconds": 20.712231647000003,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": 149.27456054057245,
+        "global_rmsd": 2.2076855552610373,
+        "local_energy": -24.734733187449272,
+        "local_rmsd": 7.22624271293079
+      },
+      "quality_cpu_seconds": 0.09248721200000176,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "42": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_rebuild": 1,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 1623.430126239047,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024089782999908493,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 3.0345029169500806,
+            "loop_id": "loop0",
+            "loop_residue_energy": -3.447050128334961,
+            "residues": 16
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 3.0345029169500806,
+        "worst_loop_ca_rmsd_A": 3.0345029169500806
+      },
+      "physical_cpu_seconds": 1655.8539830940001,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -337.1594577275654,
+        "global_rmsd": 0.718993758964829,
+        "local_energy": -3.447050128334961,
+        "local_rmsd": 3.0345029169500806
+      },
+      "quality_cpu_seconds": 0.11003885400009494,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "43": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 331.74887302827426,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.022770473999969454,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 2.4613997750856025,
+            "loop_id": "loop0",
+            "loop_residue_energy": -5.3590029573363065,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 2.4613997750856025,
+        "worst_loop_ca_rmsd_A": 2.4613997750856025
+      },
+      "physical_cpu_seconds": 452.428315385,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -535.8251511499951,
+        "global_rmsd": 0.4032914529817025,
+        "local_energy": -5.3590029573363065,
+        "local_rmsd": 2.4613997750856025
+      },
+      "quality_cpu_seconds": 0.28042629499998384,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "44": {
+      "action_counts": {
+        "minimize": 2,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 24.87833909821875,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.027151880000005235,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 5.353491907024328,
+            "loop_id": "loop0",
+            "loop_residue_energy": 11.609274538635113,
+            "residues": 12
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 5.353491907024328,
+        "worst_loop_ca_rmsd_A": 5.353491907024328
+      },
+      "physical_cpu_seconds": 46.48641718,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -546.1911069504886,
+        "global_rmsd": 1.1134296063363374,
+        "local_energy": 11.609274538635113,
+        "local_rmsd": 5.353491907024328
+      },
+      "quality_cpu_seconds": 0.13162253000000135,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "45": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_rebuild": 1,
+        "promod3_database": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 1513.1356235463215,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023469782999882227,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 8.581857409050267,
+            "loop_id": "loop0",
+            "loop_residue_energy": -43.42263270422264,
+            "residues": 16
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 8.581857409050267,
+        "worst_loop_ca_rmsd_A": 8.581857409050267
+      },
+      "physical_cpu_seconds": 1573.2030346059998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -444.4339581938746,
+        "global_rmsd": 2.680521911125972,
+        "local_energy": -43.42263270422264,
+        "local_rmsd": 8.581857409050267
+      },
+      "quality_cpu_seconds": 0.09161201100005201,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "46": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 432.87138258959766,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024972785000045405,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 6.063552570659398,
+            "loop_id": "loop0",
+            "loop_residue_energy": -1.5890403318590993,
+            "residues": 8
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 6.063552570659398,
+        "worst_loop_ca_rmsd_A": 6.063552570659398
+      },
+      "physical_cpu_seconds": 458.15542435099997,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -251.62867583634795,
+        "global_rmsd": 1.368744271353981,
+        "local_energy": -1.5890403318590993,
+        "local_rmsd": 6.063552570659398
+      },
+      "quality_cpu_seconds": 0.09427359000000024,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "47": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 442.84717921257686,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.024804648000099405,
+      "offline_per_loop_diagnostics": {
+        "additional_pareto_objective": false,
+        "fit": "unchanged original fixed-RAW-scaffold; excludes the complete loop union",
+        "loops": [
+          {
+            "ca_rmsd_A": 0.3680908119607875,
+            "loop_id": "loop0",
+            "loop_residue_energy": -27.20102073210444,
+            "residues": 12
+          }
+        ],
+        "status": "AVAILABLE",
+        "union_ca_rmsd_A": 0.3680908119607875,
+        "worst_loop_ca_rmsd_A": 0.3680908119607875
+      },
+      "physical_cpu_seconds": 548.4543479040001,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -394.3427861653235,
+        "global_rmsd": 0.07788937213631195,
+        "local_energy": -27.20102073210444,
+        "local_rmsd": 0.3680908119607875
+      },
+      "quality_cpu_seconds": 0.11877936400003364,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "5": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.977728498497493,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.19814331699999954,
+      "physical_cpu_seconds": 22.616597834,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -150.59197125377509,
+        "global_rmsd": 0.032317293753219484,
+        "local_energy": -31.50493379278691,
+        "local_rmsd": 0.1091033328677074
+      },
+      "quality_cpu_seconds": 0.1375172280000001,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "6": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.503597268275923,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.04365007299999846,
+      "physical_cpu_seconds": 18.159225142,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -4.734494339707312,
+        "global_rmsd": 0.13840546967547354,
+        "local_energy": -9.29363594726401,
+        "local_rmsd": 0.31796452928024727
+      },
+      "quality_cpu_seconds": 0.1176632359999985,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "7": {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 177.46500021009567,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023368462999997064,
+      "physical_cpu_seconds": 210.07557104199998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -137.58877257564737,
+        "global_rmsd": 0.5581033592544717,
+        "local_energy": -11.365551928464717,
+        "local_rmsd": 1.890547373532637
+      },
+      "quality_cpu_seconds": 0.24996217700001466,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "8": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.780397197961854,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.040405961000001156,
+      "physical_cpu_seconds": 20.977994032999998,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -133.76905018027733,
+        "global_rmsd": 0.04553879014402735,
+        "local_energy": -52.671313270217254,
+        "local_rmsd": 0.14255106594730535
+      },
+      "quality_cpu_seconds": 0.14030745200000183,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    },
+    "9": {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "behavior": {
+        "accepted": 0,
+        "budget_stop": null,
+        "early_delivery": null,
+        "early_stop": 0,
+        "late_delivery": null,
+        "policy_stop": null,
+        "proposal_failure": null,
+        "proposal_success": null,
+        "restores": 0
+      },
+      "budget": 1800,
+      "budget_stop": null,
+      "condition_exceedances": {
+        "bond": 0.0,
+        "cn": 0.0,
+        "contact": 0.0,
+        "extreme": 0.0
+      },
+      "cost": 9.46120312312274,
+      "delivery_age": null,
+      "disposition": "VALID",
+      "mp_complete": true,
+      "mp_cpu_seconds": 0.023359788000000492,
+      "physical_cpu_seconds": 17.962188438,
+      "policy_stop": null,
+      "quality": {
+        "global_energy": -45.06801232568382,
+        "global_rmsd": 0.07860242828149781,
+        "local_energy": -23.611970388049464,
+        "local_rmsd": 0.18116932669588845
+      },
+      "quality_cpu_seconds": 0.10889953099999872,
+      "stop_reason": "POLICY_DELIVERY",
+      "timeout_counts": {}
+    }
+  },
+  "status": "COMPLETE"
+}

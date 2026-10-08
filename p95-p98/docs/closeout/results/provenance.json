@@ -1,0 +1,18 @@
+{
+  "scope": "Existing retained scalar records only; no new measurements",
+  "source_files_sha256": {
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/qualification/budgeted_run/runs/bench48_repaired_20260920/reports/FINAL_REVIEW.json": "8752ae9ac7e14430b85400dac92d61ed72256ce6848a6a27d9f67316aec08b49",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/qualification/budgeted_run/runs/bench48_repaired_20260920/reports/LATEST.json": "0d8b5b58e1ff0d74eb5b9fe6e4e872be4eb355e92099fceef8fb4126b5d65eb3",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/qualification/budgeted_run/runs/bench48_repaired_20260920/reports/FINAL_COSTS.json": "6718a6b74e4e954d330114ce48cc7a09d47669c51e5ab05d8947b37068a548d0",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/external_controls_20260921/REUSED_FINAL_ENDPOINTS.json": "d14bbc1c2d8f809e49f9c7b09c71d6f2982bf3aaaff379f2fe405c169eb19699",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/data/TRAIN48.json": "fda84ef37caf263cb3f5ba326dd47adf1a706d68caf500f176e4baad89328511",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/external_controls_20260921/figure_maranas_20260922/per_input.csv": "cf5cd77c37e3260b15ab46c9c40176f8391e2f27f12821602ae5ce266be28188",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/external_controls_20260921/figure_maranas_20260922/audit_frozen.md": "8c0123797297927a19d53f46ce53f1f442943789eefe7998f2dd6668f7797474",
+    "artifacts/AE_WS_PREPARATION_2026-09-12/generator_controller_pairing_20260917/controller_repair/mc_evolution/routing/qualification/budgeted_run/runs/bench48_repaired_20260920/production/b07ae350f31981ef8b14fa7813d68f61edd5bd05272c947b8c14688b0049c57a/TRAIN48_EVALUATION.json": "5035d993d19da0d1635f489fd2dadc34197d608a23bde8543cc381c9f6a9ad91"
+  },
+  "rows": 144,
+  "planned_inputs_per_method": 48,
+  "homology_components": 32,
+  "terminal_verification": "Joined terminal hashes against retained REUSED_FINAL_ENDPOINTS manifest; P95/P98 full remote terminals were not reopened locally. Raw scalar totals checked against FINAL_REVIEW. Historical figure-derived CA values copied, not recomputed.",
+  "public_redaction": "Remote absolute paths removed; repository-relative terminal locators and hashes retained."
+}

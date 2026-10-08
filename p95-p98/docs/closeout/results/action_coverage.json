@@ -1,0 +1,51 @@
+{
+  "counts_are": "Aggregate action invocation counts across48 development inputs; not fractions of total savings attributable to each action.",
+  "records": [
+    {
+      "coverage": {
+        "components": 32,
+        "evaluated_rows": 48,
+        "fixed_rows": 48,
+        "pending": 0
+      },
+      "decision_coverage": {
+        "action_counts": {
+          "minimize": 44,
+          "ngk_rebuild": 2,
+          "ngk_refine": 37,
+          "promod3_database": 11
+        },
+        "full_internal_history_scored": false,
+        "terminal_rows": 48,
+        "timeout_counts": {}
+      },
+      "logical_work": 8518.318102445004,
+      "policy": "P95",
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8"
+    },
+    {
+      "coverage": {
+        "components": 32,
+        "evaluated_rows": 48,
+        "fixed_rows": 48,
+        "pending": 0
+      },
+      "decision_coverage": {
+        "action_counts": {
+          "minimize": 48,
+          "ngk_rebuild": 2,
+          "ngk_refine": 37,
+          "promod3_database": 11
+        },
+        "full_internal_history_scored": false,
+        "terminal_rows": 48,
+        "timeout_counts": {}
+      },
+      "logical_work": 13285.40712055345,
+      "policy": "P98",
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83"
+    }
+  ],
+  "source": "retained reports/LATEST.json, entries95 and98",
+  "source_sha256": "0d8b5b58e1ff0d74eb5b9fe6e4e872be4eb355e92099fceef8fb4126b5d65eb3"
+}

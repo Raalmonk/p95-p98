@@ -1,0 +1,3299 @@
+{
+  "omissions": "Coordinates, long observations and private host paths omitted. Decision samples do not establish complete temperature-override counts.",
+  "policies": {
+    "P95": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+    "P98": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83"
+  },
+  "records": [
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "77049b6b4ac89c1a5c8b07de581777449d5f756b0cfaeb28d11c9528cac327c3",
+      "index": 0,
+      "logical_work": 4.4415183153366184,
+      "method": "P95",
+      "method_cpu_seconds": 7.9681310000000005,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": null,
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "resolution_epoch": null,
+        "resolution_left": null,
+        "startup_before": null,
+        "startup_checked": false,
+        "startup_done": true,
+        "startup_only": true,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 0,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "d7e1bd2a89c780ca7e466b30b3b7312f68d0af7ad73c7d3da43985bea235131c",
+          "receipt_member": "casp15/run/results/T1104/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7518807916094,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.72777401039,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.632554650554,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1104",
+      "terminal_member": "casp15/run/results/T1104/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "2d1648fff33f14da004e819ef27014ff7218097f766b8df0d829bcd4d75fe154"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "77049b6b4ac89c1a5c8b07de581777449d5f756b0cfaeb28d11c9528cac327c3",
+      "index": 1,
+      "logical_work": 4.816064648336618,
+      "method": "P98",
+      "method_cpu_seconds": 8.723203,
+      "ngk_control_final": {
+        "cleanup_only": true,
+        "cleanup_ready": true,
+        "cutoff": 1068.5432187258327,
+        "epoch": null,
+        "epoch_opportunity": false,
+        "loop_lows": {},
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 0,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "5b8a70d77b112bd240195302b5abf997faaf9d05ac004fd1754c0469dec60edb",
+          "receipt_member": "casp15/run/results/T1104/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7481167746096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7240099933902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.6287906335542,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1104",
+      "terminal_member": "casp15/run/results/T1104/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "c4b277b9e50489a2bf140325c8c35033696be96a2292624354aaf04f4920a5d1"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "93a1a1882a2c9dfdb8812f3cd9e475c1a88b2153e65fab5a48b3fa1cd59c57d2",
+      "index": 4,
+      "logical_work": 227.94567904034008,
+      "method": "P95",
+      "method_cpu_seconds": 102.43248799999999,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 3,
+        "global_witness_local": -9.537484086020795,
+        "global_witness_visit": 184,
+        "local_witness_global": 1479.1498997159288,
+        "local_witness_visit": 184,
+        "low_global": 1475.643877217335,
+        "low_local": -9.537484086020795,
+        "origin": 1780.9053645430547,
+        "progress_global": 1479.1498997159288,
+        "progress_left": 1663.4980887460608,
+        "progress_local": -9.537484086020795,
+        "repair": false,
+        "resolution_epoch": 3,
+        "resolution_left": 1563.478869791889,
+        "startup_before": {
+          "global": 1767.6487261178313,
+          "loops": {
+            "0": 85.53613652379454
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 1915,
+            "kic": 334,
+            "kic_success": 334,
+            "mc_accepts": 167,
+            "mc_trials": 353,
+            "minimize": 353,
+            "observation_cache_hits": 1562,
+            "observation_score_calls": 3124,
+            "observe_state": 1562,
+            "repack": 19,
+            "rotamer_trials": 334,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "8a3521b86f697a788d6df79182d4734dc8adc86173064447d35f7c3b935dd91c",
+          "receipt_member": "casp15/run/results/T1104/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7521839816095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.72807720039,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 1915,
+              "event": "deliver",
+              "observation": {
+                "inner": 48,
+                "outer": 3,
+                "remaining_work": 1556.1389639995507,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "terminal",
+                "step": 353
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1104",
+      "terminal_member": "casp15/run/results/T1104/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "85f7625a58905ec561ab7d0560505558e636d841932c5680e192cdadd661ad1b"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "fa9a51024f67c0b131103a0d1614715b78aee02d6aa6bd9d4a04461c58048134",
+      "index": 5,
+      "logical_work": 17.52914115337213,
+      "method": "P98",
+      "method_cpu_seconds": 13.996203,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 1,
+        "epoch_opportunity": true,
+        "loop_lows": {
+          "0": -2.937460331138637
+        },
+        "low_global": 1487.7714121424917,
+        "low_local": -2.937460331138637,
+        "origin": 1780.9053645430547,
+        "progress_left": 1769.764008683142,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": true
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 122,
+            "kic": 21,
+            "kic_success": 21,
+            "mc_accepts": 15,
+            "mc_trials": 22,
+            "minimize": 22,
+            "observation_cache_hits": 96,
+            "observation_score_calls": 208,
+            "observe_state": 100,
+            "repack": 1,
+            "rotamer_trials": 21,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "d7e1e71db4b086dc016b1c69d42d8dbf41a189387b5b88e550fac882e5abd08a",
+          "receipt_member": "casp15/run/results/T1104/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7522484576095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7281416763901,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 122,
+              "event": "deliver",
+              "observation": {
+                "inner": 11,
+                "outer": 1,
+                "remaining_work": 1766.6370400965186,
+                "round": 2,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 22
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1104",
+      "terminal_member": "casp15/run/results/T1104/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "4db5f3fee9721e348ebe726d30f8115abb3a005c8e6d7cb0aa750dd10ed1e49f"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "ca154e76d03cbc2e5f35aadfe1fd4f8f26bcb85d94f687fe218c699ebf78be12",
+      "index": 8,
+      "logical_work": 5.016958044336618,
+      "method": "P95",
+      "method_cpu_seconds": 13.015170000000001,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": null,
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "resolution_epoch": null,
+        "resolution_left": null,
+        "startup_before": null,
+        "startup_checked": false,
+        "startup_done": true,
+        "startup_only": true,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 0,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "d122e4a9517f34dc6fa88cb3bb20d8f483d73f875c2d53df0b21eb1f332e41dc",
+          "receipt_member": "casp15/run/results/T1109/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7323192976096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7082125163902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.6129931565542,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1109",
+      "terminal_member": "casp15/run/results/T1109/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "32a9bcd0039bd70eda84b883e16f57289c5320bc56322cc05a76dbf0ab2eb408"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "ca154e76d03cbc2e5f35aadfe1fd4f8f26bcb85d94f687fe218c699ebf78be12",
+      "index": 9,
+      "logical_work": 4.842073742336619,
+      "method": "P98",
+      "method_cpu_seconds": 12.798062,
+      "ngk_control_final": {
+        "cleanup_only": true,
+        "cleanup_ready": true,
+        "cutoff": 1068.5432187258327,
+        "epoch": null,
+        "epoch_opportunity": false,
+        "loop_lows": {},
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 0,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "b12438a7399c061047d7128be05db66ae738f9ca9e0fe2d22c08013071539e57",
+          "receipt_member": "casp15/run/results/T1109/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7341249646095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.71001818339,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.614798823554,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1109",
+      "terminal_member": "casp15/run/results/T1109/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "d20a180f721ed23783dd73ba8e0e0ee0915cb9c1aaf5d65b1677bec62580c50f"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "63d2a54677ef6d0188c35be91d6dbea52b587db1026e305be0f2ed598de2370d",
+      "index": 12,
+      "logical_work": 5.080529782336618,
+      "method": "P95",
+      "method_cpu_seconds": 12.830309,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": null,
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "resolution_epoch": null,
+        "resolution_left": null,
+        "startup_before": null,
+        "startup_checked": false,
+        "startup_done": true,
+        "startup_only": true,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 1,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "c919d4a8e0b1fa326389632028cb0aa24993bcc0f08d325cb040ce42bad325d3",
+          "receipt_member": "casp15/run/results/T1109/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7336961056096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7095893243902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.6143699645543,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1109",
+      "terminal_member": "casp15/run/results/T1109/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "335c6981cc137fda0e9719b74e5fecbdf5a44dfa62bfd7353e266560a2031318"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "63d2a54677ef6d0188c35be91d6dbea52b587db1026e305be0f2ed598de2370d",
+      "index": 13,
+      "logical_work": 4.860002986336618,
+      "method": "P98",
+      "method_cpu_seconds": 12.773199,
+      "ngk_control_final": {
+        "cleanup_only": true,
+        "cleanup_ready": true,
+        "cutoff": 1068.5432187258327,
+        "epoch": null,
+        "epoch_opportunity": false,
+        "loop_lows": {},
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 1,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "6986e778d78c49cf0287aae3b4b146649a9b18d42da9988993866ea784e31429",
+          "receipt_member": "casp15/run/results/T1109/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7330508656096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7089440843902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.6137247245542,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1109",
+      "terminal_member": "casp15/run/results/T1109/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "d354c5f1ad6a2add37bfcd854b258d7fde06cd672ad425a7919ddad01b4766e2"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "ce7a3b6ea05a872481b1aaa2c3e5b3a93fedf6ac48ddc1599a20dd88b61f2580",
+      "index": 16,
+      "logical_work": 225.76006281017064,
+      "method": "P95",
+      "method_cpu_seconds": 264.808877,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 3,
+        "global_witness_local": -10.456401326962663,
+        "global_witness_visit": 180,
+        "local_witness_global": -6.5829627347135755,
+        "local_witness_visit": 25,
+        "low_global": -11.502598226229175,
+        "low_local": -10.456401326962663,
+        "origin": 1780.9053645430547,
+        "progress_global": -11.502598226229175,
+        "progress_left": 1665.8738496175251,
+        "progress_local": -10.264711717926518,
+        "repair": false,
+        "resolution_epoch": 3,
+        "resolution_left": 1565.8307642235586,
+        "startup_before": {
+          "global": 3.184320121210554,
+          "loops": {
+            "0": 6.495687189053719
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 1896,
+            "kic": 332,
+            "kic_success": 331,
+            "mc_accepts": 173,
+            "mc_trials": 349,
+            "minimize": 349,
+            "observation_cache_hits": 1540,
+            "observation_score_calls": 3108,
+            "observe_state": 1547,
+            "repack": 18,
+            "rotamer_trials": 331,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "38d2aec1223794cec8e68e986040904af5131bf0ef445af5fa8ededc7a1994b3",
+          "receipt_member": "casp15/run/results/T1123/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7261462106096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7020394293902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 1896,
+              "event": "deliver",
+              "observation": {
+                "inner": 7,
+                "outer": 3,
+                "remaining_work": 1558.6229347407202,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "terminal",
+                "step": 349
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1123",
+      "terminal_member": "casp15/run/results/T1123/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "ab3dc447529a806c142f4c7637199ce776f8afb3e343e3165f86084a1128d3f3"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "e83cc59f37c07b29447a622f206445d2fca7d07debc79a08a271d2d3cc22f956",
+      "index": 17,
+      "logical_work": 12.831029627443412,
+      "method": "P98",
+      "method_cpu_seconds": 25.173457,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 1,
+        "epoch_opportunity": false,
+        "loop_lows": {
+          "0": -9.281758959924934
+        },
+        "low_global": -5.74911177453108,
+        "low_local": -9.281758959924934,
+        "origin": 1780.9053645430547,
+        "progress_left": 1777.162226473035,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": true
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 78,
+            "kic": 13,
+            "kic_success": 13,
+            "mc_accepts": 7,
+            "mc_trials": 14,
+            "minimize": 14,
+            "observation_cache_hits": 64,
+            "observation_score_calls": 128,
+            "observe_state": 64,
+            "repack": 1,
+            "rotamer_trials": 13,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "1065a5d73241a17c3ff0408fe18f5c0fd6c8e6ad2012665a3f2d57ddecdcc208",
+          "receipt_member": "casp15/run/results/T1123/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7249431376094,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.70083635639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 78,
+              "event": "deliver",
+              "observation": {
+                "inner": 7,
+                "outer": 1,
+                "remaining_work": 1771.6774846804472,
+                "round": 2,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 14
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1123",
+      "terminal_member": "casp15/run/results/T1123/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "f718141adfe3e49a036b86d4107ec2a09b4a1c60a2b6fc15d9c5279f805f1913"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "e648b98bd231b8973c32d66a43b94cc24e244b219d7b11f785befbfacda26b27",
+      "index": 20,
+      "logical_work": 449.1430323100912,
+      "method": "P95",
+      "method_cpu_seconds": 268.720004,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 5,
+        "global_witness_local": 1.962631585118152,
+        "global_witness_visit": 694,
+        "local_witness_global": 5021.495627923399,
+        "local_witness_visit": 662,
+        "low_global": 5020.680396896801,
+        "low_local": 1.4683830099981292,
+        "origin": 1780.9053645430547,
+        "progress_global": 5020.680396896801,
+        "progress_left": 1338.7855335690679,
+        "progress_local": 1.4683830099981292,
+        "repair": false,
+        "resolution_epoch": 5,
+        "resolution_left": 1340.664924832455,
+        "startup_before": {
+          "global": 5494.0330117630865,
+          "loops": {
+            "0": 106.28026559865992
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 3811,
+            "kic": 680,
+            "kic_success": 660,
+            "mc_accepts": 325,
+            "mc_trials": 697,
+            "minimize": 697,
+            "observation_cache_hits": 3129,
+            "observation_score_calls": 6198,
+            "observe_state": 3114,
+            "repack": 38,
+            "rotamer_trials": 660,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "9998a2ce5d6ec5ca57192354aeb366044bb786bc1b5d3e92ada4a84f3931661d",
+          "receipt_member": "casp15/run/results/T1123/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7333313476095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.70922456639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2180,
+              "event": "accept",
+              "observation": {
+                "inner": 32,
+                "outer": 3,
+                "remaining_work": 1526.37888281342,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_round_2",
+                "step": 401
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2181,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 33,
+                "outer": 3,
+                "remaining_work": 1526.2860970090294,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "choose_loop",
+                "step": 401
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 3811,
+              "event": "deliver",
+              "observation": {
+                "inner": 20,
+                "outer": 5,
+                "remaining_work": 1335.4781729087995,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 697
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1123",
+      "terminal_member": "casp15/run/results/T1123/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "f10e3815db027b5da737f4245ef16ab588fa37eeef5d4f9d6a5c09a01f1be1fd"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "eeea57d4c5f5569984f30f9029a1db054194bfa9511442b18f2b8e0c58889404",
+      "index": 21,
+      "logical_work": 520.3301687142092,
+      "method": "P98",
+      "method_cpu_seconds": 310.12620599999997,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 5,
+        "epoch_opportunity": true,
+        "loop_lows": {
+          "0": 1.0455941447415509
+        },
+        "low_global": 5019.616422079688,
+        "low_local": 1.0455941447415509,
+        "origin": 1780.9053645430547,
+        "progress_left": 1291.590532295518,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 4433,
+            "kic": 800,
+            "kic_success": 764,
+            "mc_accepts": 378,
+            "mc_trials": 808,
+            "minimize": 808,
+            "observation_cache_hits": 3646,
+            "observation_score_calls": 7208,
+            "observe_state": 3625,
+            "repack": 44,
+            "rotamer_trials": 764
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "5493e4765c68af397446f22567ba4278ae3515994e105dffdc345d07c9692e4e",
+          "receipt_member": "casp15/run/results/T1123/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7336509256095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.70954414439,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2180,
+              "event": "accept",
+              "observation": {
+                "inner": 32,
+                "outer": 3,
+                "remaining_work": 1526.37920239142,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_round_2",
+                "step": 401
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2181,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 33,
+                "outer": 3,
+                "remaining_work": 1526.2864165870294,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "choose_loop",
+                "step": 401
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 4380,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 77,
+                "outer": 5,
+                "remaining_work": 1271.8993118619342,
+                "round": 1,
+                "score_epoch": 5,
+                "site": "kic_minimize",
+                "step": 797
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4382,
+              "event": "accept",
+              "observation": {
+                "inner": 77,
+                "outer": 5,
+                "remaining_work": 1271.7502811521174,
+                "round": 1,
+                "score_epoch": 5,
+                "site": "kic_round_1",
+                "step": 798
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 4433,
+              "event": "deliver",
+              "observation": {
+                "inner": 80,
+                "outer": 5,
+                "remaining_work": 1264.1379058216817,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 808
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1123",
+      "terminal_member": "casp15/run/results/T1123/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "afcb8a6895b406e25a7fd55c07e61d993b86fe40f2cb728b3ea30bf4aefcd4c8"
+    },
+    {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "2b18e4cdaf219d8798658701d5705772f50f2beac999d8bcfa17fc4851ef3edb",
+      "index": 24,
+      "logical_work": 226.64369397511015,
+      "method": "P95",
+      "method_cpu_seconds": 246.329747,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 3,
+        "global_witness_local": -4.558727637965786,
+        "global_witness_visit": 187,
+        "local_witness_global": -591.1708976614817,
+        "local_witness_visit": 169,
+        "low_global": -593.0671677007149,
+        "low_local": -5.234319565019171,
+        "origin": 1780.9053645430547,
+        "progress_global": -593.0671677007149,
+        "progress_left": 1661.7191031851735,
+        "progress_local": -5.114396546976346,
+        "repair": false,
+        "resolution_epoch": 3,
+        "resolution_left": 1566.0671294745252,
+        "startup_before": {
+          "global": -585.2114036582803,
+          "loops": {
+            "0": 1.4862888559520162
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 1936,
+            "kic": 340,
+            "kic_success": 337,
+            "mc_accepts": 158,
+            "mc_trials": 356,
+            "minimize": 356,
+            "observation_cache_hits": 1591,
+            "observation_score_calls": 3138,
+            "observe_state": 1580,
+            "repack": 19,
+            "rotamer_trials": 337,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "b75038eb0691f9c10c4ef669167123fcad9d994cea4798780c4a51fdf6eac162",
+          "receipt_member": "casp15/run/results/T1139/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7205133746095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.69640659339,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 1936,
+              "event": "deliver",
+              "observation": {
+                "inner": 11,
+                "outer": 3,
+                "remaining_work": 1554.4900592128351,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "terminal",
+                "step": 356
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1139",
+      "terminal_member": "casp15/run/results/T1139/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "00555ecdebb63614560c9cc221289f69a71ea789257af4d7a08e8f80524874ff"
+    },
+    {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "4bb2f0495ef0117e9751470720ef590f88f546162c1cbdeaf5e157dfabb25810",
+      "index": 25,
+      "logical_work": 2.91450210437348,
+      "method": "P98",
+      "method_cpu_seconds": 10.988683,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 1,
+        "epoch_opportunity": false,
+        "loop_lows": {
+          "0": 1.4862888559520162
+        },
+        "low_global": -585.2114036582803,
+        "low_local": 1.4862888559520162,
+        "origin": 1780.9053645430547,
+        "progress_left": 1779.6030619299995,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": true
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 17,
+            "kic": 2,
+            "kic_success": 2,
+            "mc_accepts": 2,
+            "mc_trials": 3,
+            "minimize": 3,
+            "observation_cache_hits": 12,
+            "observation_score_calls": 32,
+            "observe_state": 14,
+            "repack": 1,
+            "rotamer_trials": 2,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "ee41203b088a205a8c9f9f79d57eeed25665fc38527c00e940797f63306bca56",
+          "receipt_member": "casp15/run/results/T1139/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7199545156095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.69584773439,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 17,
+              "event": "deliver",
+              "observation": {
+                "inner": 2,
+                "outer": 1,
+                "remaining_work": 1778.3336908985718,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 3
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1139",
+      "terminal_member": "casp15/run/results/T1139/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "8f49366624f14529407e0550679ba83dfb1428cd086deb033ed8fb8ed2c20c8e"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "3234ed3508afada2d138265df3eed6100f7304355b9e650f8f681e9a0308a44b",
+      "index": 28,
+      "logical_work": 245.87661129558174,
+      "method": "P95",
+      "method_cpu_seconds": 248.022313,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 3,
+        "global_witness_local": 4.162806361076832,
+        "global_witness_visit": 210,
+        "local_witness_global": 2185.5319784313274,
+        "local_witness_visit": 61,
+        "low_global": 2182.0054686331196,
+        "low_local": 1.9854005932346641,
+        "origin": 1780.9053645430547,
+        "progress_global": 2182.3992570396035,
+        "progress_left": 1645.9415531457269,
+        "progress_local": 1.9854005932346641,
+        "repair": false,
+        "resolution_epoch": 3,
+        "resolution_left": 1548.4524129533675,
+        "startup_before": {
+          "global": 2800.0732827286593,
+          "loops": {
+            "0": 176.98400356623654
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 2063,
+            "kic": 366,
+            "kic_success": 357,
+            "mc_accepts": 187,
+            "mc_trials": 378,
+            "minimize": 378,
+            "observation_cache_hits": 1681,
+            "observation_score_calls": 3378,
+            "observe_state": 1685,
+            "repack": 21,
+            "rotamer_trials": 357,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "5f1f100ae3b2054f963df7607292d0b1452093565c56779a0e5fab2f0aec9f47",
+          "receipt_member": "casp15/run/results/T1139/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7227296726096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.6986228913902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 2063,
+              "event": "deliver",
+              "observation": {
+                "inner": 24,
+                "outer": 3,
+                "remaining_work": 1538.9227474263091,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "terminal",
+                "step": 378
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1139",
+      "terminal_member": "casp15/run/results/T1139/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "6fcec15c5b5b65672aa47a2b1ad926fdb3831b1d52859a669916352bf9e1b9d7"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "a9e915c879a569bfaae520375eb97553f3b4fc1bd1aac12dcdaea440ad6ab4fe",
+      "index": 29,
+      "logical_work": 519.6712263288192,
+      "method": "P98",
+      "method_cpu_seconds": 487.209102,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 5,
+        "epoch_opportunity": true,
+        "loop_lows": {
+          "0": -0.293247330896134
+        },
+        "low_global": 2138.4133761180456,
+        "low_local": -0.293247330896134,
+        "origin": 1780.9053645430547,
+        "progress_left": 1348.0074752978303,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 4437,
+            "kic": 800,
+            "kic_success": 764,
+            "mc_accepts": 329,
+            "mc_trials": 809,
+            "minimize": 809,
+            "observation_cache_hits": 3698,
+            "observation_score_calls": 7116,
+            "observe_state": 3628,
+            "repack": 45,
+            "rotamer_trials": 764
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "05fdb27b417fb576bd0aeed0c5a1a9b3066a32e6a450953c42ce8d9056b2feec",
+          "receipt_member": "casp15/run/results/T1139/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7225252776095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.69841849639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2178,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 34,
+                "outer": 3,
+                "remaining_work": 1526.3693487317187,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic",
+                "step": 399
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2182,
+              "event": "accept",
+              "observation": {
+                "inner": 34,
+                "outer": 3,
+                "remaining_work": 1525.8298825758409,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_round_2",
+                "step": 400
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 4386,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 76,
+                "outer": 5,
+                "remaining_work": 1271.9679510043509,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "kic_minimize",
+                "step": 799
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4388,
+              "event": "accept",
+              "observation": {
+                "inner": 76,
+                "outer": 5,
+                "remaining_work": 1271.818920294534,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "kic_round_2",
+                "step": 800
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 4437,
+              "event": "deliver",
+              "observation": {
+                "inner": 80,
+                "outer": 5,
+                "remaining_work": 1265.2111594130715,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 809
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1139",
+      "terminal_member": "casp15/run/results/T1139/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "a5c35b31ba63bb50521242f43daeaf48445744770f4af12346f0fb510ac88709"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "73e29e69fb5034ff60bd550e771f93b9ba54a9bf380cd80d1d6843aaaa4f315f",
+      "index": 32,
+      "logical_work": 4.883324163336618,
+      "method": "P95",
+      "method_cpu_seconds": 11.240327,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": null,
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "resolution_epoch": null,
+        "resolution_left": null,
+        "startup_before": null,
+        "startup_checked": false,
+        "startup_done": true,
+        "startup_only": true,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 1,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "56497b6af03994f6b7e39d511f87a776e0af1795aef8ea5d22b695dfdac43497",
+          "receipt_member": "casp15/run/results/T1187/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7414619976096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7173552163902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.6221358565542,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1187",
+      "terminal_member": "casp15/run/results/T1187/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "7845136897f5ed4d44cd57c8f0ebe37f72af817f23a477023696668aeff748a4"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "73e29e69fb5034ff60bd550e771f93b9ba54a9bf380cd80d1d6843aaaa4f315f",
+      "index": 33,
+      "logical_work": 5.0862375793366175,
+      "method": "P98",
+      "method_cpu_seconds": 11.464305999999999,
+      "ngk_control_final": {
+        "cleanup_only": true,
+        "cleanup_ready": true,
+        "cutoff": 1068.5432187258327,
+        "epoch": null,
+        "epoch_opportunity": false,
+        "loop_lows": {},
+        "low_global": null,
+        "low_local": null,
+        "origin": 1780.9053645430547,
+        "progress_left": null,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 6,
+            "mc_accepts": 1,
+            "mc_trials": 1,
+            "minimize": 1,
+            "observation_cache_hits": 4,
+            "observation_score_calls": 12,
+            "observe_state": 5,
+            "repack": 1,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "df4a5e0b3217989aeebed7e1ed670f2676a96441254575e5e5b5dccfd6fd8feb",
+          "receipt_member": "casp15/run/results/T1187/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7416597286094,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.71755294739,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 6,
+              "event": "deliver",
+              "observation": {
+                "inner": 1,
+                "outer": 1,
+                "remaining_work": 1779.622333587554,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 1
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1187",
+      "terminal_member": "casp15/run/results/T1187/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "3fb2ec4c91ffd28f14fad22372f715befed1910c66f489f1dd4bf7a40e09aed8"
+    },
+    {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "76775736cde75e6cbbf335f64a9e928e5fccd27c135d437f2c30c256b30bb9d6",
+      "index": 36,
+      "logical_work": 331.9936863728822,
+      "method": "P95",
+      "method_cpu_seconds": 255.752252,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 3,
+        "global_witness_local": -6.78778157670497,
+        "global_witness_visit": 356,
+        "local_witness_global": 857.1986360642646,
+        "local_witness_visit": 343,
+        "low_global": 856.955732369221,
+        "low_local": -6.78778157670497,
+        "origin": 1780.9053645430547,
+        "progress_global": 856.955732369221,
+        "progress_left": 1556.4294283428137,
+        "progress_local": -6.53974302854286,
+        "repair": false,
+        "resolution_epoch": 3,
+        "resolution_left": 1452.837612417955,
+        "startup_before": {
+          "global": 1030.2994397496493,
+          "loops": {
+            "0": 55.90871132121746
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 2866,
+            "kic": 504,
+            "kic_success": 502,
+            "mc_accepts": 200,
+            "mc_trials": 527,
+            "minimize": 527,
+            "observation_cache_hits": 2391,
+            "observation_score_calls": 4574,
+            "observe_state": 2339,
+            "repack": 25,
+            "rotamer_trials": 502,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "f0d8e617255b0d750554ce734097061adae9d9dfe4c7df89840c1422e6a77250",
+          "receipt_member": "casp15/run/results/T1187/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7422006476095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.71809386639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2200,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 14,
+                "outer": 3,
+                "remaining_work": 1526.2925141968387,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_minimize",
+                "step": 404
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2202,
+              "event": "accept",
+              "observation": {
+                "inner": 14,
+                "outer": 3,
+                "remaining_work": 1526.143483487022,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_round_2",
+                "step": 405
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 2866,
+              "event": "deliver",
+              "observation": {
+                "inner": 73,
+                "outer": 3,
+                "remaining_work": 1449.078391871063,
+                "round": 0,
+                "score_epoch": 3,
+                "site": "terminal",
+                "step": 527
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1187",
+      "terminal_member": "casp15/run/results/T1187/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "4733ce301c623e00b1cb795509845375ce976799a47c356da4ee7e6d557fd20b"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "72bd0a63f85a3e337a6f9e4f71fef811b5c6a51571ba1bc0ee14491bc737c72b",
+      "index": 37,
+      "logical_work": 584.8698076081635,
+      "method": "P98",
+      "method_cpu_seconds": 428.98533999999995,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 5,
+        "epoch_opportunity": true,
+        "loop_lows": {
+          "0": -5.107888830832378
+        },
+        "low_global": 603.3692682998119,
+        "low_local": -5.107888830832378,
+        "origin": 1780.9053645430547,
+        "progress_left": 1305.8274138265228,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": false
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 5023,
+            "kic": 900,
+            "kic_success": 872,
+            "mc_accepts": 364,
+            "mc_trials": 918,
+            "minimize": 918,
+            "observation_cache_hits": 4190,
+            "observation_score_calls": 8040,
+            "observe_state": 4105,
+            "repack": 46,
+            "rotamer_trials": 872
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "d82f79116e847ab04997cc15993097bd10cc7cfd92c4f461d493d9f622b58d18",
+          "receipt_member": "casp15/run/results/T1187/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7403921896096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7162854083901,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2200,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 14,
+                "outer": 3,
+                "remaining_work": 1526.2907057388388,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_minimize",
+                "step": 404
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2202,
+              "event": "accept",
+              "observation": {
+                "inner": 14,
+                "outer": 3,
+                "remaining_work": 1526.141675029022,
+                "round": 2,
+                "score_epoch": 3,
+                "site": "kic_round_2",
+                "step": 405
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 4400,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 34,
+                "outer": 5,
+                "remaining_work": 1272.0001717403761,
+                "round": 0,
+                "score_epoch": 5,
+                "site": "choose_loop",
+                "step": 805
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4405,
+              "event": "accept",
+              "observation": {
+                "inner": 34,
+                "outer": 5,
+                "remaining_work": 1271.458272029053,
+                "round": 1,
+                "score_epoch": 5,
+                "site": "kic_round_1",
+                "step": 806
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 5023,
+              "event": "deliver",
+              "observation": {
+                "inner": 90,
+                "outer": 5,
+                "remaining_work": 1199.4916797167273,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 918
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1187",
+      "terminal_member": "casp15/run/results/T1187/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "46dc7689a4ff3a21f15bfce5875ecd781863700c3fd78320deaa93c8c42b3e5c"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "6e5908076e52c20b38706157dc1572810060128bcf21bccfa42b9d2008f7fa8a",
+      "index": 40,
+      "logical_work": 59.78613124404632,
+      "method": "P95",
+      "method_cpu_seconds": 48.159246,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 1,
+        "global_witness_local": -2.4468750565377757,
+        "global_witness_visit": 37,
+        "local_witness_global": -302.98360343432415,
+        "local_witness_visit": 47,
+        "low_global": -303.91325618254217,
+        "low_local": -2.835468539141192,
+        "origin": 1780.9053645430547,
+        "progress_global": -303.4152698149649,
+        "progress_left": 1750.4012092891717,
+        "progress_local": -2.835468539141192,
+        "repair": false,
+        "resolution_epoch": 1,
+        "resolution_left": 1724.7119681852898,
+        "startup_before": {
+          "global": -302.60073728976084,
+          "loops": {
+            "0": 2.319868064729393
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": true
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 473,
+            "kic": 82,
+            "kic_success": 82,
+            "mc_accepts": 52,
+            "mc_trials": 87,
+            "minimize": 87,
+            "observation_cache_hits": 374,
+            "observation_score_calls": 796,
+            "observe_state": 386,
+            "repack": 5,
+            "rotamer_trials": 82,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "86afa88e4df34eb2ee34bcbc0691b28670b1d7209b0b8708f5c68401abe46b03",
+          "receipt_member": "casp15/run/results/T1194/AlphaFold2/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7440027876096,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.7198960063902,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 473,
+              "event": "deliver",
+              "observation": {
+                "inner": 42,
+                "outer": 1,
+                "remaining_work": 1724.7095346298445,
+                "round": 0,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 87
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1194",
+      "terminal_member": "casp15/run/results/T1194/AlphaFold2/P95/seed20261007/terminal.json",
+      "terminal_sha256": "eb4eb46f00921d125454348e17e2c5375e4da90b5efe01cb643324e497133a75"
+    },
+    {
+      "action_counts": {
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "c94bc3e67dc9c0406be3a2bd666f376f1e4d9da43574dc40d91e9d09d289b638",
+      "index": 41,
+      "logical_work": 18.158105584373327,
+      "method": "P98",
+      "method_cpu_seconds": 17.540106,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 1,
+        "epoch_opportunity": false,
+        "loop_lows": {
+          "0": 0.27840976488538594
+        },
+        "low_global": -302.60073728976084,
+        "low_local": 0.27840976488538594,
+        "origin": 1780.9053645430547,
+        "progress_left": 1768.4883873571598,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": true
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 155,
+            "kic": 27,
+            "kic_success": 27,
+            "mc_accepts": 18,
+            "mc_trials": 28,
+            "minimize": 28,
+            "observation_cache_hits": 122,
+            "observation_score_calls": 264,
+            "observe_state": 127,
+            "repack": 1,
+            "rotamer_trials": 27,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "6213d0cf9ee9c47c5e033edc242d533dbdead98e96e28dfd422100ad773e1631",
+          "receipt_member": "casp15/run/results/T1194/AlphaFold2/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7435646076094,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.71945782639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 155,
+              "event": "deliver",
+              "observation": {
+                "inner": 14,
+                "outer": 1,
+                "remaining_work": 1762.915594691572,
+                "round": 2,
+                "score_epoch": 1,
+                "site": "terminal",
+                "step": 28
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "AlphaFold2",
+      "status": "COMPLETE",
+      "target": "T1194",
+      "terminal_member": "casp15/run/results/T1194/AlphaFold2/P98/seed20261007/terminal.json",
+      "terminal_sha256": "0e62186f3db38b6343f1ef375373ea187309810768f41f711767a04b36a3c1e7"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "6135f24d0e76b59c227a50104a0aa19de057968959426cc3e2dd50088ede60e7",
+      "index": 44,
+      "logical_work": 411.1728975763869,
+      "method": "P95",
+      "method_cpu_seconds": 259.439258,
+      "ngk_control_final": {
+        "cutoff": 1335.679023407291,
+        "epoch": 5,
+        "global_witness_local": -1.4901832055577806,
+        "global_witness_visit": 529,
+        "local_witness_global": 854.9905405252421,
+        "local_witness_visit": 279,
+        "low_global": 845.5831540842443,
+        "low_local": -1.8457792980112104,
+        "origin": 1780.9053645430547,
+        "progress_global": 845.5831540842443,
+        "progress_left": 1441.9656500468795,
+        "progress_local": -1.6388620507479936,
+        "repair": false,
+        "resolution_epoch": 5,
+        "resolution_left": 1381.1560750152623,
+        "startup_before": {
+          "global": 1892.8239154406224,
+          "loops": {
+            "0": 6.258306282091244
+          },
+          "observed_step": 1
+        },
+        "startup_checked": true,
+        "startup_done": true,
+        "startup_only": false,
+        "startup_resolved": false
+      },
+      "policy_sha256": "6c2330e612f4c2000d9965bd45d666c3ca26a74473b994b5ba4c513a06bb5ed8",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 3445,
+            "kic": 600,
+            "kic_success": 600,
+            "mc_accepts": 353,
+            "mc_trials": 636,
+            "minimize": 636,
+            "observation_cache_hits": 2755,
+            "observation_score_calls": 5726,
+            "observe_state": 2809,
+            "repack": 36,
+            "rotamer_trials": 600
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "2a683f9a68c7f5bb9b98dc60fd0ebf93d636d731b28f598bcfadf362ddb3684d",
+          "receipt_member": "casp15/run/results/T1194/ESMFold/P95/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7439264476095,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.71981966639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2145,
+              "event": "accept",
+              "observation": {
+                "inner": 7,
+                "outer": 4,
+                "remaining_work": 1526.3918371999132,
+                "round": 2,
+                "score_epoch": 4,
+                "site": "kic_round_2",
+                "step": 396
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2146,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 8,
+                "outer": 4,
+                "remaining_work": 1526.3430768320227,
+                "round": 0,
+                "score_epoch": 4,
+                "site": "choose_loop",
+                "step": 396
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 3445,
+              "event": "deliver",
+              "observation": {
+                "inner": 60,
+                "outer": 5,
+                "remaining_work": 1372.913749100504,
+                "round": 2,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 636
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1194",
+      "terminal_member": "casp15/run/results/T1194/ESMFold/P95/seed20261007/terminal.json",
+      "terminal_sha256": "02e886cfb038b573328186a9efb79a4b7ee549d8cc15e3ecd20bbb3c95d9039f"
+    },
+    {
+      "action_counts": {
+        "minimize": 1,
+        "ngk_refine": 1
+      },
+      "final_pdb_sha256": "730ef330ddc976b4c33118ac145febca5d5c91a90b86b9373a60f3dd07f99dc7",
+      "index": 45,
+      "logical_work": 359.174043912462,
+      "method": "P98",
+      "method_cpu_seconds": 230.955455,
+      "ngk_control_final": {
+        "cleanup_only": false,
+        "cleanup_ready": false,
+        "cutoff": 1068.5432187258327,
+        "epoch": 5,
+        "epoch_opportunity": false,
+        "loop_lows": {
+          "0": -1.6388620507479936
+        },
+        "low_global": 845.5831540842443,
+        "low_local": -1.6388620507479936,
+        "origin": 1780.9053645430547,
+        "progress_left": 1441.9664338268794,
+        "repair": false,
+        "response_pending": null,
+        "response_ready": true
+      },
+      "policy_sha256": "533a5549d5d8722f0ea43ce418c009a589c288696d906e4dd5e386945fd0fd83",
+      "refinement_actions": [
+        {
+          "decision_coverage": "Sparse recorded callback samples; not a complete acceptance/temperature trace. Native counters are terminal totals.",
+          "native_counts": {
+            "controller": 3008,
+            "kic": 524,
+            "kic_success": 524,
+            "mc_accepts": 312,
+            "mc_trials": 555,
+            "minimize": 555,
+            "observation_cache_hits": 2403,
+            "observation_score_calls": 5006,
+            "observe_state": 2453,
+            "repack": 31,
+            "rotamer_trials": 524,
+            "safe_stop": 1
+          },
+          "normal_return": true,
+          "receipt_gzip_sha256": "41dc2740b36e220f6a28acdca2eb43b43e06a89f0af0e57080bc21843c92e60b",
+          "receipt_member": "casp15/run/results/T1194/ESMFold/P98/seed20261007/policy/actions/0000/native/returned.json.gz",
+          "retained_decisions": [
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 1,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1780.7447102276094,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 0
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 4,
+              "event": "accept",
+              "observation": {
+                "inner": 0,
+                "outer": 0,
+                "remaining_work": 1779.72060344639,
+                "round": 0,
+                "score_epoch": 0,
+                "site": "initial_repack",
+                "step": 1
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "mode": "native",
+                "probability": null,
+                "temperature_multiplier": null
+              },
+              "capture_index": 2145,
+              "event": "accept",
+              "observation": {
+                "inner": 7,
+                "outer": 4,
+                "remaining_work": 1526.392620979913,
+                "round": 2,
+                "score_epoch": 4,
+                "site": "kic_round_2",
+                "step": 396
+              },
+              "outcome_status": "OBSERVED"
+            },
+            {
+              "actual_decision": {
+                "loop_index": null,
+                "minimize": "native",
+                "perturbation": "native",
+                "repack": "native",
+                "restore_slot": null,
+                "stop": false
+              },
+              "capture_index": 2146,
+              "event": "pre_proposal",
+              "observation": {
+                "inner": 8,
+                "outer": 4,
+                "remaining_work": 1526.3438606120226,
+                "round": 0,
+                "score_epoch": 4,
+                "site": "choose_loop",
+                "step": 396
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            },
+            {
+              "actual_decision": {
+                "slot": null,
+                "state": "native_low"
+              },
+              "capture_index": 3008,
+              "event": "deliver",
+              "observation": {
+                "inner": 23,
+                "outer": 5,
+                "remaining_work": 1424.8791688804286,
+                "round": 0,
+                "score_epoch": 5,
+                "site": "terminal",
+                "step": 555
+              },
+              "outcome_status": "NOT_YET_RESOLVED"
+            }
+          ]
+        }
+      ],
+      "seed": 20261007,
+      "start_model": "ESMFold",
+      "status": "COMPLETE",
+      "target": "T1194",
+      "terminal_member": "casp15/run/results/T1194/ESMFold/P98/seed20261007/terminal.json",
+      "terminal_sha256": "8c0aea05f4475494848b96f9e918e7eca0961ec3ad0a8d5b0ec882bce00d2e7e"
+    }
+  ],
+  "results_csv_sha256": "2c311708d9ffba8baf402722be5d40dcfb6a4c491fb1070f7e1853e22755288d",
+  "schema": "ngngk-retained-mc-evidence-v1",
+  "scope": "Exact selected fields from retained terminals; no new scoring, simulation or policy execution.",
+  "source_snapshot_sha256": "17a99e14bda064cab8bcaf4c7cb9c37f5fdb8784da420dfc476523d88647bca0"
+}
