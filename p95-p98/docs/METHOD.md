@@ -1,78 +1,75 @@
-# P95 and P98 execution semantics
+# How P95 and P98 run
 
-P95 and P98 are frozen decision programs. The host passes `event`, a source-only
-`observation`, and trajectory-local `memory` to `decide(view)`. The returned
-decision controls the next operation; returned memory carries across outer
-routing and inner NGK callbacks. Deployment does not call an LLM.
+P95 and P98 are frozen decision programs. They never call an LLM when they run.
 
-Outer routing selects an available action and parent, retains outer state slots,
-or delivers a state. Inner callbacks can stop the native trajectory and use
-native acceptance or a 0.75 temperature multiplier. Both programs retain
-`native_low` delivery. They do not use custom inner save/restore, direct
-acceptance-probability overrides, or non-native KIC perturbations.
+The host program calls `decide(view)` and passes three things in the view:
 
-## State and observations
+- `event`: the host event for this call.
+- `observation`: facts computed only from the input structure and current candidates.
+- `memory`: notes the program keeps for this run.
 
-The host derives geometry, fixed energies, per-loop and per-residue information
-from the supplied source and current candidates. Source displacement is measured
-against the original supplied structure. Reference coordinates, reference RMSD,
-benchmark labels, and offline evaluation results are absent from runtime views.
-Observation construction must leave the native random stream unchanged.
+The program returns a decision, which controls the next operation, plus updated memory. That memory carries over between the two levels where the program makes choices:
 
-Native loop definitions use one-based pose indices. Observation loop intervals
-and residue indices use zero-based indices. The host must translate once and
-check that both definitions identify the same residues. Fixed local energy is
-the sum over the declared local energy region; the region is an explicit input
-binding, not inferred from a target structure.
+- **Outer routing.** The program picks an available action and the parent structure to start from, keeps candidates in its outer state slots, or delivers a final structure.
+- **Inner callbacks inside NGK** (Rosetta's next-generation KIC loop modeling; KIC is kinematic closure, a way of moving a loop while keeping it connected). Here the program can stop the native run early, and can choose either native acceptance or a temperature multiplier of 0.75.
 
-The frozen fixed score uses ref2015 with backbone hydrogen bonds decomposed into
-pair energies. NGK's changing active score and the fixed observation score have
-different roles and must remain separate in observations.
+Both programs keep `native_low` delivery. Neither uses custom inner save/restore, overrides the acceptance probability directly, or uses non-native KIC perturbations.
 
-## Random stream and commit
+![What the frozen program sees and controls](figures/decide_interface.svg)
 
-Coordinates retained in an outer parent slot do not reset the current route
-random stream. An operation starts from the chosen parent's coordinates and the
-current route RNG. Successful operations commit their resulting coordinates,
-RNG, and controlled-policy memory together. Native-low recovery follows the
-native protocol; it is not an instruction to reset RNG to an earlier candidate.
+## What the program can see
 
-On an uncommitted failed operation, the last committed endpoint remains
-available and the failed attempt's measured cost remains recorded. Resume
-requires an unambiguous retained operation state; an existing intent alone does
-not establish either success or safe replay.
+The host builds observations only from the supplied input structure and the current candidates: geometry, fixed energies, and per-loop and per-residue information. "Source displacement" is measured against the original supplied structure.
+
+Runtime views never contain reference coordinates, reference RMSD (root-mean-square deviation from a known answer), benchmark labels, or offline evaluation results. Building an observation must not change the native random number stream.
+
+Two input rules matter:
+
+- Native loop definitions use one-based pose indices. Observation loop intervals and residue indices are zero-based. The host must convert once and check that both point to the same residues.
+- Fixed local energy is summed over a declared local energy region. That region is an explicit input, not something inferred from a target structure.
+
+The fixed score is ref2015, with backbone hydrogen bonds split into pair energies. NGK's own active score changes during a run and has a different job. Keep the two scores separate in observations.
+
+## Random numbers and commits
+
+An operation starts from the chosen parent's coordinates and the current route's random number generator (RNG). Picking an older parent from an outer slot does not reset the RNG.
+
+When an operation succeeds, we commit its coordinates, RNG state, and policy memory together. Native-low recovery follows the native protocol. It does not mean "reset the RNG to an earlier candidate".
+
+When an operation fails without committing:
+
+- The last committed endpoint stays available.
+- The cost of the failed attempt stays on the record.
+
+To resume, the retained operation state must be unambiguous. A recorded intent alone does not prove the operation succeeded or that it is safe to replay.
 
 ## Budgets
 
-Recorded CPU, elapsed wall time, and calibrated logical work are separate
-quantities. Original BENCH48 execution used input-specific logical tariffs,
-physical CPU protection, action caps, and delivery reserves. A portable runtime
-must identify its work profile in its output. Running the exact policy with a
-different tariff does not reproduce the original budget-dependent trajectory.
+We track three separate quantities: recorded CPU time, elapsed wall time, and calibrated logical work. The original BENCH48 runs used input-specific logical prices ("tariffs"), physical CPU protection, caps on the number of actions, and reserves held back for delivery.
 
-A portable work profile should contain the four kernel prices (`kic`, `repack`,
-`rotamer_trials`, `minimize`), observation/controller/archive/restore prices,
-policy setup work, and their provenance. Original kernel prices equal measured
-kernel CPU divided by operation count, multiplied by the ratio of net refinement
-CPU to summed measured kernel CPU. Retaining an exact historical price profile
-permits execution on a new source without reading benchmark inputs. The profile
-must be named as a reference tariff rather than a calibration of the new input.
-Do not replace missing prices with zero or arbitrary unit costs: both programs
-use absolute work thresholds, and P95 also gates repeat descent by its measured
-fraction of the original allowance.
+A portable runtime must name its work profile in its output. If you run the exact same policy with a different tariff, you will not reproduce the original trajectory, because decisions depend on the budget.
+
+A portable work profile should contain:
+
+- the four kernel prices: `kic`, `repack`, `rotamer_trials`, `minimize`
+- prices for observation, controller, archive and restore
+- policy setup work
+- where each value came from
+
+Each original kernel price is the measured kernel CPU divided by the operation count, multiplied by (net refinement CPU / summed measured kernel CPU).
+
+You can keep an exact historical price profile and use it on a new input without reading any benchmark inputs. If you do, call it a reference tariff, not a calibration for the new input.
+
+Never fill missing prices with zero or arbitrary unit costs. Both programs use absolute work thresholds, and P95 also decides whether to repeat a descent based on how much of the original allowance it has used.
 
 ## Native dependency
 
-The native integration requires the legacy NGK callback interface used by the
-host. A stock NGK call without the inner callbacks does not execute the full
-policy. Runtime receipts should identify the native build, interface version,
-score profile, policy hash, input/loop bindings, random seed, and budget profile.
+The integration needs the legacy NGK callback interface that the host uses. A stock NGK call without the inner callbacks does not run the full policy.
+
+Runtime receipts should record: the native build, interface version, score profile, policy hash, input and loop bindings, random seed, and budget profile.
 
 ## Small public example
 
-PDB [1L2Y](https://www.rcsb.org/structure/1L2Y), model 1, chain A is a public
-20-residue Trp-cage structure suitable for a small execution example. PDB archive
-data are distributed under [CC0](https://www.rcsb.org/pages/usage-policy).
-Use a declared internal loop and preserve the source/download identity. An
-execution example demonstrates loading, routing and output production; it does
-not require a target structure or reference-quality measurement.
+PDB [1L2Y](https://www.rcsb.org/structure/1L2Y), model 1, chain A, is a public 20-residue Trp-cage structure suitable for a small execution example. PDB archive data are released under [CC0](https://www.rcsb.org/pages/usage-policy).
+
+Use a declared internal loop and keep the source file's identity: record where it was downloaded from and do not alter it. The example shows loading, routing and output. It does not need a target structure or any measurement against a reference.

@@ -1,6 +1,8 @@
 # BENCH48 descriptive tables
 
-All quality values in the first table are frozen raw means over all 48 returned inputs, including NGK row36 geometry-invalid output. RMSD is in Å; energy is in REU. These are not component-balanced fitness. Pooled legacy RMSD mixes W/S backbone expanded-region and hard CA loop-region definitions: use the paired subgroup changes for frozen-quality interpretation.
+The quality columns (RMSD and energy) in the first table are raw averages of the frozen (pre-specified) metrics over all 48 returned inputs; the cost columns are totals. The averages include the geometrically invalid result that NGK (next-generation kinematic closure, the native Rosetta loop-modeling baseline) returned at row 36. RMSD (root-mean-square deviation from the reference structure; lower is closer) is in Å, and energy is in REU (Rosetta energy units). These raw averages are not the component-balanced scoring objectives (the transformed, higher-is-better scores balanced across homology components). The pooled legacy RMSD averages mix two definitions: backbone atoms over an expanded region for the W and S input groups (W/S), and CA (alpha-carbon) atoms over the loop for hard inputs. So use the paired subgroup changes below to judge frozen-metric quality.
+
+In the column headers, "MP complete" counts inputs where the MolProbity structure diagnostics finished. "Logical work" is the project's calibrated work unit, not seconds. "Accounted route CPU" is measured modeling CPU (processor) time, including failed attempts and reused preparation.
 
 | Method | Returned/planned | Valid | MP complete | Local RMSD | Global RMSD | Local energy | Global energy | Logical work sum | Accounted route CPU (s) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -15,7 +17,7 @@ All quality values in the first table are frozen raw means over all 48 returned 
 | P98 / logical_work_not_seconds | 25.130934% | 2.297841% | 1.837406% | 48 |
 | P98 / cpu_seconds | 26.658927% | 4.501912% | 3.457686% | 48 |
 
-Paired valid raw mean changes below are method minus NGK; negative is better. The invalid NGK hard input remains in the main 48-input table above.
+The next table shows average changes on inputs where both the method and NGK returned valid results: method minus NGK, so negative is better. NGK's one invalid hard input is excluded here but stays in the 48-input table above.
 
 | Method | Group | Both-valid n / planned | Δ local RMSD | Δ global RMSD | Δ local energy | Δ global energy |
 |---|---|---:|---:|---:|---:|---:|
@@ -24,7 +26,7 @@ Paired valid raw mean changes below are method minus NGK; negative is better. Th
 | P98 | WS | 32/32 | -0.035327 | -0.014386 | -2.863966 | 7.617551 |
 | P98 | hard | 15/16 | 0.352907 | 0.107234 | -30.896725 | 7.146576 |
 
-Existing common scaffold-fit CA display metrics and fixed-energy medians; all available outputs including the NGK invalid output, n=48 per cell. These CA values are derived figure metrics, not the frozen fitness.
+The last table gives medians of the CA RMSD shown in the figure (computed after one shared alignment on the non-loop scaffold) and of the fixed energies. It covers all outputs, including NGK's invalid one, with n=48 per cell. These CA values are derived for the figure; they are not the frozen scoring objectives.
 
 | Method | Local CA RMSD median (Å) | Global CA RMSD median (Å) | Local energy median (REU) | Global energy median (REU) |
 |---|---:|---:|---:|---:|

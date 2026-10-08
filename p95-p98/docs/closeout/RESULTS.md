@@ -1,24 +1,31 @@
 # Results: BENCH48 development data
 
-P95 and P98 used **16.11% and 25.13% of native NGK's total recorded logical work**, respectively, on the same 48 development inputs. They delivered 48 valid endpoints each; NGK delivered 47. The frozen component-balanced objectives and raw subgroup results show a tradeoff: P98 improved all five objectives, but both programs had worse hard-group raw RMSD. This panel was used during program discovery and selection.
+**On the 48 development inputs, P95 used 16.11% and P98 used 25.13% of the total logical work of standard NGK** (Rosetta's next-generation kinematic closure loop modeling). Both returned 48 valid structures; NGK returned 47. The quality picture is a trade-off. P98 beat NGK on all five scoring objectives, but both programs had worse raw RMSD on the hard group. (RMSD, root-mean-square deviation, measures how far a model is from the true structure, in Å.)
 
-The prior “8%” statement is withdrawn: no verified 8% result was found in the retained P95/P98 versus NGK cost totals, per-input ratio medians, or ratios of median costs. P98's verified total-work reduction is 74.87%, not an 8% speed improvement.
+One caveat applies to all the BENCH48 results: we used this same data to discover and select the programs, so it is not an independent test.
 
-## Numerical tables and reproduction
+[![BENCH48 structural validity, recorded CPU and structural-quality distributions](../figures/method_comparison.png)](../figures/method_comparison.pdf)
 
-[TABLES.md](results/TABLES.md) gives the main raw means, three distinct cost ratios, and paired valid subgroup changes. [per_input.csv](results/per_input.csv) contains all 144 method–input rows, including the invalid NGK endpoint, original raw values, separate existing scaffold-fit display RMSDs, CPU components, wall time, and terminal identities. All four frozen raw quality metrics are available on 48/48 rows per method; valid pair counts versus NGK are 47 overall, 32 W/S and 15 hard. There are 32 homology components, not 48 independent proteins: W/S comprise 32 starts from 16 components, plus 16 hard components.
+**Correction:** we previously said P98 was "8%" faster. We withdraw that. No retained comparison supports it: not total costs, not median per-input ratios, not ratios of medians. The verified figure is that P98 cut total logical work by 74.87%.
 
-Run from the release root with Python's standard library; this reads only the shipped scalar CSV and regenerates the tables and machine-readable summary:
+## Where the numbers are, and how to regenerate them
+
+- [TABLES.md](results/TABLES.md): the main raw averages, three different cost ratios, and paired changes on valid inputs by subgroup.
+- [per_input.csv](results/per_input.csv): all 144 method-by-input rows, including NGK's one invalid result. It has the original raw values, the separate scaffold-fit RMSDs used for display, CPU components, wall time and final-structure identities.
+
+All four raw quality metrics exist for 48/48 rows per method. When paired with NGK on inputs where both results are valid, there are 47 pairs overall: 32 in the W/S groups and 15 in the hard group. The inputs are not 48 independent proteins. There are 32 homology components (groups of related proteins): the W and S inputs are 32 starts from 16 components, and the hard inputs are 16 more components.
+
+To regenerate the tables and a machine-readable summary, run this from the release root. It needs only Python's standard library and reads only the shipped CSV:
 
 ```sh
 python3 docs/closeout/results/summarize.py
 ```
 
-The project-private `artifacts/NGNGK_CLOSEOUT/results/extract_retained.py` extracts these scalars from the retained figure CSV, checks each input and terminal hash against the original manifest, and checks all original domain means and logical/route CPU totals against the final reports. [provenance.json](results/provenance.json) records those source identities. It does not reopen remote endpoint files or recompute coordinates. Original full terminal locators and hashes remain in the CSV without host/account paths.
+Behind that, a private script, `artifacts/NGNGK_CLOSEOUT/results/extract_retained.py`, pulled these numbers from the saved figure CSV. It checked each input and final-structure hash against the original manifest, and checked the original group averages and logical/route CPU totals against the final reports. [provenance.json](results/provenance.json) records those sources. The script did not reopen the remote structure files or recompute coordinates. The full original file locators and hashes stay in the CSV, minus host and account paths.
 
-## Frozen primary objectives
+## The five scoring objectives
 
-These are the original transformed, component-balanced, dimensionless objectives, all higher-is-better. They are preserved in [frozen_axes.csv](results/frozen_axes.csv), separately from the new descriptive arithmetic in the main table. No five-axis average or new winner is introduced.
+These are the original objectives we froze before the search. Each is transformed so higher is better, balanced across homology components, and unitless. They are stored in [frozen_axes.csv](results/frozen_axes.csv), apart from the newer descriptive arithmetic in the main table. We do not average them into one score or name a new winner.
 
 | Method | Local RMSD axis | Global RMSD axis | Local energy axis | Global energy axis | Efficiency axis |
 |---|---:|---:|---:|---:|---:|
@@ -26,11 +33,19 @@ These are the original transformed, component-balanced, dimensionless objectives
 | P98 | 0.499389 | 0.490022 | 0.547624 | 0.465248 | 0.824536 |
 | NGK | 0.465555 | 0.460504 | 0.467521 | 0.461339 | 0.317161 |
 
-P95's global-energy objective is below NGK. For both programs the paired valid hard-group local/global RMSD changes are positive (worse). The raw all-input NGK energy means include its extreme geometry-invalid endpoint; the both-valid subgroup table exposes the paired energy regressions that a pooled mean can obscure.
+What to notice:
 
-NGK row36 returned a geometry-invalid endpoint after a CPU_LIMIT action; row35 also had a CPU_LIMIT action but returned a valid endpoint. Both costs and outputs remain included. P95/P98 have no endpoint failures in this panel. All three methods completed the 15-component MolProbity diagnostic collection on all 48 inputs; collection completion is not an anomaly-free result.
+- P95 scores below NGK on the global energy axis (worse, since higher is better).
+- On hard inputs where both results are valid, both programs have worse (higher) local and global RMSD than NGK.
+- NGK's raw average energy over all inputs includes one extreme, geometrically invalid result. The both-valid subgroup table shows energy regressions that a pooled average can hide.
+
+![BENCH48: better on W/S, worse on hard inputs](../figures/bench48_subgroup_deltas.svg)
+
+NGK had one failure. Its row 36 hit its CPU limit (a CPU_LIMIT action) and returned a geometrically invalid structure. Row 35 also had a CPU_LIMIT action but returned a valid one. Both rows' costs and outputs stay in the data. P95 and P98 had no failed results here. All three methods finished the 15-part MolProbity diagnostic set on all 48 inputs. Finishing the diagnostics does not mean no problems were found.
 
 ## Cost boundaries
+
+![What each cost number counts](../figures/cost_boundaries.svg)
 
 | Method | Retained measured route CPU (s) | Reused preparation (s) | Accounted route CPU (s) | Final quality receipt CPU (s) | MP receipt CPU (s) | Sum active wall (s) | Sum worker wait (s) |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -38,35 +53,47 @@ NGK row36 returned a geometry-invalid endpoint after a CPU_LIMIT action; row35 a
 | P98 | 14889.631 | 14.279 | 14903.911 | 7.281 | 1.289 | 14525.217 | 130.638 |
 | NGK | 55891.610 | 14.279 | 55905.890 | 7.025 | 1776.579 | 55316.972 | 6162.233 |
 
-Each column has 48 measured/recorded rows per method. Accounted route CPU is retained measured route CPU plus exact measured preparation reused at rows17 and35; it includes retained failed attempts. NGK reused 46 whole routes, preserving their original CPU. Its `incremental_run_cpu_seconds` sums to 3520.462 s, whereas P95/P98 sum to 9960.670/14889.631 s in their original passes. Those incremental fields describe different historical execution passes and are not a matched speed ratio or this closeout's new CPU consumption. This closeout performed no structure computation.
+Each column has 48 recorded rows per method.
 
-The MP columns are recorded evaluation/retrieval costs, including reuse; they do not measure fresh full MolProbity execution for every endpoint. [evaluation_costs.csv](results/evaluation_costs.csv) preserves the report fields and measured-row counts. Neither final scoring nor MP is included in the route CPU comparison. Per-input active wall and queue wait are retained separately; summing overlapping input walls does not yield batch elapsed time. Timings were historical, not a controlled hardware speedup experiment. Logical work retains the original hybrid tariff definition; it is neither CPU seconds nor the new draft clock-independent action-price mode.
+- Accounted route CPU is the measured route CPU plus exactly measured preparation work reused at rows 17 and 35. It includes failed attempts.
+- NGK reused 46 whole routes, keeping their original CPU cost. Its `incremental_run_cpu_seconds` sums to 3520.462 s, versus 9960.670 s (P95) and 14889.631 s (P98) in their original runs. Those fields come from different historical runs, so they are not a fair speed ratio, and they are not new CPU used for this report. This report ran no structure computations.
+- The MP columns are recorded MolProbity scoring and retrieval costs, including reuse. They do not mean MolProbity was fully rerun for every structure. [evaluation_costs.csv](results/evaluation_costs.csv) keeps the report fields and row counts.
+- Neither final scoring nor MolProbity is part of the route CPU comparison.
+- We keep per-input active wall time and queue wait separately. Input wall times overlap, so adding them up does not give the batch's elapsed time.
+- Timings are historical. This was not a controlled hardware speed test.
+- Logical work uses the original hybrid cost definition. It is not CPU seconds, and it is not the newer draft mode that prices actions independent of the clock.
 
-Discovery costs are distinct from deployment: all proposal evaluations recorded 380.437 route CPU hours, of which 372.876 hours were additional to P1; the three strong controls recorded another 19.631 hours. The 100 returned-program evaluation summaries separately sum to 761.163 s final-quality CPU and 32915.071 s MP receipt CPU, including the invalid-policy fallback and reuse. These are evaluation accounts, not reconciled new server consumption. The 100 known usage receipts contain 21,531,286 tokens; P96 usage is missing. The search used the existing subscription channel and recorded zero paid API calls. A reconciled discovery LLM-wait total, one-time resource-building total, and currency bill are unavailable in the selected closeout records and remain null in [discovery_costs.json](results/discovery_costs.json). No one-time costs or model wait are folded into route CPU.
+**Discovery costs are separate from running the programs.** All proposal evaluations recorded 380.437 route CPU hours, 372.876 of them beyond P1. The three strong comparison methods recorded another 19.631 hours. The 100 returned-program summaries add 761.163 s of final-quality CPU and 32915.071 s of MolProbity CPU, including the invalid-program fallback and reuse. These are scoring accounts, not reconciled new server usage. The 100 known usage receipts total 21,531,286 tokens; P96's usage is missing. The search ran on an existing subscription with zero paid API calls. We don't have a reconciled total for LLM wait time during discovery, one-time resource building, or a currency bill; those stay null in [discovery_costs.json](results/discovery_costs.json). None of these one-time costs or model wait is included in route CPU.
 
 ## Metric definitions
 
-The CSV's `legacy_local_rmsd_A` / `legacy_global_rmsd_A` are the frozen raw quantities. For W/S they use N, CA, C and O backbone atoms: prediction and reference are fitted independently to the same visible-source scaffold anchors, followed by local/global errors with no additional fit. Local covers the frozen expanded region L; global covers all final-sequence residues. For hard inputs they use CA atoms with explicit residue correspondence, independently fitting prediction and reference to fixed RAW source non-loop anchors; local covers the loop union and global all mapped residues. Pairing uses input index, episode and homology component, never nearest numerical value.
+Frozen raw RMSD (`legacy_local_rmsd_A` / `legacy_global_rmsd_A` in the CSV) is defined differently for the two input types:
 
-The pooled legacy RMSD means combine these two atom/region definitions and are included only for arithmetic traceability. Use the group-specific paired changes to describe frozen raw quality; use the explicitly labeled common CA display metric for a cross-domain geometric headline.
+- W/S inputs: backbone atoms N, CA, C and O. The model and the reference are each aligned to the same visible scaffold anchors from the starting structure, then errors are measured with no further fitting. Local covers the frozen expanded region L. Global covers every residue in the final sequence.
+- Hard inputs: CA atoms only, with explicit residue matching. Model and reference are each aligned to fixed non-loop anchors from the raw starting structure. Local covers the union of loops; global covers all matched residues.
 
-The existing figure's `local_rmsd_A` / `global_rmsd_A` are different derived display metrics: a single direct prediction-to-reference Kabsch fit on all mapped non-loop CA atoms, then loop-union/all-mapped CA RMSDs under that same transform. They are copied unchanged for figure reconciliation and do not replace the frozen objectives.
+Pairs are matched by input index, episode and homology component, never by nearest value.
 
-Both energies use the fixed ref2015 score with backbone hydrogen-bond pair decomposition, in REU. Local sums weighted per-residue contributions over the frozen local region (expanded L for W/S, loop union for hard); global covers the complete pose. CSV residue counts retain these boundaries. Geometry validity uses the fixed sequence, heavy-atom, chemistry/connectivity and geometry checks; low RMSD, low energy, and completed MolProbity diagnostics are separate observations.
+Because the pooled RMSD averages mix these two definitions, we show them only so the arithmetic can be traced. To judge raw quality, use the paired changes by group. For a single cross-group number, use the clearly labeled common CA display metric.
 
-## Fixed CASP15 direct-source supplement — 8 October 2026
+Display RMSD (`local_rmsd_A` / `global_rmsd_A` in the existing figure) is a different, derived metric. It fits the model directly onto the reference with one Kabsch alignment over all matched non-loop CA atoms, then measures CA RMSD over the loop union (local) and all matched atoms (global) using that same fit. We copied these values unchanged so they match the figure. They do not replace the frozen objectives.
 
-**Additional interpretation: this test also separates MC control from retrieval.** No database action was selected. On the six AlphaFold2 starting models, frozen P98 used 6.66% of native warm-start NGK CPU (14.448 versus 216.944 seconds/input), with mean local backbone RMSD 1.6016 versus 1.6297 Å. All six native refinement receipts contain a voluntary stop. This is evidence of useful non-retrieval sampling control, not proof that a new MC algorithm or improved annealing schedule was learned.
+Energies use Rosetta's fixed ref2015 score with backbone hydrogen-bond pair decomposition, in Rosetta energy units (REU). Local energy sums weighted per-residue contributions over the frozen local region (expanded L for W/S, loop union for hard). Global energy covers the whole structure. The CSV's residue counts record these boundaries.
 
-The AlphaFold2 source mean was 1.5963 Å; average improvement over the source is not claimed. ESMFold starts did not preserve the compute advantage (151.50% of NGK CPU). [Full source-stratified interpretation, native counters and limitations](casp15/INTERPRETATION.md) complement, rather than replace, the pooled table below.
+Geometry validity uses fixed checks on sequence, heavy atoms, chemistry and connectivity, and geometry. Low RMSD, low energy, and finished MolProbity diagnostics are separate observations.
 
+## CASP15 supplement: new proteins from predicted starts (8 October 2026)
 
-This separate input protocol uses six proteins, each with an existing AlphaFold2
-and ESMFold prediction: 12 inputs × four methods × one fixed seed20261007 =48
-positions. All48 returned endpoints satisfy the retained geometry-valid flag;
-MolProbity was skipped. There is no shared NGK reconstruction prefix. These are
-six proteins, not12 independent proteins, and this is not a replacement for the
-old nine-protein General experiment or the BENCH48 tables above.
+**We also read this test as separating sampling control from database lookup, because no program chose a database action.** On the six AlphaFold2 starting models, frozen P98 used 6.66% of the CPU of standard warm-start NGK (14.448 vs. 216.944 seconds per input). Its mean local backbone RMSD was 1.6016 Å vs. 1.6297 Å for NGK. All six of P98's refinement runs show a voluntary stop. This is evidence of useful control over sampling without database lookup. It is not proof that P98 learned a new Monte Carlo algorithm or a better annealing schedule.
+
+Two important limits:
+
+- The AlphaFold2 starting models themselves averaged 1.5963 Å. We don't claim P98 improved on them on average.
+- On ESMFold starts, the compute advantage disappeared: P98 used 151.50% of NGK's CPU.
+
+The [full interpretation, split by starting model, with modeling counters and limitations](casp15/INTERPRETATION.md) adds detail the pooled table below doesn't show.
+
+The test used six proteins, each with an existing AlphaFold2 and ESMFold prediction. That gives 12 inputs × 4 methods × one fixed seed (seed20261007) = 48 runs. All 48 results passed the saved geometry-validity flag. MolProbity was skipped. No method started from a shared NGK reconstruction step: the programs made their decisions without a common NGK rebuild run first. These are six proteins, not 12 independent ones. This test does not replace the earlier nine-protein General experiment or the BENCH48 tables above.
 
 | Method | Geometry-valid / planned | Mean method CPU (s) | Mean local backbone RMSD (Å) |
 |---|---:|---:|---:|
@@ -75,17 +102,11 @@ old nine-protein General experiment or the BENCH48 tables above.
 | native_NGK | 12 / 12 | 190.104 | 3.705 |
 | short_NGK | 12 / 12 | 41.574 | 3.757 |
 
-The unprocessed sources average3.514533Å local RMSD, lower than every method's
-pooled mean. P95/P98 use less mean method CPU than native_NGK and more than
-short_NGK; this does not establish superiority to leaving the predictions
-unchanged. Both policies recorded12 ngk_refine and10 minimize actions; no
-database action was recorded, so this panel does not test a retrieval-repair
-advantage. All source-model strata and protein-level effects remain visible.
+Pooled across both starting models:
 
-The table uses successful current-attempt outer method CPU. Original record-order
-repair attempts add156.182618CPU seconds, retained separately by method;
-resource build148.439991CPU seconds is counted once. Preflight and source/endpoint
-evaluation are separate from method CPU. See the exact retained
-[48-row CSV](casp15/results_per_input.csv) and [report](casp15/REPORT.md) for
-mean/median/total costs, prior/cumulative costs, global RMSD, both energies,
-paired source changes and separate AlphaFold2/ESMFold summaries.
+- The unchanged starting structures averaged 3.514533 Å local RMSD, better than every method's pooled average.
+- P95 and P98 used less average CPU than native_NGK and more than short_NGK. This does not show that P95 or P98 beats leaving the predictions unchanged.
+- Both programs recorded 12 ngk_refine and 10 minimize actions and no database actions, so this panel does not test whether database lookup helps repair structures.
+- Results by starting model and by protein remain visible in the linked files.
+
+The table counts outer method CPU from the successful current attempt. Earlier repair attempts, in original record order, add 156.182618 CPU seconds, kept separately by method. Building shared resources took 148.439991 CPU seconds, counted once. Preflight and scoring of starting and final structures are separate from method CPU. The exact [48-row CSV](casp15/results_per_input.csv) and [report](casp15/REPORT.md) give mean, median and total costs, prior and cumulative costs, global RMSD, both energies, paired changes from the starting structures, and separate AlphaFold2 and ESMFold summaries.

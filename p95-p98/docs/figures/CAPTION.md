@@ -1,10 +1,17 @@
 # Figure caption
 
-**Loop modeling: compute and quality.** Unnamed-P95/P98 are frozen evolved programs. All methods retain the same 48 planned inputs, except the online Agent pilots with three inputs each.
+**Loop modeling: compute and quality.** "Unnamed-P95" and "Unnamed-P98" are the frozen LLM-evolved programs. Every method runs the same 48 planned inputs, except the two online Agent pilots, which ran three inputs each.
 
-**A:** Passed/planned counts use the fixed full-atom checks, not the absence of all MolProbity anomalies. **B:** Per-input recorded modeling/control CPU includes failed attempts and measured-cost reuse, but excludes final scoring, MolProbity, shared resource construction and LLM wait. **C-D:** Derived CA RMSD uses one non-loop scaffold fit; local covers the modeled loop union, global all mapped CA atoms. **E-F:** Existing ref2015 energies retain their frozen local regions. Symmetric-log axes retain every extreme value and use original REU. Right-hand numeric summaries in B-F are medians in original units: seconds, Å and REU, respectively. No missing value is imputed.
+**Panels**
 
-Available sample sizes are listed below; RMSD and energy counts apply to both their local and global panels. The 48 development inputs comprise 32 W/S and 16 hard inputs, spanning 32 homology components.
+- **A:** Passed/planned counts. "Passed" means the fixed full-atom checks, not that MolProbity found no problems at all.
+- **B:** CPU per input for modeling and control. Includes failed attempts and reused, already-measured work. Excludes final scoring, MolProbity, building shared resources, and LLM wait time.
+- **C-D:** CA RMSD (root-mean-square deviation of CA atoms from the reference structure) after one alignment on the non-loop scaffold. Local covers the modeled loops; global covers all matched CA atoms.
+- **E-F:** The existing ref2015 energies. Local energy keeps its original frozen local region; global energy covers the whole structure. The axes use a symmetric log scale so every extreme value is shown, in original REU.
+
+The numbers on the right of panels B-F are medians in original units: seconds, Å and REU. We never fill in missing values.
+
+**Sample sizes.** RMSD and energy counts apply to both the local and global panels. The 48 development inputs are 32 W/S and 16 hard inputs, from 32 homology components (groups of related proteins).
 
 | Method | n CPU | n RMSD | n energy |
 | --- | ---: | ---: | ---: |
@@ -17,10 +24,16 @@ Available sample sizes are listed below; RMSD and energy counts apply to both th
 | Agent-Luna | 3 | 3 | 3 |
 | Agent-Astra | 3 | 3 | 3 |
 
-Blue identifies P95/P98; controls are gray. Circles denote W/S inputs, diamonds hard inputs, hollow markers outputs not meeting full-atom validity. Vertical strokes mark medians. Agent rows contain real points and medians only, separated from the full BENCH48 methods. All six Agent outputs were emergency deliveries after format or request/network/wall-limit failures. Their model waits were 74-231 s/input (Luna) and 767-895 s/input (Astra).
+**How to read the markers.** P95 and P98 are blue; comparison methods are gray. Circles are W/S inputs and diamonds are hard inputs. Hollow markers are outputs that failed full-atom validity. Vertical strokes mark medians.
 
-ProMod3 is the full native pipeline. Sphinx is an independent adapted reproduction using MSL sidechains. FREAD uses a rebuilt library and supplies backbone RMSD, but no comparable full-atom energies. Returned structures with available coordinates remain in the RMSD panels even when they fail full-atom validity. Missing structures and energies retain their planned denominators and are not replaced by zero.
+**Agent rows** show real points and medians only, and sit apart from the full BENCH48 methods. All six Agent outputs were emergency deliveries after format, request or network failures, or after hitting the wall-clock time limit. Model wait was 74-231 s per input for Luna and 767-895 s per input for Astra.
 
-The RMSD display uses one direct prediction-to-reference Kabsch alignment on all mapped non-loop Cα pairs. The same transform is applied to the actual modeled-loop union for local RMSD and to all mapped Cα pairs for global RMSD. These derived display measurements are separate from the frozen development objectives. Energy uses the fixed ref2015 score with backbone hydrogen-bond pair decomposition; local energy sums the original declared region, which includes additional context for W/S inputs, while global energy sums the complete structure. Values are Rosetta energy units (REU).
+**Comparison methods.** NGK is Rosetta's standard next-generation kinematic closure loop modeling. ProMod3 is the full native ProMod3 pipeline. Sphinx is an independent, adapted reproduction that uses MSL for side chains. FREAD uses a rebuilt fragment library; it gives backbone RMSD but no comparable full-atom energies.
 
-Full-atom validity checks sequence, required heavy atoms, source chemistry/connectivity and fixed geometry thresholds; completing MolProbity diagnostics is a separate status. Recorded CPU includes each method's retained failed attempts and exact measured preparation assigned to its pipeline. Whole-route reuse retains the original measured route cost. Shared database construction and model wait are separate costs. These development-set comparisons describe the selected programs and do not establish independent generalization.
+**Missing and invalid outputs.** Returned structures with coordinates stay in the RMSD panels even if they fail full-atom validity. Missing structures and energies still count in the planned totals and are never replaced by zero.
+
+**Metric details.** The RMSD display uses one direct Kabsch alignment of the model onto the reference over all matched non-loop Cα pairs. The same alignment is then used for local RMSD (the modeled-loop union) and global RMSD (all matched Cα pairs). These display values are separate from the frozen development objectives. Energy uses Rosetta's fixed ref2015 score with backbone hydrogen-bond pair decomposition, in Rosetta energy units (REU). Local energy sums the original declared region, which includes extra surrounding residues for W/S inputs. Global energy sums the whole structure.
+
+Full-atom validity checks the sequence, required heavy atoms, chemistry and connectivity from the starting structure, and fixed geometry thresholds. Finishing the MolProbity diagnostics is a separate status. Recorded CPU includes each method's failed attempts and the exact measured preparation assigned to its pipeline. When a whole route was reused, it keeps its original measured cost. Shared database building and model wait are counted separately.
+
+**Caveat:** these are development-set comparisons of programs we selected on this same data. They do not show that the results generalize to new proteins.

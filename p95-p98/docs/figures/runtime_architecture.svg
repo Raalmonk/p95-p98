@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="756pt" viewBox="0 0 1152 756" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>NGNGK documentation figure builder</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 756 
+L 1152 756 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 49.32 191.88 
+L 505.08 191.88 
+Q 512.28 191.88 512.28 184.68 
+L 512.28 111.24 
+Q 512.28 104.04 505.08 104.04 
+L 49.32 104.04 
+Q 42.12 104.04 42.12 111.24 
+L 42.12 184.68 
+Q 42.12 191.88 49.32 191.88 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #f4f6f7; stroke: #78838a; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 668.52 191.88 
+L 1102.68 191.88 
+Q 1109.88 191.88 1109.88 184.68 
+L 1109.88 111.24 
+Q 1109.88 104.04 1102.68 104.04 
+L 668.52 104.04 
+Q 661.32 104.04 661.32 111.24 
+L 661.32 184.68 
+Q 661.32 191.88 668.52 191.88 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #f4f6f7; stroke: #78838a; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 49.32 561.24 
+L 505.08 561.24 
+Q 512.28 561.24 512.28 554.04 
+L 512.28 237.24 
+Q 512.28 230.04 505.08 230.04 
+L 49.32 230.04 
+Q 42.12 230.04 42.12 237.24 
+L 42.12 554.04 
+Q 42.12 561.24 49.32 561.24 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #f4f6f7; stroke: #78838a; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 70.2 386.28 
+L 484.2 386.28 
+Q 491.4 386.28 491.4 379.08 
+L 491.4 325.8 
+Q 491.4 318.6 484.2 318.6 
+L 70.2 318.6 
+Q 63 318.6 63 325.8 
+L 63 379.08 
+Q 63 386.28 70.2 386.28 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #eaf4f9; stroke: #79b4d4; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 668.52 561.24 
+L 1102.68 561.24 
+Q 1109.88 561.24 1109.88 554.04 
+L 1109.88 237.24 
+Q 1109.88 230.04 1102.68 230.04 
+L 668.52 230.04 
+Q 661.32 230.04 661.32 237.24 
+L 661.32 554.04 
+Q 661.32 561.24 668.52 561.24 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #f4f6f7; stroke: #78838a; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 277.2 190.8 
+Q 277.2 209.461289 277.2 226.333724 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 280.2 220.333724 
+L 277.2 226.333724 
+L 274.2 220.333724 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 885.6 190.8 
+Q 885.6 209.461289 885.6 226.333724 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 888.6 220.333724 
+L 885.6 226.333724 
+L 882.6 220.333724 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 511.2 367.2 
+Q 585.298059 367.2 657.607264 367.2 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #096daa; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 651.607264 364.2 
+L 657.607264 367.2 
+L 651.607264 370.2 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #096daa; stroke: #096daa; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 662.4 415.44 
+Q 588.301941 415.44 515.992736 415.44 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #096daa; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 521.992736 418.44 
+L 515.992736 415.44 
+L 521.992736 412.44 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #096daa; stroke: #096daa; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 277.2 560.16 
+Q 277.2 586.37929 277.2 610.809725 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 280.2 604.809725 
+L 277.2 610.809725 
+L 274.2 604.809725 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 49.32 716.76 
+L 1102.68 716.76 
+Q 1109.88 716.76 1109.88 709.56 
+L 1109.88 621.72 
+Q 1109.88 614.52 1102.68 614.52 
+L 49.32 614.52 
+Q 42.12 614.52 42.12 621.72 
+L 42.12 709.56 
+Q 42.12 716.76 49.32 716.76 
+z
+" clip-path="url(#p6aa455402e)" style="fill: #f4f6f7; stroke: #78838a; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 63.36 507.6 
+L 490.32 507.6 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #e3e9ec; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 682.56 488.16 
+L 1087.92 488.16 
+" clip-path="url(#p6aa455402e)" style="fill: none; stroke: #e3e9ec; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #18313f; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="43.2" y="53.556094" transform="rotate(-0 43.2 53.556094)">Install layout: two Python environments</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #5e6d77; font: 14px 'DejaVu Sans'; text-anchor: start" x="43.2" y="84.797812" transform="rotate(-0 43.2 84.797812)">Data flow of one P95 / P98 run</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #18313f; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="61.92" y="134.597344" transform="rotate(-0 61.92 134.597344)">Run inputs</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'" transform="translate(61.92 161.077969)">Input JSON: complete PDB + target sequence</text>
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'" transform="translate(61.92 177.610719)">Work profile (reference tariff) + CPU / wall budget</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #18313f; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="681.12" y="134.597344" transform="rotate(-0 681.12 134.597344)">One-time resource build</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'" transform="translate(681.12 161.077969)">protected.json → build_resources → resources/</text>
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'" transform="translate(681.12 177.972281)">Exclude the input before modeling</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #18313f; font: 700 19px 'DejaVu Sans'; text-anchor: start" x="63.36" y="269.317031" transform="rotate(-0 63.36 269.317031)">Host process</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #18313f; font: 15px 'DejaVu Sans'; text-anchor: start" x="63.36" y="304.437656" transform="rotate(-0 63.36 304.437656)">Linux x86-64 · Python 3.12</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #096daa; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="79.2" y="349.8375" transform="rotate(-0 79.2 349.8375)">p95p98 CLI + frozen P95 / P98 policy</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #18313f; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="63.36" y="425.4375" transform="rotate(-0 63.36 425.4375)">Legacy NGK scheduler</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #18313f; font: 14px 'DejaVu Sans'; text-anchor: start" x="63.36" y="459.917813" transform="rotate(-0 63.36 459.917813)">Licensed PyRosetta</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #18313f; font: 14px 'DejaVu Sans'; text-anchor: start" x="63.36" y="487.277812" transform="rotate(-0 63.36 487.277812)">2026.03+releasequarterly.5e498f1409</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #5e6d77; font: 13px 'DejaVu Sans'; text-anchor: start" x="63.36" y="536.917969" transform="rotate(-0 63.36 536.917969)">Before refinement: check runtime version</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #18313f; font: 700 19px 'DejaVu Sans'; text-anchor: start" x="682.56" y="269.317031" transform="rotate(-0 682.56 269.317031)">ProMod3 worker</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #18313f; font: 15px 'DejaVu Sans'; text-anchor: start" x="682.56" y="304.437656" transform="rotate(-0 682.56 304.437656)">Python 3.14</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #18313f; font: 14px 'DejaVu Sans'; text-anchor: start" x="682.56" y="338.957812" transform="rotate(-0 682.56 338.957812)">ProMod3 3.7.0 + OpenStructure 2.12.0</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #18313f; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="682.56" y="375.677813" transform="rotate(-0 682.56 375.677813)">--promod-python wrapper</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #18313f; font: 14px 'DejaVu Sans'; text-anchor: start" x="682.56" y="403.037813" transform="rotate(-0 682.56 403.037813)">PYTHONPATH: p95-p98/src</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #18313f; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="682.56" y="439.037813" transform="rotate(-0 682.56 439.037813)">resources/</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="682.56" y="466.357969" transform="rotate(-0 682.56 466.357969)">Manifest · filter ledger · StructureDB · FragDB</text>
+   </g>
+   <g id="text_21">
+    <text style="fill: #5e6d77; font: 13px 'DejaVu Sans'" transform="translate(682.56 515.317969)">Before modeling: check native versions,</text>
+    <text style="fill: #5e6d77; font: 13px 'DejaVu Sans'" transform="translate(682.56 531.850719)">database SHA256 values + input filter ledger</text>
+   </g>
+   <g id="text_22">
+    <text style="fill: #096daa; font: 700 14px 'DejaVu Sans'" transform="translate(540.32875 333.197813)">PDB + JSON</text>
+    <text style="fill: #096daa; font: 700 14px 'DejaVu Sans'" transform="translate(550.849531 351.002313)">files only</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #18313f; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="63.36" y="650.837344" transform="rotate(-0 63.36 650.837344)">Run outputs</text>
+   </g>
+   <g id="text_24">
+    <text style="fill: #18313f; font: 15px 'DejaVu Sans'; text-anchor: start" x="63.36" y="685.317656" transform="rotate(-0 63.36 685.317656)">final.pdb     result.json     endpoint.json.gz     route_steps/     actions/</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6aa455402e">
+   <rect x="0" y="0" width="1152" height="756"/>
+  </clipPath>
+ </defs>
+</svg>

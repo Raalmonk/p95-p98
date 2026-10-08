@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="756pt" viewBox="0 0 1008 756" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>NGNGK documentation figure builder</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 756 
+L 1008 756 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 58.716 399.66696 
+L 461.8152 399.66696 
+Q 473.06448 399.66696 473.06448 392.5908 
+L 473.06448 174.4092 
+Q 473.06448 167.33304 461.8152 167.33304 
+L 58.716 167.33304 
+Q 47.46672 167.33304 47.46672 174.4092 
+L 47.46672 392.5908 
+Q 47.46672 399.66696 58.716 399.66696 
+z
+" clip-path="url(#p93d936d559)" style="fill: #f5f7f8; stroke: #e3e9ec; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 546.1848 399.66696 
+L 949.284 399.66696 
+Q 960.53328 399.66696 960.53328 392.5908 
+L 960.53328 174.4092 
+Q 960.53328 167.33304 949.284 167.33304 
+L 546.1848 167.33304 
+Q 534.93552 167.33304 534.93552 174.4092 
+L 534.93552 392.5908 
+Q 534.93552 399.66696 546.1848 399.66696 
+z
+" clip-path="url(#p93d936d559)" style="fill: #f5f7f8; stroke: #e3e9ec; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 58.716 706.30056 
+L 461.8152 706.30056 
+Q 473.06448 706.30056 473.06448 699.2244 
+L 473.06448 451.5588 
+Q 473.06448 444.48264 461.8152 444.48264 
+L 58.716 444.48264 
+Q 47.46672 444.48264 47.46672 451.5588 
+L 47.46672 699.2244 
+Q 47.46672 706.30056 58.716 706.30056 
+z
+" clip-path="url(#p93d936d559)" style="fill: #eaf4f9; stroke: #79b4d4; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 546.1848 706.30056 
+L 949.284 706.30056 
+Q 960.53328 706.30056 960.53328 699.2244 
+L 960.53328 451.5588 
+Q 960.53328 444.48264 949.284 444.48264 
+L 546.1848 444.48264 
+Q 534.93552 444.48264 534.93552 451.5588 
+L 534.93552 699.2244 
+Q 534.93552 706.30056 546.1848 706.30056 
+z
+" clip-path="url(#p93d936d559)" style="fill: #f5f7f8; stroke: #e3e9ec; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 477.876527 283.5 
+Q 499.311637 283.5 519.069696 283.5 
+" clip-path="url(#p93d936d559)" style="fill: none; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 513.069696 280.5 
+L 519.069696 283.5 
+L 513.069696 286.5 
+z
+" clip-path="url(#p93d936d559)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 747.7344 409.332472 
+Q 747.7344 416.176096 747.7344 421.34267 
+" clip-path="url(#p93d936d559)" style="fill: none; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 750.7344 415.34267 
+L 747.7344 421.34267 
+L 744.7344 415.34267 
+z
+" clip-path="url(#p93d936d559)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 745.737248 425.0232 
+Q 503.999613 425.0232 263.939029 425.0232 
+" clip-path="url(#p93d936d559)" style="fill: none; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 269.939029 428.0232 
+L 263.939029 425.0232 
+L 269.939029 422.0232 
+z
+" clip-path="url(#p93d936d559)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 260.2656 427.024311 
+Q 260.2656 430.918834 260.2656 433.136305 
+" clip-path="url(#p93d936d559)" style="fill: none; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 263.2656 427.136305 
+L 260.2656 433.136305 
+L 257.2656 427.136305 
+z
+" clip-path="url(#p93d936d559)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 477.876527 578.34 
+Q 499.311637 578.34 519.069696 578.34 
+" clip-path="url(#p93d936d559)" style="fill: none; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 513.069696 575.34 
+L 519.069696 578.34 
+L 513.069696 581.34 
+z
+" clip-path="url(#p93d936d559)" style="fill: #5e6d77; stroke: #5e6d77; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #18313f; font: 700 15px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="200.548856" transform="rotate(-0 72.7776 200.548856)">1  Discover the programs</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="246.203569" transform="rotate(-0 72.7776 246.203569)">Once, before deployment</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="280.405009" transform="rotate(-0 72.7776 280.405009)">380.437 route-CPU hours</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="314.606449" transform="rotate(-0 72.7776 314.606449)">21,531,286 recorded LLM tokens</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="348.807889" transform="rotate(-0 72.7776 348.807889)">P96 tokens missing; 0 paid API calls</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="383.009329" transform="rotate(-0 72.7776 383.009329)">LLM waiting and money not reconciled</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #18313f; font: 700 15px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="200.548856" transform="rotate(-0 560.2464 200.548856)">2  Build the fragment library</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="246.203569" transform="rotate(-0 560.2464 246.203569)">Once per protected input set</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="280.405009" transform="rotate(-0 560.2464 280.405009)">CASP15: 148.44 CPU seconds</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="314.606449" transform="rotate(-0 560.2464 314.606449)">Public 1L2Y example: 29.36 CPU seconds</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="348.807889" transform="rotate(-0 560.2464 348.807889)">BENCH48 build cost not reconciled</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #096daa; font: 700 15px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="477.698456" transform="rotate(-0 72.7776 477.698456)">3  Run a program on an input</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="523.125216" transform="rotate(-0 72.7776 523.125216)">Used in program-vs-NGK comparisons</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="557.326656" transform="rotate(-0 72.7776 557.326656)">BENCH48 logical work: 16.11% / 25.13%</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="591.528096" transform="rotate(-0 72.7776 591.528096)">BENCH48 route CPU: 17.84% / 26.66%</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="625.729536" transform="rotate(-0 72.7776 625.729536)">Both pairs: P95 / P98, relative to NGK</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="659.930976" transform="rotate(-0 72.7776 659.930976)">CASP15 P98: 6.66% / 151.50% CPU</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #18313f; font: 12.7px 'DejaVu Sans'; text-anchor: start" x="72.7776" y="694.132416" transform="rotate(-0 72.7776 694.132416)">AlphaFold2 / ESMFold starts, vs NGK</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #18313f; font: 700 15px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="477.698456" transform="rotate(-0 560.2464 477.698456)">4  Check the outputs</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="523.353169" transform="rotate(-0 560.2464 523.353169)">Final structure-quality scoring</text>
+   </g>
+   <g id="text_21">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="557.554609" transform="rotate(-0 560.2464 557.554609)">MolProbity where performed</text>
+   </g>
+   <g id="text_22">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="591.756049" transform="rotate(-0 560.2464 591.756049)">Preflight and starting-model scoring</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="625.957489" transform="rotate(-0 560.2464 625.957489)">Counted separately from method CPU</text>
+   </g>
+   <g id="text_24">
+    <text style="fill: #18313f; font: 13px 'DejaVu Sans'; text-anchor: start" x="560.2464" y="660.158929" transform="rotate(-0 560.2464 660.158929)">CASP15 MolProbity was skipped</text>
+   </g>
+  </g>
+  <g id="text_25">
+   <text style="fill: #18313f; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="55.44" y="56.796094" transform="rotate(-0 55.44 56.796094)">What each cost number counts</text>
+  </g>
+  <g id="text_26">
+   <text style="fill: #5e6d77; font: 13px 'DejaVu Sans'; text-anchor: start" x="55.44" y="95.305969" transform="rotate(-0 55.44 95.305969)">Discovery, resource building, a modeling run and evaluation have separate ledgers.</text>
+  </g>
+  <g id="text_27">
+   <text style="fill: #5e6d77; font: 12.5px 'DejaVu Sans'; text-anchor: start" x="55.44" y="731.808" transform="rotate(-0 55.44 731.808)">Logical work is not seconds. CASP15 retains 156.18 s of earlier repair attempts separately.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p93d936d559">
+   <rect x="35.28" y="136.08" width="937.44" height="589.68"/>
+  </clipPath>
+ </defs>
+</svg>

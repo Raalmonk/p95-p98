@@ -1,9 +1,18 @@
-# Fixed CASP15 retained-results report
+# Fixed CASP15 results report (all retained records)
 
-48 positions: 12 inputs per method, 6 proteins, 2 source models, seed20261007. MolProbity skipped.
-Values below summarize retained records only. Missing/error values are N/A, never zero. Metric means use the displayed available-value count; delta = endpoint minus paired source.
+The tables can be recomputed with `docs/closeout/casp15/summarize.py`. For a plain-language reading of these numbers, see [INTERPRETATION.md](INTERPRETATION.md).
 
-## Method CPU (seconds; outer method receipts only)
+Setup: 48 positions, one for each of 4 methods on each of 12 inputs (6 proteins, each with 2 source models: AlphaFold2 and ESMFold), using one seed, seed20261007. Each position has one retained result. MolProbity checks were skipped.
+
+How to read the tables:
+- Values summarize retained records only.
+- Missing or failed values show as N/A. They are never counted as zero.
+- Each mean uses the count shown in its `n` column.
+- Delta = final model minus its paired source model. RMSD (root-mean-square deviation from the reference structure) is lower when a model is closer to the reference, so a negative RMSD delta means the model moved closer.
+
+## Method CPU time (seconds, from the outer method receipts only)
+
+"Total" covers the method runs themselves. "Prior repair total" is CPU spent on earlier attempts to repair record order. "Cumulative total" is the sum of the two.
 
 | Method | Positions | Complete labels | CPU n | Mean | Median | Total | Prior repair total | Cumulative total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -12,7 +21,7 @@ Values below summarize retained records only. Missing/error values are N/A, neve
 | native_NGK | 12 | 12 | 12 | 190.104051 | 214.899402 | 2281.248618 | 123.756355 | 2405.004973 |
 | short_NGK | 12 | 12 | 12 | 41.574026 | 43.981930 | 498.888315 | 28.159726 | 527.048041 |
 
-## Retained action counts
+## Actions taken
 
 | Method | Positions with recorded action counts | Action totals |
 |---|---:|---|
@@ -21,14 +30,17 @@ Values below summarize retained records only. Missing/error values are N/A, neve
 | native_NGK | 0 | {} |
 | short_NGK | 0 | {} |
 
-Action totals use terminal value.action_counts only; absent native-baseline counters are not inferred.
-Resource build CPU, once and separate: 148.439991.
-Preflight CPU, once and separate: 2.270524.
-Source-evaluation CPU (12 unique inputs): 27.011579.
-Endpoint-evaluation CPU: 117.630336.
-Retained summary subtree CPU: 6392.683434; do not add this subtotal to the components above.
+Action totals come only from each run's final `value.action_counts`. The NGK baselines do not record these counters, and we do not guess them.
 
-## Per-method metrics and source-model strata
+Other CPU costs, counted once and kept separate from method CPU (seconds):
+- Resource build: 148.439991
+- Preflight: 2.270524
+- Evaluating the 12 source models: 27.011579
+- Evaluating the final models: 117.630336
+
+Retained summary subtree CPU: 6392.683434 seconds. This is a subtotal that already contains the method CPU in the first table (including prior repair), preflight and both evaluations. Do not add it to any of the figures above.
+
+## Metrics by method and source model
 
 | Source model | Method | Denominator | Geometry true/known | Metric | n | Mean | Median | Source mean | Paired delta n | Paired delta mean |
 |---|---|---:|---|---|---:|---:|---:|---:|---:|---:|
@@ -81,7 +93,7 @@ Retained summary subtree CPU: 6392.683434; do not add this subtotal to the compo
 | ESMFold | short_NGK | 6 | 6/6 | local_energy_REU | 6 | -0.420728 | -0.103131 | 71.312390 | 6 | -71.733118 |
 | ESMFold | short_NGK | 6 | 6/6 | global_energy_REU | 6 | 1757.809662 | 1175.069438 | 2197.475091 | 6 | -439.665429 |
 
-## Protein-level means (two source models per method)
+## Means per protein (two source models per method)
 
 | Protein | Method | Positions | Metric | n | Mean | Paired delta n | Paired delta mean |
 |---|---|---:|---|---:|---:|---:|---:|
@@ -206,6 +218,6 @@ Retained summary subtree CPU: 6392.683434; do not add this subtotal to the compo
 | T1194 | short_NGK | 2 | local_energy_REU | 2 | -3.030483 | 2 | -7.101137 |
 | T1194 | short_NGK | 2 | global_energy_REU | 2 | 264.542593 | 2 | -530.242269 |
 
-## Non-complete or unavailable evaluations
+## Incomplete or missing evaluations
 
 None.

@@ -1,0 +1,412 @@
+{
+  "sources": [
+    {
+      "path": "closeout/casp15/results_per_input.csv",
+      "sha256": "2c311708d9ffba8baf402722be5d40dcfb6a4c491fb1070f7e1853e22755288d"
+    },
+    {
+      "path": "closeout/casp15/mc_control_counts.csv",
+      "sha256": "1fd2b4e0782e16805c90b4230de13c8da7089c1325e2b894de2dcec4df1bbc76"
+    },
+    {
+      "path": "closeout/results/per_input.csv",
+      "sha256": "980e0c311c3adf8e3982cb1b422a5e1f6f4d2f7faae7e707b2470bce06c592b7"
+    },
+    {
+      "path": "closeout/results/summary.json",
+      "sha256": "e59e3772990c224437b688ba91b5af164cb533651b36dd077a094f93b3ff8807"
+    }
+  ],
+  "derivation": {
+    "casp15": "Unweighted means of the six retained scalar rows per method/start; CPU ratio is ratio of group means.",
+    "early_stopping": "Retained method CPU joined to counters by target/start/method and checked by index.",
+    "bench48": "Mean of paired method-minus-NGK frozen raw RMSD differences; exact input/episode/component/domain joins; both-valid pairs only."
+  },
+  "casp15_quality_cost": {
+    "AlphaFold2": {
+      "n": 6,
+      "source_mean_local_bb_rmsd_A": 1.5963081666666668,
+      "methods": {
+        "P95": {
+          "n": 6,
+          "mean_method_cpu_seconds": 98.58691633333333,
+          "mean_local_bb_rmsd_A": 1.7547584999999999,
+          "cpu_percent_native": 45.44348163129757,
+          "input_indices": [
+            0,
+            8,
+            16,
+            24,
+            32,
+            40
+          ]
+        },
+        "P98": {
+          "n": 6,
+          "mean_method_cpu_seconds": 14.4479695,
+          "mean_local_bb_rmsd_A": 1.6015853333333334,
+          "cpu_percent_native": 6.659768466262548,
+          "input_indices": [
+            1,
+            9,
+            17,
+            25,
+            33,
+            41
+          ]
+        },
+        "native_NGK": {
+          "n": 6,
+          "mean_method_cpu_seconds": 216.944021,
+          "mean_local_bb_rmsd_A": 1.6297096666666666,
+          "cpu_percent_native": 100.0,
+          "input_indices": [
+            2,
+            10,
+            18,
+            26,
+            34,
+            42
+          ]
+        },
+        "short_NGK": {
+          "n": 6,
+          "mean_method_cpu_seconds": 48.436276,
+          "mean_local_bb_rmsd_A": 1.8174421666666667,
+          "cpu_percent_native": 22.326624064924104,
+          "input_indices": [
+            3,
+            11,
+            19,
+            27,
+            35,
+            43
+          ]
+        }
+      }
+    },
+    "ESMFold": {
+      "n": 6,
+      "source_mean_local_bb_rmsd_A": 5.432758333333334,
+      "methods": {
+        "P95": {
+          "n": 6,
+          "mean_method_cpu_seconds": 191.19943733333332,
+          "mean_local_bb_rmsd_A": 5.755349166666667,
+          "cpu_percent_native": 117.11053343216871,
+          "input_indices": [
+            4,
+            12,
+            20,
+            28,
+            36,
+            44
+          ]
+        },
+        "P98": {
+          "n": 6,
+          "mean_method_cpu_seconds": 247.3409175,
+          "mean_local_bb_rmsd_A": 5.7425355,
+          "cpu_percent_native": 151.4974478587397,
+          "input_indices": [
+            5,
+            13,
+            21,
+            29,
+            37,
+            45
+          ]
+        },
+        "native_NGK": {
+          "n": 6,
+          "mean_method_cpu_seconds": 163.264082,
+          "mean_local_bb_rmsd_A": 5.780353666666667,
+          "cpu_percent_native": 100.0,
+          "input_indices": [
+            6,
+            14,
+            22,
+            30,
+            38,
+            46
+          ]
+        },
+        "short_NGK": {
+          "n": 6,
+          "mean_method_cpu_seconds": 34.7117765,
+          "mean_local_bb_rmsd_A": 5.697073333333334,
+          "cpu_percent_native": 21.26112251683135,
+          "input_indices": [
+            7,
+            15,
+            23,
+            31,
+            39,
+            47
+          ]
+        }
+      }
+    }
+  },
+  "casp15_early_stopping": {
+    "AlphaFold2": {
+      "shown": 6,
+      "total": 6,
+      "rows": [
+        {
+          "target": "T1104",
+          "P98_cpu_seconds": 8.723203,
+          "native_cpu_seconds": 91.857356,
+          "P98_kic_attempts": 0,
+          "P98_safe_stops": 1,
+          "P98_index": 1,
+          "native_index": 2,
+          "P98_terminal_sha256": "c4b277b9e50489a2bf140325c8c35033696be96a2292624354aaf04f4920a5d1"
+        },
+        {
+          "target": "T1109",
+          "P98_cpu_seconds": 12.798062,
+          "native_cpu_seconds": 251.426516,
+          "P98_kic_attempts": 0,
+          "P98_safe_stops": 1,
+          "P98_index": 9,
+          "native_index": 10,
+          "P98_terminal_sha256": "d20a180f721ed23783dd73ba8e0e0ee0915cb9c1aaf5d65b1677bec62580c50f"
+        },
+        {
+          "target": "T1123",
+          "P98_cpu_seconds": 25.173457,
+          "native_cpu_seconds": 334.971574,
+          "P98_kic_attempts": 13,
+          "P98_safe_stops": 1,
+          "P98_index": 17,
+          "native_index": 18,
+          "P98_terminal_sha256": "f718141adfe3e49a036b86d4107ec2a09b4a1c60a2b6fc15d9c5279f805f1913"
+        },
+        {
+          "target": "T1139",
+          "P98_cpu_seconds": 10.988683,
+          "native_cpu_seconds": 237.497575,
+          "P98_kic_attempts": 2,
+          "P98_safe_stops": 1,
+          "P98_index": 25,
+          "native_index": 26,
+          "P98_terminal_sha256": "8f49366624f14529407e0550679ba83dfb1428cd086deb033ed8fb8ed2c20c8e"
+        },
+        {
+          "target": "T1187",
+          "P98_cpu_seconds": 11.464306,
+          "native_cpu_seconds": 242.886636,
+          "P98_kic_attempts": 0,
+          "P98_safe_stops": 1,
+          "P98_index": 33,
+          "native_index": 34,
+          "P98_terminal_sha256": "3fb2ec4c91ffd28f14fad22372f715befed1910c66f489f1dd4bf7a40e09aed8"
+        },
+        {
+          "target": "T1194",
+          "P98_cpu_seconds": 17.540106,
+          "native_cpu_seconds": 143.024469,
+          "P98_kic_attempts": 27,
+          "P98_safe_stops": 1,
+          "P98_index": 41,
+          "native_index": 42,
+          "P98_terminal_sha256": "0e62186f3db38b6343f1ef375373ea187309810768f41f711767a04b36a3c1e7"
+        }
+      ]
+    },
+    "ESMFold": {
+      "shown": 2,
+      "total": 6,
+      "rows": [
+        {
+          "target": "T1123",
+          "P98_cpu_seconds": 310.126206,
+          "native_cpu_seconds": 75.744122,
+          "P98_kic_attempts": 800,
+          "P98_safe_stops": 0,
+          "P98_index": 21,
+          "native_index": 22,
+          "P98_terminal_sha256": "afcb8a6895b406e25a7fd55c07e61d993b86fe40f2cb728b3ea30bf4aefcd4c8"
+        },
+        {
+          "target": "T1139",
+          "P98_cpu_seconds": 487.209102,
+          "native_cpu_seconds": 204.293161,
+          "P98_kic_attempts": 800,
+          "P98_safe_stops": 0,
+          "P98_index": 29,
+          "native_index": 30,
+          "P98_terminal_sha256": "a5c35b31ba63bb50521242f43daeaf48445744770f4af12346f0fb510ac88709"
+        }
+      ]
+    }
+  },
+  "bench48_subgroup_deltas": [
+    {
+      "method": "P95",
+      "group": "WS",
+      "n": 32,
+      "planned": 32,
+      "legacy_local_rmsd_A": -0.1773816993021102,
+      "legacy_global_rmsd_A": -0.06908929084453685,
+      "paired_input_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "excluded_input_indices": []
+    },
+    {
+      "method": "P98",
+      "group": "WS",
+      "n": 32,
+      "planned": 32,
+      "legacy_local_rmsd_A": -0.03532733217707371,
+      "legacy_global_rmsd_A": -0.014385889491822295,
+      "paired_input_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "excluded_input_indices": []
+    },
+    {
+      "method": "P95",
+      "group": "hard",
+      "n": 15,
+      "planned": 16,
+      "legacy_local_rmsd_A": 0.8738258396938366,
+      "legacy_global_rmsd_A": 0.21634166610967726,
+      "paired_input_indices": [
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "excluded_input_indices": [
+        36
+      ]
+    },
+    {
+      "method": "P98",
+      "group": "hard",
+      "n": 15,
+      "planned": 16,
+      "legacy_local_rmsd_A": 0.3529070149901858,
+      "legacy_global_rmsd_A": 0.10723428051426653,
+      "paired_input_indices": [
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "excluded_input_indices": [
+        36
+      ]
+    }
+  ],
+  "export": {
+    "format": [
+      "SVG with selectable text",
+      "PNG"
+    ],
+    "png_dpi": 180,
+    "builder_sha256": "b5ac1a2c37efb08c77fbde93211a9f23b3d85a6d4f20ba38a850ace967f3786e",
+    "style_sha256": "55e25a5592c4ad7808517013bf1aacd10657658ea08a8efe3520c2349108bfe9",
+    "figures": {
+      "casp15_quality_cost": {
+        "svg": "b7cc7a2d110033be029329595778c3881f2c05cdd785171aa9eef669c445353e",
+        "png": "17cb8d879a879e3dede0893e9afb8ad3151a95c73cee6a9ed3ae0a7cbf91e14c"
+      },
+      "casp15_early_stopping": {
+        "svg": "404b78b2cf031e663574bcc99265e4c0dd28810c72591bad3d23d396a5f934ff",
+        "png": "e93fac30cb9877044147e97372ef2b434d4d9570406a07b81318e7120f52122c"
+      },
+      "bench48_subgroup_deltas": {
+        "svg": "f81d01e2b06d78a50daaee560404228a697ecdb80fdb69abd9061bed3dccda9d",
+        "png": "8a4cc5acc044c78bca330e53493477e6fee6167e45307c6278d0674353cb14ce"
+      }
+    }
+  }
+}
