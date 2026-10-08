@@ -2,6 +2,14 @@
 
 P95 and P98 are **LLM-discovered control programs**. During development, an LLM proposed edits to a Python `decide(view)` function; the host applied those edits, enforced the interface and evaluated the resulting program on BENCH48. Deployment executes the frozen function and makes no LLM calls.
 
+## A bounded OpenEvolve-based algorithm-discovery study
+
+The methodological setting is **LLM-guided search over executable scientific control programs**. [OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve) provided the program-evolution infrastructure; this study supplied the protein-modeling decisions, native interfaces, observations and evaluation. It is an independent application, not a claim to have invented OpenEvolve or the underlying physical algorithms.
+
+The run was deliberately finite: approximately 100 candidate proposals, with exact outcomes listed below. P95/P98 are proposal identifiers, not ages or versions of a protein foundation model. Freezing those programs before the external test makes it possible to examine whether their behavior transfers beyond the development inputs. Longer searches and broader applications remain unmeasured.
+
+The [research overview](../RESEARCH_OVERVIEW.md) explains the two levels of search—molecular conformations and the programs controlling that search—and shows an actual stopping-rule excerpt. The evidence below documents what happened, rather than substituting an explanation generated after the fact for original records.
+
 ## Task, contributions and boundaries
 
 The human-directed work defined the scientific question—how to trade loop-model quality against computation—and specified source-only observations, five evaluation objectives, budgets and controls. Native Monte Carlo integration and infrastructure repair used coding assistants; these engineering contributions are separate from the evolved policies. The search model proposed control-program changes from supplied parent/peer code and TRAIN feedback. The host performed patch application, static/interface checks, native execution, final-structure evaluation and archive updates. These records do not include a controlled comparison establishing that LLM search outperforms human-written rules or random search.

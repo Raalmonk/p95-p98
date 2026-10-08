@@ -1,9 +1,14 @@
-# P95 / P98
+# P95 / P98: executable controllers from LLM-guided program search
 
-Frozen, LLM-discovered control programs for CPU-based local protein-structure
-search. A Python host executes the selected program using source-structure
-observations, search history and a finite budget. No LLM account or OpenEvolve
-installation is needed for inference.
+**The installable outputs of NGNGK, a case study in AI-assisted algorithm discovery for computational biology.**
+
+Instead of asking an LLM to predict a protein structure, this study asks it to help discover **the rules that control a structure-modeling workflow**: which operation to try, which candidate to retain and when to stop spending computation. OpenEvolve-based search proposes and evaluates control programs; the selected programs then run independently of the LLM.
+
+P95 and P98 are named for proposals 95 and 98 in a bounded run of approximately 100 candidates. They are ordinary, inspectable Python programs, not new neural-network models. The run recorded 101 model starts, 100 returned programs and 99 legal evaluated programs. No language-model weights were trained, and no claim of exhaustive search or convergence is made.
+
+A Python host executes the frozen programs using source-structure observations, search history and a finite budget. Native Rosetta/NGK and ProMod3 supply the scientific operations. **No LLM account or OpenEvolve installation is needed for deployment.**
+
+[Research idea and significance](docs/RESEARCH_OVERVIEW.md) · [How the programs were discovered](docs/closeout/DISCOVERY.md) · [Installation](#installation) · [Input format](#inputs)
 
 ## Method
 

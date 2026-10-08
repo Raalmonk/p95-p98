@@ -1,5 +1,7 @@
 # Evidence index
 
+Start with the [research overview](../RESEARCH_OVERVIEW.md) for the scientific question: can LLM-guided program search discover useful, inspectable rules for allocating biomolecular computation? P95/P98 are the frozen artifacts of one bounded experiment in that direction. This index connects the conceptual account to the unchanged measurements and original records.
+
 This publication joins three distinct bodies of evidence. No new structural calculation, LLM call, policy change or sample selection was performed for this documentation update.
 
 | Evidence | What it supports | What it does not establish |
