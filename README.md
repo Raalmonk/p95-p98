@@ -18,20 +18,6 @@ Searching longer can lower the energy without getting any closer to the real, ex
 
 ![How the programs were found, then deployed](p95-p98/docs/figures/search_loop.svg)
 
-```text
-Researcher defines editable code, observations and evaluation
-                            ↓
-                 LLM proposes a control program
-                            ↓
-          Check code → run native tools → measure results
-                            ↓
-            Feed measurements into the next proposal
-                            ↓
-         Freeze selected programs → test on new inputs
-                            ↓
-         Deploy ordinary CPU code, with no LLM calls
-```
-
 The search loop is built on [OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve). We added the protein side: what the program sees (the current structure and its own search history, never the experimental answer), what it may control in Rosetta's own Monte Carlo search, how it's scored, and records tying each piece of discovered code to what it actually did.
 
 ## What we found
